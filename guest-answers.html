@@ -27,14 +27,6 @@
         <!-- Start: Intro -->
         <div class="intro">
             <h2 class="text-center">NOTICE</h2>
-            <div id="subject">
-                <strong class="text-primary">SUBJECT:</strong>
-                <strong id="subject-name"></strong>
-            </div>
-            <div id="time">
-                <strong class="text-primary">TIME:</strong>
-                <strong id="exam-time"></strong>
-            </div>
             <div id="notice-board" class="text-center d-none"></div>
         </div>
         <!-- End: Intro -->
@@ -63,8 +55,13 @@
         </div>
     </div>
 </nav>
-<header>
-    <h1 class="text-uppercase text-center text-dark shadow-sm">Answers</h1>
+<header class="text-center text-dark shadow-sm">
+    <h1 id="subject-name" class="text-uppercase">Answers</h1>
+
+    <div id="time">
+        <strong class="text-primary pr-3">EXAM TIME:</strong>
+        <strong id="exam-time"></strong>
+    </div>
 </header>
 <main>
     <div id="answers" class="container">
@@ -72,7 +69,7 @@
               style="width: 105px;height: 105px;"></span>
     </div>
 </main>
-<footer class="py-5 bg-black fixed-bottom">
+<footer class="py-5 bg-black">
     <div class="container">
         <p class="text-center text-white m-0 small">Copyright&nbsp;© CeebookAnswers 2020</p>
     </div>
@@ -84,14 +81,13 @@
   const guestRefreshPage = document.querySelector('#guest-refresh-page');
   const guestLogout = document.querySelector('#guest-logout');
 
-  guestRefreshPage.addEventListener('click', getAllAnswers);
+  loadAnswerNotice();
 
+  guestRefreshPage.addEventListener('click', getAllAnswers);
   window.addEventListener('load', getAllAnswers);
 
   async function getAllAnswers (e) {
     e.preventDefault();
-
-    await loadAnswerNotice();
 
     const body = document.querySelector('body');
     const fetchUrl = ` https://ceebookanswers.herokuapp.com/answers`;
@@ -179,7 +175,7 @@
     }
   });
 
-  async function loadAnswerNotice (e) {
+  async function loadAnswerNotice () {
     const subjectName = document.querySelector('#subject-name');
     const examTime = document.querySelector('#exam-time');
     const noticeBoard = document.querySelector('#notice-board');
@@ -193,20 +189,24 @@
       });
       const answerNotice = await data.json();
 
+      console.log('answerNotice:', answerNotice);
+
       if (answerNotice.error) {
         throw new Error(answerNotice.error.message);
       }
 
-      subjectName.textContent = answerNotice[0].examName;
-      examTime.textContent = answerNotice[0].examTime;
 
-      if (answerNotice[0].notice) {
+      subjectName.textContent = answerNotice.data[0].examName + " answers";
+      console.log(subjectName);
+      examTime.innerHTML = answerNotice.data[0].examTime;
+
+      if (answerNotice.data[0].notice) {
         noticeBoard.classList.remove('d-none');
-        noticeBoard.innerHTML = answerNotice[0].notice;
+        noticeBoard.innerHTML = answerNotice.data[0].notice;
       }
 
     } catch (e) {
-     console.log(e.message);
+      console.log(e.message);
     }
   }
 </script>
