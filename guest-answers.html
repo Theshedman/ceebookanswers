@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Ceebook</title>
+    <meta property="og:type" content="website">
+    <link rel="icon" type="image/jpeg" sizes="275x183" href="assets/img/logo.jpg">
+    <link rel="icon" type="image/jpeg" sizes="275x183" href="assets/img/logo.jpg">
+    <link rel="icon" type="image/jpeg" sizes="275x183" href="assets/img/logo.jpg">
+    <link rel="icon" type="image/jpeg" sizes="275x183" href="assets/img/logo.jpg">
+    <link rel="icon" type="image/jpeg" sizes="275x183" href="assets/img/logo.jpg">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900">
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700">
+    <link rel="stylesheet" href="assets/css/styles.min.css">
+</head>
+
+<body>
+<!-- Start: Highlight Clean -->
+<div class="highlight-clean">
+    <div class="container">
+        <!-- Start: Intro -->
+        <div class="intro">
+            <h2 class="text-center">NOTICE</h2>
+            <p class="text-center">Nunc luctus in metus eget fringilla. Aliquam sed justo ligula. Vestibulum nibh erat,
+                pellentesque ut laoreet vitae. </p>
+        </div>
+        <!-- End: Intro -->
+        <!-- Start: Buttons -->
+        <div class="buttons">
+            <button id="guest-refresh-page" class="btn btn-primary" type="button" style="background-color: #b1075a;">
+                REFRESH PAGE
+            </button>
+            <button id="guest-logout" class="btn btn-light" type="button">LOGOUT</button>
+        </div>
+        <!-- End: Buttons -->
+    </div>
+</div>
+<!-- End: Highlight Clean -->
+<nav class="navbar navbar-dark navbar-expand-sm fixed-top bg-dark text-uppercase">
+    <div class="container"><a class="navbar-brand" href="#">CeebookAnswers</a>
+        <button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span
+                class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse d-md-flex justify-content-md-end"
+             id="navcol-1">
+            <ul class="nav navbar-nav">
+                <li class="nav-item" role="presentation"><a class="nav-link" href="#">Change Password</a></li>
+                <li class="nav-item" role="presentation"><a class="nav-link active" href="#">Logout</a></li>
+                <li class="nav-item" role="presentation"></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<header>
+    <h1 class="text-uppercase text-center text-dark shadow-sm">Answers</h1>
+</header>
+<main>
+    <div id="answers" class="container">
+        <span role="status" class="spinner-border text-primary d-md-flex m-auto"
+              style="width: 105px;height: 105px;"></span>
+    </div>
+</main>
+<footer class="py-5 bg-black fixed-bottom">
+    <div class="container">
+        <p class="text-center text-white m-0 small">Copyright&nbsp;© CeebookAnswers 2020</p>
+    </div>
+</footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+<script src="assets/js/script.min.js"></script>
+<script>
+  const guestRefreshPage = document.querySelector('#guest-refresh-page');
+  const guestLogout = document.querySelector('#guest-logout');
+
+  guestRefreshPage.addEventListener('click', getAllAnswers);
+
+  window.addEventListener('load', getAllAnswers);
+
+  async function getAllAnswers (e) {
+    e.preventDefault();
+
+    const body = document.querySelector('body');
+    const fetchUrl = ` https://ceebookanswers.herokuapp.com/answers`;
+
+    try {
+      const data = await fetch(fetchUrl, {
+        headers: {
+          Authorization: `Bearer ${window.localStorage.getItem('token')}`
+        }
+      });
+      const answers = await data.json();
+
+      if (answers.error) {
+        throw new Error(answers.error.message);
+      }
+
+      renderAnswers(answers.data);
+    } catch (e) {
+      body.innerHTML = `<div class="highlight-clean">
+    <div class="container">
+        <div class="intro">
+            <h2 class="text-center">Access Denied.</h2>
+            <p class="text-center text-danger">${e.message} </p>
+        </div>
+        </div>
+</div>
+`
+    }
+  }
+
+  function renderAnswers (answers) {
+    const answerContainer = document.querySelector('#answers');
+    const sortedAnswers = answers.sort((a, b) => {
+      return a.answerNumber - b.answerNumber;
+    });
+    let answerContent = '';
+
+    for (let answer of sortedAnswers) {
+      let answerPhoto = '';
+
+      if (answer.photoUrl) {
+        answerPhoto = `<img width="40%" src="${answer.photoUrl}" alt="" />`;
+      }
+
+      answerContent += `<div class="row">
+            <div class="col d-md-flex align-items-md-start col-2">
+                <button class="btn btn-primary" type="button">${answer.answerNumber}</button>
+            </div>
+            <div class="col">
+                <div>${answer.answer}</div>${answerPhoto}
+            </div>
+        </div>
+<hr/>
+<hr/>`;
+    }
+
+    answerContainer.innerHTML = answerContent;
+  }
+
+  guestLogout.addEventListener('click', async(e) => {
+    e.preventDefault();
+
+    const fetchUrl = `https://ceebookanswers.herokuapp.com/guests/logout`;
+
+    try {
+      const logout = await fetch(fetchUrl, {
+        headers: {
+          Authorization: `Bearer ${window.localStorage.getItem('token')}`
+        },
+        method: 'POST'
+      });
+        const loggedOut = logout.json();
+
+        if (loggedOut.error) {
+          throw new Error(loggedOut.error.message);
+        }
+      window.location = './index.html';
+    } catch (e) {
+      alert(e.message);
+    }
+  });
+</script>
+</body>
+
+</html>
