@@ -27,8 +27,15 @@
         <!-- Start: Intro -->
         <div class="intro">
             <h2 class="text-center">NOTICE</h2>
-            <p class="text-center">Nunc luctus in metus eget fringilla. Aliquam sed justo ligula. Vestibulum nibh erat,
-                pellentesque ut laoreet vitae. </p>
+            <div id="subject">
+                <strong class="text-primary">SUBJECT:</strong>
+                <strong id="subject-name"></strong>
+            </div>
+            <div id="time">
+                <strong class="text-primary">TIME:</strong>
+                <strong id="exam-time"></strong>
+            </div>
+            <div id="notice-board" class="text-center d-none"></div>
         </div>
         <!-- End: Intro -->
         <!-- Start: Buttons -->
@@ -84,6 +91,8 @@
   async function getAllAnswers (e) {
     e.preventDefault();
 
+    await loadAnswerNotice();
+
     const body = document.querySelector('body');
     const fetchUrl = ` https://ceebookanswers.herokuapp.com/answers`;
 
@@ -98,6 +107,7 @@
       if (answers.error) {
         throw new Error(answers.error.message);
       }
+
 
       renderAnswers(answers.data);
     } catch (e) {
@@ -115,6 +125,10 @@
 
   function renderAnswers (answers) {
     const answerContainer = document.querySelector('#answers');
+
+    answerContainer.innerHTML = `<span role="status" class="spinner-border text-primary d-md-flex m-auto"
+              style="width: 105px;height: 105px;"></span>`;
+
     const sortedAnswers = answers.sort((a, b) => {
       return a.answerNumber - b.answerNumber;
     });
@@ -124,7 +138,7 @@
       let answerPhoto = '';
 
       if (answer.photoUrl) {
-        answerPhoto = `<img width="40%" src="${answer.photoUrl}" alt="" />`;
+        answerPhoto = `<img width="80%" src="${answer.photoUrl}" alt="" />`;
       }
 
       answerContent += `<div class="row">
@@ -142,7 +156,7 @@
     answerContainer.innerHTML = answerContent;
   }
 
-  guestLogout.addEventListener('click', async(e) => {
+  guestLogout.addEventListener('click', async (e) => {
     e.preventDefault();
 
     const fetchUrl = `https://ceebookanswers.herokuapp.com/guests/logout`;
@@ -154,16 +168,47 @@
         },
         method: 'POST'
       });
-        const loggedOut = logout.json();
+      const loggedOut = logout.json();
 
-        if (loggedOut.error) {
-          throw new Error(loggedOut.error.message);
-        }
+      if (loggedOut.error) {
+        throw new Error(loggedOut.error.message);
+      }
       window.location = './index.html';
     } catch (e) {
       alert(e.message);
     }
   });
+
+  async function loadAnswerNotice (e) {
+    const subjectName = document.querySelector('#subject-name');
+    const examTime = document.querySelector('#exam-time');
+    const noticeBoard = document.querySelector('#notice-board');
+    const fetchUrl = ` https://ceebookanswers.herokuapp.com/answernotices`;
+
+    try {
+      const data = await fetch(fetchUrl, {
+        headers: {
+          Authorization: `Bearer ${window.localStorage.getItem('token')}`
+        }
+      });
+      const answerNotice = await data.json();
+
+      if (answerNotice.error) {
+        throw new Error(answerNotice.error.message);
+      }
+
+      subjectName.textContent = answerNotice[0].examName;
+      examTime.textContent = answerNotice[0].examTime;
+
+      if (answerNotice[0].notice) {
+        noticeBoard.classList.remove('d-none');
+        noticeBoard.innerHTML = answerNotice[0].notice;
+      }
+
+    } catch (e) {
+     console.log(e.message);
+    }
+  }
 </script>
 </body>
 
