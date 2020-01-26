@@ -179,7 +179,7 @@
     const subjectName = document.querySelector('#subject-name');
     const examTime = document.querySelector('#exam-time');
     const noticeBoard = document.querySelector('#notice-board');
-    const fetchUrl = ` https://ceebookanswers.herokuapp.com/answernotices`;
+    const fetchUrl = ` https://ceebookanswers.herokuapp.com/answer-notices`;
 
     try {
       const data = await fetch(fetchUrl, {
@@ -189,15 +189,12 @@
       });
       const answerNotice = await data.json();
 
-      console.log('answerNotice:', answerNotice);
-
       if (answerNotice.error) {
         throw new Error(answerNotice.error.message);
       }
 
 
       subjectName.textContent = answerNotice.data[0].examName + " answers";
-      console.log(subjectName);
       examTime.innerHTML = answerNotice.data[0].examTime;
 
       if (answerNotice.data[0].notice) {
