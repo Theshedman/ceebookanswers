@@ -14,145 +14,234 @@
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="manifest" href="manifest.json">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i">
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700">
     <link rel="stylesheet" href="assets/css/styles.min.css">
 </head>
 
 <body>
-    <nav class="navbar navbar-dark navbar-expand-sm fixed-top bg-dark d-md-flex navbar-custom">
-        <div class="container"><a class="navbar-brand" href="#">CeebookAnswers</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navbarResponsive"><span class="navbar-toggler-icon"></span></button>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="nav navbar-nav ml-auto">
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="#verify-subscription">VERIFY SUBSCRIPTION</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link active" href="#login">Log In</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-    <header class="masthead text-center text-white">
-        <div class="masthead-content">
-            <div class="container">
-                <h1 class="masthead-heading mb-0">Ceebook Answers</h1>
-                <h2 class="masthead-subheading mb-0" style="font-size: 22px;"><em>...write once, make all your papers.</em></h2><a class="btn btn-primary btn-xl rounded-pill mt-5" role="button" href="#verify-subscription">Verify subscription</a></div>
-        </div>
-        <div class="bg-circle-1 bg-circle"></div>
-        <div class="bg-circle-2 bg-circle"></div>
-        <div class="bg-circle-3 bg-circle"></div>
-        <div class="bg-circle-4 bg-circle"></div>
-    </header>
-    <section><div class="container-fluid">
-    <div class="row align-items-center">
-        <div class="col col-sm-12 col-md-9">
-            <div id="login">
-                <h3 class="display-4">Login</h3>
-                <p>There are three different login sections on this page: <a href="#admin-login"><strong>Admin</strong></a>, <a
-                        href="#candidate-login"><strong>Candidate</strong></a> and <a
-                        href="#guest-login"><strong>Guest</strong></a>. Those we consider
-                    candidates are the early subscribers whose details are registered in our system. If you are a
-                    candidate, you should login using the candidate section. Guests are <span id="underline">daily subscribers</span>. If you are a
-                    guest, use the password that was given
-                    you to login under the guest section. Admins should use the admin section to login.</p>
-                <p><strong>Note</strong>: click on the <a href="#verify-subscription">Verify Subscription</a> and enter
-                    your phone number to verify your subscription. If you pass the verification, you are a candidate
-                    else you are not.</p>
-            </div>
+<nav class="navbar navbar-dark navbar-expand-sm fixed-top bg-dark d-md-flex navbar-custom">
+    <div class="container"><a class="navbar-brand" href="#">CeebookAnswers</a>
+        <button data-toggle="collapse" class="navbar-toggler" data-target="#navbarResponsive"><span
+                class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="nav navbar-nav ml-auto">
+                <li class="nav-item" role="presentation"><a class="nav-link" href="#verify-subscription">VERIFY
+                    SUBSCRIPTION</a></li>
+                <li class="nav-item" role="presentation"><a class="nav-link active" href="#login">Log In</a></li>
+            </ul>
         </div>
     </div>
-</div></section>
-    <section><div>
-    <ul class="nav nav-tabs">
-        <li class="nav-item"><a role="tab" data-toggle="tab" class="nav-link active" id="guest-login" href="#tab-1">Guest</a>
-        </li>
-        <li class="nav-item"><a role="tab" data-toggle="tab" class="nav-link" id="candidate-login" href="#tab-2">Candidate</a>
-        </li>
-        <li class="nav-item"><a role="tab" data-toggle="tab" class="nav-link" id="admin-login" href="#tab-3">Admin</a>
-        </li>
-    </ul>
-    <div class="tab-content">
-        <div role="tabpanel" class="tab-pane active" id="tab-1">
-            <div class="login-clean">
-                <form>
-                    <h2 class="sr-only">Login Form</h2>
-                    <div class="form-group"><input id="guest-phone" type="text" class="form-control" name="phone"
-                                                   placeholder="Phone"/></div>
-                    <div class="form-group"><input id="guest-password" type="password" class="form-control"
-                                                   name="password" placeholder="Password"/></div>
-                    <div class="form-group">
-                        <button id="guest-login-btn" class="btn btn-primary btn-block" type="submit">Guest Log In
-                        </button>
-                    </div>
-                    <p id="guest-login-error-message" class="text-danger d-none"></p>
-                </form>
-            </div>
-        </div>
-        <div role="tabpanel" class="tab-pane" id="tab-2">
-            <div class="login-clean">
-                <form>
-                    <h2 class="sr-only">Login Form</h2>
-                    <div class="form-group"><input id="candidate-phone" type="text" class="form-control" name="phone"
-                                                   placeholder="Phone"/></div>
-                    <div class="form-group"><input id="candidate-password" type="password" class="form-control"
-                                                   name="password" placeholder="Password"/></div>
-                    <div class="form-group">
-                        <button id="candidate-login-btn" class="btn btn-primary btn-block" type="submit">Candidate Log
-                            In
-                        </button>
-                    </div>
-                    <p id="candidate-login-error-message" class="text-danger d-none"></p>
-                </form>
-            </div>
-        </div>
-        <div role="tabpanel" class="tab-pane" id="tab-3">
-            <div class="login-clean">
-                <form>
-                    <h2 class="sr-only">Login Form</h2>
-                    <div class="form-group"><input id="admin-phone" type="text" class="form-control" name="phone"
-                                                   placeholder="Phone"/></div>
-                    <div class="form-group"><input id="admin-password" type="password" class="form-control"
-                                                   name="password" placeholder="Password"/></div>
-                    <div class="form-group">
-                        <button id="admin-login-btn" class="btn btn-primary btn-block" type="submit">Admin Log In
-                        </button>
-                    </div>
-                    <p id="admin-login-error-message" class="text-danger d-none"></p>
-                </form>
-            </div>
-        </div>
-    </div>
-</div></section>
-    <section>
+</nav>
+<header class="masthead text-center text-white">
+    <div class="masthead-content">
         <div class="container">
-            <h3 id="verify-subscription">Verify Subscription</h3>
-            <div class="row">
-                <div class="col col-12 col-lg-7">
-                    <form>
-                        <div class="form-group">
-                            <div class="input-group">
-                                <div class="input-group-prepend"></div><input class="form-control" type="text" id="verify-subscription-phone" placeholder="Phone Number">
-                                <div class="input-group-append"><button class="btn btn-primary" id="verify-subscription-btn" type="button">Verify Subscription</button></div>
+            <h1 class="masthead-heading mb-0">Ceebook Answers</h1>
+            <h2 class="masthead-subheading mb-0" style="font-size: 22px;"><em>...write once, make all your papers.</em>
+
+                <div role="tablist" id="accordion-1">
+                    <div class="card">
+                        <div role="tab" class="card-header">
+                            <h5 class="mb-0"><a data-toggle="collapse" aria-expanded="true"
+                                                aria-controls="accordion-1 .item-1" href="#accordion-1 .item-1">Accordion
+                                Item</a></h5>
+                        </div>
+                        <div role="tabpanel" data-parent="#accordion-1" class="collapse show item-1">
+                            <div class="card-body">
+                                <p class="card-text">hi id dolor id nibh ultricies vehicula ut id elit. Cras justo
+                                    odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida
+                                    at eget metus.</p>
                             </div>
                         </div>
-                    </form>
+                    </div>
+                    <div class="card">
+                        <div role="tab" class="card-header">
+                            <h5 class="mb-0"><a data-toggle="collapse" aria-expanded="false"
+                                                aria-controls="accordion-1 .item-2" href="#accordion-1 .item-2">Accordion
+                                Item</a></h5>
+                        </div>
+                        <div role="tabpanel" data-parent="#accordion-1" class="collapse item-2">
+                            <div class="card-body">
+                                <p class="card-text">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo
+                                    odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida
+                                    at eget metus.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div role="tab" class="card-header">
+                            <h5 class="mb-0"><a data-toggle="collapse" aria-expanded="false"
+                                                aria-controls="accordion-1 .item-3" href="#accordion-1 .item-3">Accordion
+                                Item</a></h5>
+                        </div>
+                        <div role="tabpanel" data-parent="#accordion-1" class="collapse item-3">
+                            <div class="card-body">
+                                <p class="card-text">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo
+                                    odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida
+                                    at eget metus.</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="col col-12 col-lg-5">
-                    <h6 id="verified-message"></h6>
-                    <p id="phone-title" class="d-none"><strong>Phone</strong>:</p>
-                    <p id="verified-phone"></p>
-                    <p id="subject-title" class="d-none"><strong>Subjects</strong>:</p>
-                    <ul id="verified-subjects"></ul>
+
+            </h2>
+            <a id="external-link" target="_blank" class="btn btn-primary btn-xl rounded-pill mt-5" role="button"
+               href="#verify-subscription"></a></div>
+    </div>
+    <div class="bg-circle-1 bg-circle"></div>
+    <div class="bg-circle-2 bg-circle"></div>
+    <div class="bg-circle-3 bg-circle"></div>
+    <div class="bg-circle-4 bg-circle"></div>
+</header>
+<section>
+    <div class="container-fluid">
+        <div class="row align-items-center">
+            <div class="col col-sm-12 col-md-9">
+                <div id="login">
+                    <h3 class="display-4">Login</h3>
+                    <p>There are three different login sections on this page: <a
+                            href="#admin-login"><strong>Admin</strong></a>, <a
+                            href="#candidate-login"><strong>Candidate</strong></a> and <a
+                            href="#guest-login"><strong>Guest</strong></a>. Those we consider
+                        candidates are the early subscribers whose details are registered in our system. If you are a
+                        candidate, you should login using the candidate section. Guests are <span id="underline">daily subscribers</span>.
+                        If you are a
+                        guest, use the password that was given
+                        you to login under the guest section. Admins should use the admin section to login.</p>
+                    <p><strong>Note</strong>: click on the <a href="#verify-subscription">Verify Subscription</a> and
+                        enter
+                        your phone number to verify your subscription. If you pass the verification, you are a candidate
+                        else you are not.</p>
                 </div>
             </div>
         </div>
-    </section>
-    <footer class="py-5 bg-black">
-        <div class="container">
-            <p class="text-center text-white m-0 small">Copyright&nbsp;© CeebookAnswers 2020</p>
+    </div>
+</section>
+<section>
+    <div>
+        <ul class="nav nav-tabs">
+            <li class="nav-item"><a role="tab" data-toggle="tab" class="nav-link active" id="guest-login" href="#tab-1">Guest</a>
+            </li>
+            <li class="nav-item"><a role="tab" data-toggle="tab" class="nav-link" id="candidate-login" href="#tab-2">Candidate</a>
+            </li>
+            <li class="nav-item"><a role="tab" data-toggle="tab" class="nav-link" id="admin-login"
+                                    href="#tab-3">Admin</a>
+            </li>
+        </ul>
+        <div class="tab-content">
+            <div role="tabpanel" class="tab-pane active" id="tab-1">
+                <div class="login-clean">
+                    <form>
+                        <h2 class="sr-only">Login Form</h2>
+                        <div class="form-group"><input id="guest-phone" type="text" class="form-control" name="phone"
+                                                       placeholder="Phone"/></div>
+                        <div class="form-group"><input id="guest-password" type="password" class="form-control"
+                                                       name="password" placeholder="Password"/></div>
+                        <div class="form-group">
+                            <button id="guest-login-btn" class="btn btn-primary btn-block" type="submit">Guest Log In
+                                <span id="guest-login-spanner" role="status"
+                                      class="spinner-border text-white m-auto d-none"
+                                      style="width: 15px;height: 15px;">
+                                    </span>
+                            </button>
+                        </div>
+                        <p id="guest-login-error-message" class="text-danger d-none"></p>
+                    </form>
+                </div>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="tab-2">
+                <div class="login-clean">
+                    <form>
+                        <h2 class="sr-only">Login Form</h2>
+                        <div class="form-group"><input id="candidate-phone" type="text" class="form-control"
+                                                       name="phone"
+                                                       placeholder="Phone"/></div>
+                        <div class="form-group"><input id="candidate-password" type="password" class="form-control"
+                                                       name="password" placeholder="Password"/></div>
+                        <div class="form-group">
+                            <button id="candidate-login-btn" class="btn btn-primary btn-block" type="submit">Candidate
+                                Log In
+                                <span id="candidate-login-spanner" role="status"
+                                      class="spinner-border text-white m-auto d-none"
+                                      style="width: 15px;height: 15px;">
+                                    </span>
+                            </button>
+                        </div>
+                        <p id="candidate-login-error-message" class="text-danger d-none"></p>
+                    </form>
+                </div>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="tab-3">
+                <div class="login-clean">
+                    <form>
+                        <h2 class="sr-only">Login Form</h2>
+                        <div class="form-group"><input id="admin-phone" type="text" class="form-control" name="phone"
+                                                       placeholder="Phone"/></div>
+                        <div class="form-group"><input id="admin-password" type="password" class="form-control"
+                                                       name="password" placeholder="Password"/></div>
+                        <div class="form-group">
+                            <button id="admin-login-btn" class="btn btn-primary btn-block" type="submit">Admin Log In
+                                <span id="admin-login-spanner" role="status"
+                                      class="spinner-border text-white m-auto d-none"
+                                      style="width: 15px;height: 15px;">
+                                    </span>
+                            </button>
+                        </div>
+                        <p id="admin-login-error-message" class="text-danger d-none"></p>
+                    </form>
+                </div>
+            </div>
         </div>
-    </footer>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/js/script.min.js"></script>
+    </div>
+</section>
+<section>
+    <div class="container">
+        <h3 id="verify-subscription">Verify Subscription</h3>
+        <div class="row">
+            <div class="col-12 justify-content-center align-content-center align-items-center">
+                <form>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="input-group-prepend"></div>
+                            <input class="form-control" type="text" id="verify-subscription-phone"
+                                   placeholder="Phone Number">
+                            <div class="input-group-append">
+                                <button class="btn btn-primary" id="verify-subscription-btn" type="button">Verify
+                                    Subscription
+                                    <span id="verify-sub-spanner" role="status"
+                                          class="spinner-border text-white m-auto d-none"
+                                          style="width: 15px;height: 15px;font-weight: normal">
+                                    </span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-12 justify-content-center align-content-center align-items-center">
+                <h6 id="verified-message" class="text-center"></h6>
+                <p id="phone-title" class="d-none text-center"><strong>Phone</strong>:</p>
+                <p id="verified-phone" class="text-center"></p>
+                <p id="subject-title" class="d-none text-center"><strong>Subjects</strong>:</p>
+                <ul id="verified-subjects"
+                    style="list-style: none; display: flex; flex-flow: column; justify-content: center; align-items: center; margin: 0; padding: 0"></ul>
+            </div>
+        </div>
+    </div>
+</section>
+<footer class="py-5 bg-black">
+    <div class="container">
+        <p class="text-center text-white m-0 small">Copyright&nbsp;© CeebookAnswers 2020</p>
+    </div>
+</footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+<script src="assets/js/verify-subscription.js"></script>
+<script src="assets/js/guest-login.js"></script>
+<script src="assets/js/admin-login.js"></script>
+<script src="assets/js/candidate-login.js"></script>
+<script src="assets/js/index.js"></script>
 </body>
 
 </html>

@@ -65,8 +65,10 @@
 </header>
 <main>
     <div id="answers" class="container">
-        <span role="status" class="spinner-border text-primary d-md-flex m-auto"
-              style="width: 105px;height: 105px;"></span>
+        <span role="status" id="guest-answer-spanner"
+              class="spinner-border text-primary justify-content-center align-items-center align-content-center d-flex m-auto"
+              style="width: 65px;height: 65px;">
+        </span>
     </div>
 </main>
 <footer class="py-5 bg-black">
@@ -76,137 +78,7 @@
 </footer>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
-<script src="assets/js/script.min.js"></script>
-<script>
-  const guestRefreshPage = document.querySelector('#guest-refresh-page');
-  const guestLogout = document.querySelector('#guest-logout');
-
-  loadAnswerNotice();
-
-  guestRefreshPage.addEventListener('click', getAllAnswers);
-  window.addEventListener('load', getAllAnswers);
-
-  async function getAllAnswers (e) {
-    e.preventDefault();
-
-    const body = document.querySelector('body');
-    const fetchUrl = ` https://ceebookanswers.herokuapp.com/answers`;
-
-    try {
-      const data = await fetch(fetchUrl, {
-        headers: {
-          Authorization: `Bearer ${window.localStorage.getItem('token')}`
-        }
-      });
-      const answers = await data.json();
-
-      if (answers.error) {
-        throw new Error(answers.error.message);
-      }
-
-
-      renderAnswers(answers.data);
-    } catch (e) {
-      body.innerHTML = `<div class="highlight-clean">
-    <div class="container">
-        <div class="intro">
-            <h2 class="text-center">Access Denied.</h2>
-            <p class="text-center text-danger">${e.message} </p>
-        </div>
-        </div>
-</div>
-`
-    }
-  }
-
-  function renderAnswers (answers) {
-    const answerContainer = document.querySelector('#answers');
-
-    answerContainer.innerHTML = `<span role="status" class="spinner-border text-primary d-md-flex m-auto"
-              style="width: 105px;height: 105px;"></span>`;
-
-    const sortedAnswers = answers.sort((a, b) => {
-      return a.answerNumber - b.answerNumber;
-    });
-    let answerContent = '';
-
-    for (let answer of sortedAnswers) {
-      let answerPhoto = '';
-
-      if (answer.photoUrl) {
-        answerPhoto = `<img width="80%" src="${answer.photoUrl}" alt="" />`;
-      }
-
-      answerContent += `<div class="row">
-            <div class="col d-md-flex align-items-md-start col-2">
-                <button class="btn btn-primary" type="button">${answer.answerNumber}</button>
-            </div>
-            <div class="col">
-                <div>${answer.answer}</div>${answerPhoto}
-            </div>
-        </div>
-<hr/>
-<hr/>`;
-    }
-
-    answerContainer.innerHTML = answerContent;
-  }
-
-  guestLogout.addEventListener('click', async (e) => {
-    e.preventDefault();
-
-    const fetchUrl = `https://ceebookanswers.herokuapp.com/guests/logout`;
-
-    try {
-      const logout = await fetch(fetchUrl, {
-        headers: {
-          Authorization: `Bearer ${window.localStorage.getItem('token')}`
-        },
-        method: 'POST'
-      });
-      const loggedOut = logout.json();
-
-      if (loggedOut.error) {
-        throw new Error(loggedOut.error.message);
-      }
-      window.location = './index.html';
-    } catch (e) {
-      alert(e.message);
-    }
-  });
-
-  async function loadAnswerNotice () {
-    const subjectName = document.querySelector('#subject-name');
-    const examTime = document.querySelector('#exam-time');
-    const noticeBoard = document.querySelector('#notice-board');
-    const fetchUrl = ` https://ceebookanswers.herokuapp.com/answer-notices`;
-
-    try {
-      const data = await fetch(fetchUrl, {
-        headers: {
-          Authorization: `Bearer ${window.localStorage.getItem('token')}`
-        }
-      });
-      const answerNotice = await data.json();
-
-      if (answerNotice.error) {
-        throw new Error(answerNotice.error.message);
-      }
-
-
-      subjectName.textContent = answerNotice.data[0].examName + " answers";
-      examTime.innerHTML = answerNotice.data[0].examTime;
-
-      if (answerNotice.data[0].notice) {
-        noticeBoard.classList.remove('d-none');
-        noticeBoard.innerHTML = answerNotice.data[0].notice;
-      }
-
-    } catch (e) {
-      console.log(e.message);
-    }
-  }
-</script>
+<script src="assets/js/guest-answer-page.js"></script>
 </body>
 
 </html>
