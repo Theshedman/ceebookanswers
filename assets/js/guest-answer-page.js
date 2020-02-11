@@ -1,16 +1,20 @@
 const guestRefreshPage = document.querySelector('#guest-refresh-page');
 const  guestLogout = document.querySelector('#guest-logout');
 const guestAnswerSpanner = document.querySelector('#guest-answer-spanner');
+const guestRefreshBtnSpanner = document.querySelector('#guest-refresh-btn-spanner');
+const guestLogoutBtnSpanner = document.querySelector('#guest-logout-btn-spanner');
+
 
 loadAnswerNotice();
 
 guestRefreshPage.addEventListener('click', getAllAnswers);
-window.addEventListener('load', getAllAnswers);
+window.addEventListener('DOMContentLoaded', getAllAnswers);
 
 async function getAllAnswers (e) {
   e.preventDefault();
   guestAnswerSpanner.classList.remove('d-none');
   guestAnswerSpanner.classList.add('d-flex');
+  guestRefreshBtnSpanner.classList.remove('d-none');
 
   const body = document.querySelector('body');
 
@@ -71,6 +75,7 @@ function renderAnswers (answers) {
 <hr/>`;
   }
 
+  guestRefreshBtnSpanner.classList.add('d-none');
   guestAnswerSpanner.classList.add('d-none');
   guestAnswerSpanner.classList.remove('d-flex');
   answerContainer.insertAdjacentHTML('beforeend', answerContent);
@@ -80,6 +85,7 @@ guestLogout.addEventListener('click', async (e) => {
   e.preventDefault();
 
   const fetchUrl = `https://ceebookanswers.herokuapp.com/guests/logout`;
+  guestLogoutBtnSpanner.classList.remove('d-none');
 
   try {
     const logout = await fetch(fetchUrl, {
@@ -93,6 +99,7 @@ guestLogout.addEventListener('click', async (e) => {
     if (loggedOut.error) {
       throw new Error(loggedOut.error.message);
     }
+    guestLogoutBtnSpanner.classList.add('d-none');
     window.location = './index.html';
   } catch (e) {
     alert(e.message);

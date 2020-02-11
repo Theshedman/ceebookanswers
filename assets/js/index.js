@@ -1,5 +1,6 @@
 const accordion = document.querySelector('#accordion-1');
 const externalLink = document.querySelector('#external-link');
+const accordionSpanner = document.querySelector('#accordion-spanner');
 
 async function getExternalLink () {
   const fetchUrl = ` https://ceebookanswers.herokuapp.com/external-links`;
@@ -35,12 +36,14 @@ async function getGeneralNotice () {
 }
 
 function accordionComponentBuilder (itemNumber, header, text) {
+  const toggleItem = itemNumber === 0 ? 'show' : '';
+
   return (`<div class="card">
     <div class="card-header" role="tab">
     <h5 class="mb-0"><a data-toggle="collapse" aria-expanded="true" aria-controls="accordion-1 .item-${itemNumber}"
   href="#accordion-1 .item-${itemNumber}">${header}</a></h5>
   </div>
-  <div class="collapse item-${itemNumber}" role="tabpanel" data-parent="#accordion-1">
+  <div class="collapse ${toggleItem} item-${itemNumber}" role="tabpanel" data-parent="#accordion-1">
     <div class="card-body">
     <div class="card-text text-black-50">${text}</div>
   </div>
@@ -54,5 +57,7 @@ document.addEventListener('DOMContentLoaded', async (e) => {
 
   externalLink.href = `http://${btnLink.data[0].link}`;
   externalLink.innerHTML = btnLink.data[0].text;
+
+  accordionSpanner.classList.add('d-none');
   accordion.insertAdjacentHTML('beforeend', getNotice)
 });
