@@ -22,6 +22,7 @@ candidateLoginBtn.addEventListener("click", async (e) => {
     }
 
     window.localStorage.setItem('token', candidateLoginData.data.token);
+    window.localStorage.setItem('examType', candidateLoginData.data.candidate.examType);
 
     candidateLoginSpanner.classList.add('d-none');
     window.location = "./candidate-dashboard.html";
@@ -49,6 +50,6 @@ const candidateSubmitLoginDetails = async (phone, password) => {
     });
     return await response.json();
   } catch (e) {
-    console.log(e.message);
+    throw  new Error(e.message);
   }
 };
