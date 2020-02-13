@@ -1,6 +1,7 @@
 const candidateChangePassword = document.querySelector('#candidate-change-password');
 const candidateLogout = document.querySelector('#candidate-logout');
 const candidateSubjectsContainer = document.querySelector('#candidate-subjects-container');
+const greetCandidate = document.querySelector('#candidate-greeting');
 
 window.addEventListener('DOMContentLoaded', getCandidateSubjects);
 candidateSubjectsContainer.addEventListener('click', (e) => {
@@ -22,6 +23,7 @@ async function getCandidateSubjects() {
       throw new Error(candidateProfile.error.message);
     }
 
+    greetCandidate.textContent = candidateProfile.data.phone;
     candidateProfile.data.subjects.map(value => {
       const subject = `
       <li class="list-group-item text-primary border m-1 rounded-pill border-primary shadow swing animated flex-grow-1">

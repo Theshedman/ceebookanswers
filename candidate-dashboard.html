@@ -41,16 +41,21 @@
 </nav>
 <div class="container text-left" style="height: 100%;">
     <h1 class="text-center">Candidate Dashboard</h1>
-    <p class="text-center">Welcome to your page dear valued candidate. Here you can change your login password and most
+    <p class="text-center">Welcome <strong id="candidate-greeting"></strong>,</p>
+    <p>Here you can change your login password and most
         importantly, below are the subjects you registered for. &nbsp;Click on a &nbsp;subject you have today to view
         answers.</p>
     <div class="d-flex justify-content-center">
-        <button id="candidate-change-password" class="btn btn-primary swing animated" type="button">Change Password</button>
-        <button id="candidate-logout" class="btn btn-link border rounded-0 border-primary swing animated" type="button">Logout</button>
+        <button id="candidate-change-password" class="btn btn-primary swing animated" type="button">Change Password
+        </button>
+        <button id="candidate-logout" class="btn btn-link border rounded-0 border-primary swing animated" type="button">
+            Logout
+        </button>
     </div>
     <hr>
-    <ul id="candidate-subjects-container" class="list-group d-flex flex-row justify-content-between align-items-center align-content-around flex-wrap"
-      style="justify-content: space-evenly; height: 100%;">
+    <ul id="candidate-subjects-container"
+        class="list-group d-flex flex-row justify-content-between align-items-center align-content-around flex-wrap"
+        style="justify-content: space-evenly; height: 100%;">
     </ul>
 </div>
 <footer class="py-5 bg-black">
