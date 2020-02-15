@@ -41,7 +41,7 @@ async function getAllAnswers (e) {
     <div class="container">
         <div class="intro">
             <h2 class="text-center">Access Denied.</h2>
-            <p class="text-center text-danger">${e.message} </p>
+            <p class="text-center text-danger">Please Login to view answers... </p>
         </div>
         </div>
 </div>

@@ -41,7 +41,7 @@ async function getAllAnswers (e) {
     <div class="container">
         <div class="intro">
             <h2 class="text-center">Access Denied.</h2>
-            <p class="text-center text-danger">${e.message} </p>
+            <p class="text-center text-danger">Please Login to view answers. You can only login in to one device. Logging in to another device will log you out from the first one. So make sure that you do not share your password with anyone to avoid being logged out from your device. </p>
         </div>
         </div>
 </div>
