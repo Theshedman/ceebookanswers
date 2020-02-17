@@ -22,9 +22,12 @@ candidateLoginBtn.addEventListener("click", async (e) => {
     }
 
     window.localStorage.setItem('token', candidateLoginData.data.token);
+    window.localStorage.setItem('phone', candidateLoginData.data.candidate.phone);
     window.localStorage.setItem('examType', candidateLoginData.data.candidate.examType);
 
     candidateLoginSpanner.classList.add('d-none');
+
+    window.localStorage.removeItem('subject');
     window.location = "./candidate-dashboard.html";
   } catch (e) {
     candidateLoginErrorMessage.classList.remove('d-none');

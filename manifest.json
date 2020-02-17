@@ -1,1 +1,18 @@
-{"short_name":"Ceebook","name":"Ceebook","icons":[{"src":"/assets/img/logo.jpg","type":"image/jpeg","sizes":"275x183"},{"src":"/assets/img/logo.jpg","type":"image/jpeg","sizes":"275x183"}],"start_url":"https://ceebook.bss.design","display":"fullscreen"}
+{
+  "short_name": "Ceebook",
+  "name": "Ceebook",
+  "icons": [
+    {
+      "src": "/assets/img/logo.jpg",
+      "type": "image/jpeg",
+      "sizes": "275x183"
+    },
+    {
+      "src": "/assets/img/logo.jpg",
+      "type": "image/jpeg",
+      "sizes": "275x183"
+    }
+  ],
+  "start_url": "https://ceebook.bss.design",
+  "display": "fullscreen"
+}

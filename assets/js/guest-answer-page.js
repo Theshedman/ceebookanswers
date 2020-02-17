@@ -100,6 +100,7 @@ guestLogout.addEventListener('click', async (e) => {
       throw new Error(loggedOut.error.message);
     }
     guestLogoutBtnSpanner.classList.add('d-none');
+    window.localStorage.removeItem("token");
     window.location = './index.html';
   } catch (e) {
     alert(e.message);
