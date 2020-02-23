@@ -100,6 +100,10 @@ candidateLogout.addEventListener('click', async (e) => {
       throw new Error(loggedOut.error.message);
     }
     candidateLogoutBtnSpanner.classList.add('d-none');
+    window.localStorage.removeItem("token");
+    window.localStorage.removeItem("subject");
+    window.localStorage.removeItem("examType");
+    window.localStorage.removeItem("phone");
     window.location = './index.html';
   } catch (e) {
     alert(e.message);
