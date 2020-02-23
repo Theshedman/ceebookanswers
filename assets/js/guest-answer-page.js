@@ -114,7 +114,8 @@ async function loadAnswerNotice () {
   const subjectName = document.querySelector('#subject-name');
   const examTime = document.querySelector('#exam-time');
   const noticeBoard = document.querySelector('#notice-board');
-  const fetchUrl = ` https://ceebookanswers.herokuapp.com/answer-notices`;
+  const subject = window.localStorage.getItem("subject");
+  const fetchUrl = ` https://ceebookanswers.herokuapp.com/answer-notices?subject=${subject}`;
 
   try {
     const data = await fetch(fetchUrl, {
@@ -128,22 +129,18 @@ async function loadAnswerNotice () {
       throw new Error(answerNotice.error.message);
     }
 
-    const notice = answerNotice.data.filter(value => {
-      if (value.subject === localStorage.getItem('subject')) {
-        return value;
-      }
-    });
+    const notice = answerNotice.data[0];
 
-    if (notice.length) {
-      subjectName.textContent = notice[0].subject + " answers";
-      examTime.innerHTML = notice[0].examTime;
+    if (notice) {
+      subjectName.textContent = notice.subject + " answers";
+      examTime.innerHTML = notice.examTime;
     } else {
       subjectName.textContent = "Answer";
     }
 
-    if (answerNotice.data[0].notice) {
+    if (notice.notice) {
       noticeBoard.classList.remove('d-none');
-      noticeBoard.innerHTML = answerNotice.data[0].notice;
+      noticeBoard.innerHTML = notice.notice;
     }
 
   } catch (e) {
