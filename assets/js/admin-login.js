@@ -22,6 +22,9 @@ adminLoginBtn.addEventListener("click", async (e) => {
     }
 
     window.localStorage.setItem('token', adminLoginData.data.token);
+    window.localStorage.setItem('phone', adminLoginData.data.admin.phone);
+    window.localStorage.setItem('firstName', adminLoginData.data.admin.firstName);
+    window.localStorage.setItem('lastName', adminLoginData.data.admin.lastName);
 
     adminLoginSpanner.classList.add('d-none');
     window.location = "./admin-dashboard.html";
