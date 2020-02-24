@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>CeebookAnswers | Register Candidate</title>
+    <title>CeebookAnswers | Manage Candidate</title>
     <meta property="og:type" content="website">
     <link rel="icon" type="image/jpeg" sizes="275x183" href="assets/img/logo.jpg">
     <link rel="icon" type="image/jpeg" sizes="275x183" href="assets/img/logo.jpg">
@@ -34,10 +34,37 @@
     </div>
 </nav>
 <div class="container-fluid bg-primary" style="margin-top: 4.2rem; border-top: 20.5px solid  #ee0979;">
-    <h1 class="text-center text-white bg-dark">Register Candidate</h1>
+    <h1 class="text-center text-white bg-dark">Edit/Delete Candidate</h1>
 </div>
 <main>
-    <div class="container">
+    <form id="search-form" style="height: 55vh; width: 100vw; display:flex; align-content: center; justify-content: center; align-items: center; flex-flow: column">
+        <p class="text-center m-3">Enter a candidate's phone number to delete or edit his subscription details</p>
+
+        <div class="form-group">
+            <input id="search-phone" class="form-control"
+                  type="tel" placeholder="Candidate Number">
+        </div>
+        <div class="form-row">
+            <div class="col col-6">
+                <button id="edit-candidate-btn" class="btn btn-primary w-100 mt-3" type="button">Edit
+                    <span id="edit-candidate-spanner-btn" role="status"
+                          class="d-none spinner-border text-white m-auto"
+                          style="width: 15px;height: 15px;">
+                        </span>
+                </button>
+            </div>
+
+            <div class="col col-6">
+                <button id="delete-candidate-btn" class="btn btn-primary w-100 mt-3" type="button">Delete
+                    <span id="delete-candidate-spanner-btn" role="status"
+                          class="d-none spinner-border text-white m-auto"
+                          style="width: 15px;height: 15px;">
+                        </span>
+                </button>
+            </div>
+        </div>
+    </form>
+    <div id="update-form" class="container d-none">
         <form id="candidate-form">
             <div class="form-row">
                 <div class="col col-6">
@@ -81,8 +108,10 @@
             </div>
             <div class="form-row">
                 <div class="col">
-                    <div class="form-group"><label>Default Password:</label><input id="candidate-default-password" class="form-control"
-                                                                        type="tel" placeholder="Phone Number"></div>
+                    <div class="form-group"><label>Default Password:</label><input id="candidate-default-password"
+                                                                                   class="form-control"
+                                                                                   type="tel"
+                                                                                   placeholder="Phone Number"></div>
                 </div>
             </div>
             <hr>
@@ -100,7 +129,7 @@
                             <hr>
                             <div id="subject-container"
                                  class="d-flex justify-content-between flex-wrap align-content-around">
-                                <span id="register-candidate-spanner" role="status"
+                                <span id="update-candidate-spanner" role="status"
                                       class="spinner-border text-primary m-auto"
                                       style="width: 15px;height: 15px;">
                                 </span>
@@ -111,8 +140,8 @@
             </div>
             <div class="form-row">
                 <div class="col col-12">
-                    <button id="register-candidate-btn" class="btn btn-primary w-100 mt-3" type="button">Register
-                        <span id="register-candidate-spanner-btn" role="status"
+                    <button id="update-candidate-btn" class="btn btn-primary w-100 mt-3" type="button">Update Candidate
+                        <span id="update-candidate-spanner-btn" role="status"
                               class="d-none spinner-border text-white m-auto"
                               style="width: 15px;height: 15px;">
                         </span>
@@ -121,9 +150,9 @@
             </div>
         </form>
 
-        <div id="register-candidate-alert" class="d-none alert alert-success alert-dismissible fade show" role="alert">
+    </div>
+    <div id="update-candidate-alert" class="d-none alert alert-success alert-dismissible fade show" role="alert">
 
-        </div>
     </div>
 </main>
 <footer class="py-5 bg-black mt-4">
@@ -133,7 +162,7 @@
 </footer>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-<script src="assets/js/register-candidate.js"></script>
+<script src="assets/js/manage-candidate.js"></script>
 </body>
 
 </html>

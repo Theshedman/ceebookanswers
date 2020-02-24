@@ -16,7 +16,9 @@ const manageAccordion = document.querySelector("#manage-accordion");
 const postAnswers = document.querySelector("#post-answers");
 const createGuestsPassword = document.querySelector("#create-guests-password");
 const manageAnswerNotices = document.querySelector("#manage-answer-notices");
-const updateAdmin = document.querySelector("#update-admin");
+const manageCandidate = document.querySelector("#manage-candidate");
+
+// TODO - manageAccordion, postAnswers, createGuestsPassword, manageAnswerNotices
 
 window.addEventListener("DOMContentLoaded", () => {
   const firstName = window.localStorage.getItem("firstName");
@@ -28,6 +30,10 @@ window.addEventListener("DOMContentLoaded", () => {
 
 registerCandidate.addEventListener("click", () => {
   window.location = "./register-candidate.html";
+});
+
+manageCandidate.addEventListener("click", () => {
+  window.location = "./manage-candidate.html";
 });
 
 adminChangePassword.addEventListener("click", (e) => {

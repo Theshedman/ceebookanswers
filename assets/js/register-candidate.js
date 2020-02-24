@@ -10,6 +10,8 @@ const candidateDefaultPassword = document.querySelector("#candidate-default-pass
 const registerCandidateSpannerBtn = document.querySelector("#register-candidate-spanner-btn");
 const candidateForm = document.querySelector("#candidate-form");
 
+let subjectArray = [];
+
 window.addEventListener("DOMContentLoaded", loadExamYearAndSubjects);
 registerCandidateBtn.addEventListener("click", async () => {
   const subjects = [...document.querySelectorAll("[name=subjects]")];
@@ -21,14 +23,14 @@ registerCandidateBtn.addEventListener("click", async () => {
   const subType = subscriptionType.value;
   const exam_type = examType.value;
   const password = candidateDefaultPassword.value;
-  const candidateData = {
-    phone,
-    examYear: exam_year,
-    examType: exam_type,
-    subscriptionType: subType,
-    subjects: subjectArray,
-    password
-  };
+  const candidateData = {};
+
+  if (phone) candidateData.phone = phone;
+  if (exam_type) candidateData.examType = exam_type;
+  if (exam_year) candidateData.examYear = exam_year;
+  if (subType) candidateData.subscriptionType = subType;
+  if (password) candidateData.password = password;
+  if (subjectArray.length) candidateData.subjects = subjectArray;
 
   const candidateAlert = (heading, message) => `<strong>${heading}!</strong> ${message}.
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -85,8 +87,6 @@ registerCandidateBtn.addEventListener("click", async () => {
   }
 });
 
-let subjectArray = [];
-
 allSubjects.addEventListener('click', () => {
   const subjects = [...document.querySelectorAll("[name=subjects]")];
   if (allSubjects.checked === true) {
@@ -103,10 +103,23 @@ allSubjects.addEventListener('click', () => {
 });
 
 subjectContainer.addEventListener("click", (e) => {
+  const subjects = [...document.querySelectorAll("[name=subjects]")];
+  const allSubjectCount = subjects.length;
+  let count = 0;
   if (e.target.checked && !subjectArray.includes(e.target.value)) {
     subjectArray.push(e.target.value);
   } else {
     subjectArray = subjectArray.filter(value => e.target.value !== value);
+  }
+
+  for (let candidateSubject of subjectArray) {
+    for (let editSubject of subjects) {
+      if (editSubject.value === candidateSubject) {
+        count++;
+        editSubject.checked = true
+      }
+      allSubjects.checked = count === allSubjectCount;
+    }
   }
 });
 
