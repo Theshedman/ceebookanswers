@@ -99,8 +99,6 @@ allSubjects.addEventListener('click', () => {
 });
 
 subjectContainer.addEventListener("click", (e) => {
-  // const subjects = [...document.querySelectorAll("[name=subjects]")];
-  console.log(e.target.value);
   if (e.target.checked && !subjectArray.includes(e.target.value)) {
     subjectArray.push(e.target.value);
   } else {
