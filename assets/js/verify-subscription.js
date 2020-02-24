@@ -54,7 +54,7 @@ async function fetchApi () {
     subjectTitle.classList.remove("d-none");
     verifiedMessage.textContent = verified.message;
 
-    let list = ""
+    let list = "";
     verified.data.subjects.map(subject => {
       list += "<li>" + subject + "</li>";
     });

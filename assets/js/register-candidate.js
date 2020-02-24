@@ -69,6 +69,7 @@ registerCandidateBtn.addEventListener("click", async () => {
     registerCandidateAlert.classList.remove("d-none");
     manipulateRegisterCandidateElements(registerCandidateAlert, candidateForm);
 
+    subjectArray = [];
   } catch (e) {
     registerCandidateSpannerBtn.classList.add("d-none");
 
