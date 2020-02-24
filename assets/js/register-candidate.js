@@ -12,8 +12,9 @@ const candidateForm = document.querySelector("#candidate-form");
 
 window.addEventListener("DOMContentLoaded", loadExamYearAndSubjects);
 registerCandidateBtn.addEventListener("click", async () => {
-  registerCandidateSpannerBtn.classList.remove("d-none");
+  const subjects = [...document.querySelectorAll("[name=subjects]")];
   const fetchUrl = ` https://ceebookanswers.herokuapp.com/candidates/register`;
+  registerCandidateSpannerBtn.classList.remove("d-none");
 
   const phone = candidatePhone.value;
   const exam_year = examYear.value;
@@ -69,6 +70,8 @@ registerCandidateBtn.addEventListener("click", async () => {
     registerCandidateAlert.classList.remove("d-none");
     manipulateRegisterCandidateElements(registerCandidateAlert, candidateForm);
 
+    allSubjects.checked = false;
+    subjects.map(subject => subject.checked = false);
     subjectArray = [];
   } catch (e) {
     registerCandidateSpannerBtn.classList.add("d-none");
