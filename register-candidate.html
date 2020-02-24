@@ -62,7 +62,7 @@
                     <div class="form-group">
                         <label for="exam-year">Exam Year:</label><select id="exam-year" class="form-control">
 
-                        </select>
+                    </select>
                     </div>
                 </div>
                 <div class="col">
@@ -90,8 +90,12 @@
                                     Subjects</label>
                             </div>
                             <hr>
-                            <div id="subject-container" class="form-row wrap">
-
+                            <div id="subject-container"
+                                 class="d-flex justify-content-between flex-wrap align-content-around">
+                                <span id="register-candidate-spanner" role="status"
+                                      class="spinner-border text-primary m-auto"
+                                      style="width: 15px;height: 15px;">
+                                </span>
                             </div>
                         </fieldset>
                     </form>
@@ -99,7 +103,8 @@
             </div>
             <div class="form-row">
                 <div class="col col-12">
-                    <button id="register-candidate-btn" class="btn btn-primary w-100 mt-3" type="button">Register</button>
+                    <button id="register-candidate-btn" class="btn btn-primary w-100 mt-3" type="button">Register
+                    </button>
                 </div>
             </div>
         </form>

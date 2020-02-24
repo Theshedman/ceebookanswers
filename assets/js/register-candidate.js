@@ -51,12 +51,10 @@ async function loadSubjects () {
 
     subjects.data.map(subject => {
       subjectElements += `
-        <div class="col">
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="${subject._id}">
-                <label class="form-check-label" for="formCheck-1">${subject.subject}</label>
-            </div>
-        </div>
+          <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="${subject._id}">
+              <label class="form-check-label" for="formCheck-1">${subject.subject}</label>
+          </div>
       `
     });
 
