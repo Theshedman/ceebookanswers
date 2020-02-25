@@ -55,6 +55,7 @@ async function fetchApi () {
     verifiedMessage.textContent = verified.message;
 
     let list = "";
+    verified.data.subjects.sort();
     verified.data.subjects.map(subject => {
       list += "<li>" + subject + "</li>";
     });
