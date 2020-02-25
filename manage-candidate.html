@@ -37,12 +37,12 @@
     <h1 class="text-center text-white bg-dark">Edit/Delete Candidate</h1>
 </div>
 <main>
-    <form id="search-form" style="height: 55vh; width: 100vw; display:flex; align-content: center; justify-content: center; align-items: center; flex-flow: column">
-        <p class="text-center m-3">Enter a candidate's phone number to delete or edit his subscription details</p>
+    <form id="search-form" class="m-auto p-2">
+        <p class="text-center m-3 mt-5">Enter a candidate's phone number to delete or edit his subscription details</p>
 
         <div class="form-group">
             <input id="search-phone" class="form-control"
-                  type="tel" placeholder="Candidate Number">
+                   type="tel" placeholder="Candidate Number">
         </div>
         <div class="form-row">
             <div class="col col-6">
@@ -63,7 +63,59 @@
                 </button>
             </div>
         </div>
+
+        <h4 class="text-center mt-5" style="border-bottom: 3px solid hotpink">View Registered Candidates</h4>
+        <div class="form-row">
+            <div class="col">
+                <div class="form-group">
+                    <select id="view-exam-type" class="form-control">
+                        <optgroup label="Exam Type">
+                            <option value="" selected="">Exam Type</option>
+                            <option value="WAEC">WAEC</option>
+                            <option value="NECO">NECO</option>
+                            <option value="WAEC GCE 1ST SERIES">WAEC GCE 1ST SERIES</option>
+                            <option value="WAEC GCE 2ND SERIES">WAEC GCE 2ND SERIES</option>
+                            <option value="NECO GCE">NECO GCE</option>
+                            <option value="NABTEB">NABTEB</option>
+                            <option value="NABTEB GCE">NABTEB GCE</option>
+                        </optgroup>
+                    </select></div>
+            </div>
+            <div class="col">
+                <div class="form-group">
+                    <select id="view-exam-year" class="form-control">
+
+                    </select>
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-group">
+                    <select id="view-subscription-type"
+                            class="form-control">
+                        <optgroup label="Subscription Type">
+                            <option value="" selected="">Subscription</option>
+                            <option value="DIRECT">DIRECT</option>
+                            <option value="PASSWORD">PASSWORD</option>
+                            <option value="WHATSAPP">WHATSAPP</option>
+                        </optgroup>
+                    </select></div>
+            </div>
+            <div class="col col-12">
+                <button id="view-candidate-btn" class="btn btn-primary w-100" type="button">View Candidates
+                    <span id="view-candidate-spanner-btn" role="status"
+                          class="d-none spinner-border text-white m-auto"
+                          style="width: 15px;height: 15px;">
+                        </span>
+                </button>
+            </div>
+            <div class="col col-12">
+                <textarea id="view-candidate" class="d-none w-100 mt-3 border-primary" style="height: 150px; background: lightpink;" readonly>
+
+                </textarea>
+            </div>
+        </div>
     </form>
+
     <div id="update-form" class="container d-none">
         <form id="candidate-form">
             <div class="form-row">
