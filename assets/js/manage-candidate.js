@@ -266,6 +266,7 @@ updateCandidateBtn.addEventListener("click", async () => {
 
 allSubjects.addEventListener('click', () => {
   const subjects = [...document.querySelectorAll("[name=subjects]")];
+  subjectArray = [];
   if (allSubjects.checked === true) {
     subjects.map(subject => {
       subject.checked = true;
