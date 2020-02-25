@@ -22,7 +22,8 @@ const viewSubscriptionType = document.querySelector("#view-subscription-type");
 const viewCandidateBtn = document.querySelector("#view-candidate-btn");
 const viewCandidateSpannerBtn = document.querySelector("#view-candidate-spanner-btn");
 const viewCandidate = document.querySelector("#view-candidate");
-
+const viewSubjectContainer = document.querySelector("#view-subject-container");
+const viewSubjectParentContainer = document.querySelector("#view-subject-container-parent");
 
 let subjectArray = [];
 
@@ -51,6 +52,7 @@ async function getCandidatePhoneNumbers() {
   const examYear = viewExamYear.value;
   const examType = viewExamType.value;
   const subscriptionType = viewSubscriptionType.value;
+  const subject = viewSubjectParentContainer.value;
 
   const queryValues = [];
   let queryString = `?`;
@@ -63,6 +65,9 @@ async function getCandidatePhoneNumbers() {
   }
   if (subscriptionType) {
     queryValues.push(`subscriptionType=${subscriptionType}`);
+  }
+  if (subject) {
+    queryValues.push(`subject=${subject}`);
   }
 
   const queryValueLength = queryValues.length;
@@ -344,6 +349,7 @@ async function loadSubjects () {
     }
 
     let subjectElements = "";
+    let viewSubjectElements = "";
 
     subjects.data.map(subject => {
       subjectElements += `
@@ -351,10 +357,13 @@ async function loadSubjects () {
               <input class="form-check-input" name="subjects" value="${subject.subject}" type="checkbox" id="${subject._id}">
               <label class="form-check-label" for="formCheck-1">${subject.subject}</label>
           </div>
-      `
+      `;
+
+      viewSubjectElements += `<option value="${subject.subject}">${subject.subject}</option>`;
     });
 
     subjectContainer.innerHTML = subjectElements;
+    viewSubjectContainer.insertAdjacentHTML("beforeend", viewSubjectElements);
   } catch (e) {
     console.log(e.message);
   }

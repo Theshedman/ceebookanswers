@@ -34,7 +34,7 @@
     </div>
 </nav>
 <div class="container-fluid bg-primary" style="margin-top: 4.2rem; border-top: 20.5px solid  #ee0979;">
-    <h1 class="text-center text-white bg-dark">Edit/Delete Candidate</h1>
+    <h1 class="text-center text-white bg-dark">Manage <br> Candidate</h1>
 </div>
 <main>
     <form id="search-form" class="m-auto p-2">
@@ -66,6 +66,15 @@
 
         <h4 class="text-center mt-5" style="border-bottom: 3px solid hotpink">View Registered Candidates</h4>
         <div class="form-row">
+            <div class="col col-12">
+                <div class="form-group">
+                    <select id="view-subject-container-parent" class="form-control">
+                        <optgroup id="view-subject-container" label="Exam Type">
+                            <option value="" selected>Subject</option>
+                        </optgroup>
+                    </select>
+                </div>
+            </div>
             <div class="col">
                 <div class="form-group">
                     <select id="view-exam-type" class="form-control">
@@ -109,7 +118,8 @@
                 </button>
             </div>
             <div class="col col-12">
-                <textarea id="view-candidate" class="d-none w-100 mt-3 border-primary" style="height: 150px; background: lightpink;" readonly>
+                <textarea id="view-candidate" class="d-none w-100 mt-3 border-primary"
+                          style="height: 150px; background: lightpink;" readonly>
 
                 </textarea>
             </div>
