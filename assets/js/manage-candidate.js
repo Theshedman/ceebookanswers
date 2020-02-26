@@ -45,7 +45,7 @@ const manipulateupdateCandidateElements = (alertElement, searchFormContainer) =>
   }, 3500);
 };
 
-async function getCandidatePhoneNumbers() {
+async function getCandidatePhoneNumbers () {
   viewCandidateSpannerBtn.classList.remove("d-none");
   viewCandidate.classList.add("d-none");
 
@@ -134,8 +134,9 @@ async function searchCandidate () {
   editCandidateSpinnerBtn.classList.remove("d-none");
   const subjects = [...document.querySelectorAll("[name=subjects]")];
 
-  const fetchUrl = ` https://ceebookanswers.herokuapp.com/candidates/${phone}`;
   try {
+    if (!phone) throw new Error("Please Enter a phone number to continue!");
+    const fetchUrl = ` https://ceebookanswers.herokuapp.com/candidates/${phone}`;
     const candidateResponse = await fetch(fetchUrl, {
       method: 'GET',
       mode: 'cors',
@@ -373,9 +374,10 @@ async function loadSubjects () {
 async function deleteCandidate () {
   const phone = searchCandidatePhone.value;
   deleteCandidateSpinnerBtn.classList.remove("d-none");
-  const fetchUrl = ` https://ceebookanswers.herokuapp.com/candidates/${phone}`;
 
   try {
+    if (!phone) throw new Error("Please Enter a phone number to continue!");
+    const fetchUrl = ` https://ceebookanswers.herokuapp.com/candidates/${phone}`;
     const response = await fetch(fetchUrl, {
       method: 'DELETE',
       mode: 'cors',
