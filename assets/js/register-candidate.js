@@ -1,3 +1,5 @@
+import { examTypes } from './utils/exam-type';
+
 const candidatePhone = document.querySelector("#candidate-phone");
 const examType = document.querySelector("#exam-type");
 const examYear = document.querySelector("#exam-year");
@@ -177,6 +179,12 @@ async function loadSubjects () {
   } catch (e) {
     console.log(e.message);
   }
+}
+loadExamType();
+
+function loadExamType() {
+  examType.innerHTML = `<optgroup label="Exam Type">${examTypes()}</optgroup>`;
+  console.log(examType);
 }
 
 async function createCandidate (candidateDetails = {}) {
