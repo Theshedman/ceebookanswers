@@ -1,4 +1,4 @@
-import { baseUrl, examTypes, examYears, subscriptionTypes } from './utils/index.js';
+import { baseUrl, examTypes, examYears, subscriptionTypes, post } from './utils/index.js';
 
 const candidatePhone = document.querySelector('#candidate-phone');
 const examType = document.querySelector('#exam-type');
@@ -169,22 +169,6 @@ function loadSubscriptionType() {
 }
 
 async function createCandidate(candidateDetails = {}) {
-  const fetchUrl = ` ${baseUrl}/candidates/register`;
-  try {
-    const response = await fetch(fetchUrl, {
-      method: 'POST',
-      mode: 'cors',
-      credentials: 'same-origin',
-      headers: {
-        'Content-Type': 'application/json',
-        Authorization: `Bearer ${window.localStorage.getItem('token')}`
-      },
-      redirect: 'follow',
-      referrerPolicy: 'no-referrer',
-      body: JSON.stringify(candidateDetails)
-    });
-    return await response.json();
-  } catch (e) {
-    throw new Error(e.message);
-  }
+  const fetchUrl = `${baseUrl}/candidates/register`;
+  await post(fetchUrl, candidateDetails);
 }
