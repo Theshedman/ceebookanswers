@@ -1,5 +1,4 @@
-import { subscriptionTypes } from './utils/index';
-import { baseUrl, examYears, examTypes } from './utils/index.js';
+import { baseUrl, examYears, examTypes, subscriptionTypes } from './utils/index.js';
 
 const candidatePhone = document.querySelector("#candidate-phone");
 const examType = document.querySelector("#exam-type");
