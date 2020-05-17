@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <meta charset="utf-8">
@@ -23,6 +23,22 @@
 </head>
 
 <body>
+<nav class="navbar navbar-dark navbar-expand-sm fixed-top bg-dark d-md-flex navbar-custom">
+    <div class="container"><a class="navbar-brand" href="./index.html">CeebookAnswers</a>
+        <button data-toggle="collapse" class="navbar-toggler" data-target="#navbarResponsive"><span
+                class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="nav navbar-nav ml-auto">
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link" href="#">VERIFY SUBSCRIPTION</a>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link active" href="#">Log Out</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
 <div class="container-fluid bg-primary">
     <h1 class="text-center text-white bg-dark">Answers</h1>
 </div>
@@ -31,29 +47,33 @@
         <form>
             <div class="form-row">
                 <div class="col">
-                    <div class="form-group"><label>Subject:</label><select id="answer-subject"
-                                                                           class="form-control">
-                        <optgroup label="subjectOption">
-                            <option value="Civic Education" selected="">Civic Education</option>
-                        </optgroup>
-                    </select></div>
+                    <div class="form-group"><label for="answer-subject">Subject:</label>
+                        <select id="answer-subject" class="form-control">
+                            <optgroup label="subjectOption">
+                                <option value="Civic Education" selected="">Civic Education</option>
+                            </optgroup>
+                        </select>
+                    </div>
                 </div>
                 <div class="col">
-                    <div class="form-group"><label>Exam Type:</label><select class="form-control">
-                        <optgroup label="examTypeOption">
-                            <option value="" selected="">Exam Type</option>
-                            <option value="WAEC">WAEC</option>
-                            <option value="NECO">NECO</option>
-                            <option value="WAEC GCE 1ST SERIES">WAEC GCE 1ST SERIES</option>
-                            <option value="WAEC GCE 2ND SERIES">WAEC GCE 2ND SERIES</option>
-                            <option value="NECO GCE">NECO GCE</option>
-                            <option value="NABTEB">NABTEB</option>
-                            <option value="NABTEB GCE">NABTEB GCE</option>
-                        </optgroup>
-                    </select></div>
+                    <div class="form-group"><label for="exam-type">Exam Type:</label>
+                        <select id="exam-type" class="form-control">
+                            <optgroup label="examTypeOption">
+                                <option value="" selected="">Exam Type</option>
+                                <option value="WAEC">WAEC</option>
+                                <option value="NECO">NECO</option>
+                                <option value="WAEC GCE 1ST SERIES">WAEC GCE 1ST SERIES</option>
+                                <option value="WAEC GCE 2ND SERIES">WAEC GCE 2ND SERIES</option>
+                                <option value="NECO GCE">NECO GCE</option>
+                                <option value="NABTEB">NABTEB</option>
+                                <option value="NABTEB GCE">NABTEB GCE</option>
+                            </optgroup>
+                        </select>
+                    </div>
                 </div>
                 <div class="col">
-                    <div class="form-group"><label for="answer-exam-year">Exam Year:</label><select id="answer-exam-year" class="form-control">
+                    <div class="form-group"><label for="answer-exam-year">Exam Year:</label><select
+                            id="answer-exam-year" class="form-control">
                         <optgroup label="examYearOption">
                             <option value="2020" selected="">2020</option>
                         </optgroup>
@@ -70,7 +90,7 @@
                 </div>
                 <div class="col col-2">
                     <div class="form-group">
-                        <label>Number:</label>
+                        <label for="examNumber">Number:</label>
                         <input id="examNumber" name="examNumber" class="form-control" type="number">
                     </div>
                 </div>
@@ -86,10 +106,14 @@
         </form>
     </div>
 </main>
+<footer class="py-5 bg-black mt-4">
+    <div class="container">
+        <p class="text-center text-white m-0 small">Copyright&nbsp;© CeebookAnswers 2020</p>
+    </div>
+</footer>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
-<script src="assets/js/script.min.js"></script>
-<script src="./assets/js/post-answers.js"></script>
+<script src="./assets/js/post-answers.js" type="module"></script>
 </body>
 
 </html>
