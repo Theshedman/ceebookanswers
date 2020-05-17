@@ -1,36 +1,36 @@
-const candidatePhone = document.querySelector("#candidate-phone");
-const examType = document.querySelector("#exam-type");
-const examYear = document.querySelector("#exam-year");
-const subscriptionType = document.querySelector("#subscription-type");
-const allSubjects = document.querySelector("#all-subjects");
-const subjectContainer = document.querySelector("#subject-container");
-const updateCandidateBtn = document.querySelector("#update-candidate-btn");
-const updateCandidateAlert = document.querySelector("#update-candidate-alert");
-const candidateDefaultPassword = document.querySelector("#candidate-default-password");
-const updateCandidateSpannerBtn = document.querySelector("#update-candidate-spanner-btn");
-const candidateFormContainer = document.querySelector("#update-form");
-const candidateForm = document.querySelector("#candidate-form");
-const editCandidateBtn = document.querySelector("#edit-candidate-btn");
-const editCandidateSpinnerBtn = document.querySelector("#edit-candidate-spanner-btn");
-const deleteCandidateBtn = document.querySelector("#delete-candidate-btn");
-const deleteCandidateSpinnerBtn = document.querySelector("#delete-candidate-spanner-btn");
-const searchCandidatePhone = document.querySelector("#search-phone");
-const searchFormContainer = document.querySelector("#search-form");
-const viewExamType = document.querySelector("#view-exam-type");
-const viewExamYear = document.querySelector("#view-exam-year");
-const viewSubscriptionType = document.querySelector("#view-subscription-type");
-const viewCandidateBtn = document.querySelector("#view-candidate-btn");
-const viewCandidateSpannerBtn = document.querySelector("#view-candidate-spanner-btn");
-const viewCandidate = document.querySelector("#view-candidate");
-const viewSubjectContainer = document.querySelector("#view-subject-container");
-const viewSubjectParentContainer = document.querySelector("#view-subject-container-parent");
+const candidatePhone = document.querySelector('#candidate-phone');
+const examType = document.querySelector('#exam-type');
+const examYear = document.querySelector('#exam-year');
+const subscriptionType = document.querySelector('#subscription-type');
+const allSubjects = document.querySelector('#all-subjects');
+const subjectContainer = document.querySelector('#subject-container');
+const updateCandidateBtn = document.querySelector('#update-candidate-btn');
+const updateCandidateAlert = document.querySelector('#update-candidate-alert');
+const candidateDefaultPassword = document.querySelector('#candidate-default-password');
+const updateCandidateSpannerBtn = document.querySelector('#update-candidate-spanner-btn');
+const candidateFormContainer = document.querySelector('#update-form');
+const candidateForm = document.querySelector('#candidate-form');
+const editCandidateBtn = document.querySelector('#edit-candidate-btn');
+const editCandidateSpinnerBtn = document.querySelector('#edit-candidate-spanner-btn');
+const deleteCandidateBtn = document.querySelector('#delete-candidate-btn');
+const deleteCandidateSpinnerBtn = document.querySelector('#delete-candidate-spanner-btn');
+const searchCandidatePhone = document.querySelector('#search-phone');
+const searchFormContainer = document.querySelector('#search-form');
+const viewExamType = document.querySelector('#view-exam-type');
+const viewExamYear = document.querySelector('#view-exam-year');
+const viewSubscriptionType = document.querySelector('#view-subscription-type');
+const viewCandidateBtn = document.querySelector('#view-candidate-btn');
+const viewCandidateSpannerBtn = document.querySelector('#view-candidate-spanner-btn');
+const viewCandidate = document.querySelector('#view-candidate');
+const viewSubjectContainer = document.querySelector('#view-subject-container');
+const viewSubjectParentContainer = document.querySelector('#view-subject-container-parent');
 
 let subjectArray = [];
 
-window.addEventListener("DOMContentLoaded", loadExamYearAndSubjects);
-editCandidateBtn.addEventListener("click", searchCandidate);
-deleteCandidateBtn.addEventListener("click", deleteCandidate);
-viewCandidateBtn.addEventListener("click", getCandidatePhoneNumbers);
+window.addEventListener('DOMContentLoaded', loadExamYearAndSubjects);
+editCandidateBtn.addEventListener('click', searchCandidate);
+deleteCandidateBtn.addEventListener('click', deleteCandidate);
+viewCandidateBtn.addEventListener('click', getCandidatePhoneNumbers);
 
 const candidateAlert = (heading, message) => `<strong>${heading}!</strong> ${message}.
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -39,15 +39,15 @@ const candidateAlert = (heading, message) => `<strong>${heading}!</strong> ${mes
 
 const manipulateupdateCandidateElements = (alertElement, searchFormContainer) => {
   setTimeout(() => {
-    alertElement.classList.add("d-none");
+    alertElement.classList.add('d-none');
 
-    searchFormContainer.classList.remove("d-none");
+    searchFormContainer.classList.remove('d-none');
   }, 3500);
 };
 
-async function  getCandidatePhoneNumbers () {
-  viewCandidateSpannerBtn.classList.remove("d-none");
-  viewCandidate.classList.add("d-none");
+async function getCandidatePhoneNumbers() {
+  viewCandidateSpannerBtn.classList.remove('d-none');
+  viewCandidate.classList.add('d-none');
 
   const examYear = viewExamYear.value;
   const examType = viewExamType.value;
@@ -115,27 +115,27 @@ async function  getCandidatePhoneNumbers () {
       }
     }
 
-    viewCandidateSpannerBtn.classList.add("d-none");
-    viewCandidate.classList.remove("d-none");
+    viewCandidateSpannerBtn.classList.add('d-none');
+    viewCandidate.classList.remove('d-none');
     viewCandidate.textContent = candidateNumbers;
 
   } catch (e) {
-    updateCandidateSpannerBtn.classList.add("d-none");
+    updateCandidateSpannerBtn.classList.add('d-none');
 
-    updateCandidateAlert.classList.remove("d-none", "alert-success");
-    updateCandidateAlert.classList.add("alert-primary");
-    updateCandidateAlert.innerHTML = candidateAlert("Error", e.message);
+    updateCandidateAlert.classList.remove('d-none', 'alert-success');
+    updateCandidateAlert.classList.add('alert-primary');
+    updateCandidateAlert.innerHTML = candidateAlert('Error', e.message);
     manipulateupdateCandidateElements(updateCandidateAlert, candidateForm);
   }
 }
 
-async function searchCandidate () {
+async function searchCandidate() {
   const phone = searchCandidatePhone.value;
-  editCandidateSpinnerBtn.classList.remove("d-none");
-  const subjects = [...document.querySelectorAll("[name=subjects]")];
+  editCandidateSpinnerBtn.classList.remove('d-none');
+  const subjects = [...document.querySelectorAll('[name=subjects]')];
 
   try {
-    if (!phone) throw new Error("Please Enter a phone number to continue!");
+    if (!phone) throw new Error('Please Enter a phone number to continue!');
     const fetchUrl = ` https://ceebookanswers.herokuapp.com/candidates/${phone}`;
     const candidateResponse = await fetch(fetchUrl, {
       method: 'GET',
@@ -167,7 +167,7 @@ async function searchCandidate () {
       for (let editSubject of subjects) {
         if (editSubject.value === candidateSubject) {
           count++;
-          editSubject.checked = true
+          editSubject.checked = true;
         }
 
         allSubjects.checked = count === allSubjectCount;
@@ -175,25 +175,25 @@ async function searchCandidate () {
     }
 
 
-    editCandidateSpinnerBtn.classList.add("d-none");
-    searchFormContainer.classList.add("d-none");
-    candidateFormContainer.classList.remove("d-none");
+    editCandidateSpinnerBtn.classList.add('d-none');
+    searchFormContainer.classList.add('d-none');
+    candidateFormContainer.classList.remove('d-none');
   } catch (e) {
-    editCandidateSpinnerBtn.classList.add("d-none");
+    editCandidateSpinnerBtn.classList.add('d-none');
 
-    candidateForm.classList.add("d-none");
-    searchFormContainer.classList.add("d-none");
+    candidateForm.classList.add('d-none');
+    searchFormContainer.classList.add('d-none');
 
-    updateCandidateAlert.classList.remove("d-none", "alert-success");
-    updateCandidateAlert.classList.add("alert-primary");
-    updateCandidateAlert.innerHTML = candidateAlert("Error", e.message);
+    updateCandidateAlert.classList.remove('d-none', 'alert-success');
+    updateCandidateAlert.classList.add('alert-primary');
+    updateCandidateAlert.innerHTML = candidateAlert('Error', e.message);
     manipulateupdateCandidateElements(updateCandidateAlert, searchFormContainer);
   }
 }
 
-updateCandidateBtn.addEventListener("click", async () => {
-  const subjects = [...document.querySelectorAll("[name=subjects]")];
-  updateCandidateSpannerBtn.classList.remove("d-none");
+updateCandidateBtn.addEventListener('click', async () => {
+  const subjects = [...document.querySelectorAll('[name=subjects]')];
+  updateCandidateSpannerBtn.classList.remove('d-none');
 
   const phone = candidatePhone.value;
   const exam_year = examYear.value;
@@ -217,9 +217,9 @@ updateCandidateBtn.addEventListener("click", async () => {
 
   const manipulateupdateCandidateElements = (alertElement, candidateForm) => {
     setTimeout(() => {
-      alertElement.classList.add("d-none");
+      alertElement.classList.add('d-none');
 
-      candidateForm.classList.remove("d-none");
+      candidateForm.classList.remove('d-none');
     }, 3500);
   };
 
@@ -242,31 +242,31 @@ updateCandidateBtn.addEventListener("click", async () => {
       throw  new Error(responseData.error.message);
     }
 
-    updateCandidateSpannerBtn.classList.add("d-none");
-    candidateForm.classList.add("d-none");
+    updateCandidateSpannerBtn.classList.add('d-none');
+    candidateForm.classList.add('d-none');
 
-    updateCandidateAlert.classList.add("d-none", "alert-success");
-    updateCandidateAlert.innerHTML = candidateAlert("Success", "Candidate is successufully updateed.");
-    updateCandidateAlert.classList.remove("d-none");
+    updateCandidateAlert.classList.add('d-none', 'alert-success');
+    updateCandidateAlert.innerHTML = candidateAlert('Success', 'Candidate is successufully updateed.');
+    updateCandidateAlert.classList.remove('d-none');
     manipulateupdateCandidateElements(updateCandidateAlert, candidateForm);
 
     allSubjects.checked = false;
     subjects.map(subject => subject.checked = false);
     subjectArray = [];
   } catch (e) {
-    updateCandidateSpannerBtn.classList.add("d-none");
+    updateCandidateSpannerBtn.classList.add('d-none');
 
-    candidateForm.classList.add("d-none");
+    candidateForm.classList.add('d-none');
 
-    updateCandidateAlert.classList.remove("d-none", "alert-success");
-    updateCandidateAlert.classList.add("alert-primary");
-    updateCandidateAlert.innerHTML = candidateAlert("Error", e.message);
+    updateCandidateAlert.classList.remove('d-none', 'alert-success');
+    updateCandidateAlert.classList.add('alert-primary');
+    updateCandidateAlert.innerHTML = candidateAlert('Error', e.message);
     manipulateupdateCandidateElements(updateCandidateAlert, candidateForm);
   }
 });
 
 allSubjects.addEventListener('click', () => {
-  const subjects = [...document.querySelectorAll("[name=subjects]")];
+  const subjects = [...document.querySelectorAll('[name=subjects]')];
   subjectArray = [];
   if (allSubjects.checked === true) {
     subjects.map(subject => {
@@ -281,8 +281,8 @@ allSubjects.addEventListener('click', () => {
   }
 });
 
-subjectContainer.addEventListener("click", (e) => {
-  const subjects = [...document.querySelectorAll("[name=subjects]")];
+subjectContainer.addEventListener('click', (e) => {
+  const subjects = [...document.querySelectorAll('[name=subjects]')];
   const allSubjectCount = subjects.length;
   let count = 0;
 
@@ -296,7 +296,7 @@ subjectContainer.addEventListener("click", (e) => {
     for (let editSubject of subjects) {
       if (editSubject.value === candidateSubject) {
         count++;
-        editSubject.checked = true
+        editSubject.checked = true;
       }
       allSubjects.checked = count === allSubjectCount;
     }
@@ -304,12 +304,12 @@ subjectContainer.addEventListener("click", (e) => {
 });
 
 
-function loadExamYearAndSubjects () {
+function loadExamYearAndSubjects() {
   loadExamYear();
   loadSubjects();
 }
 
-function loadExamYear () {
+function loadExamYear() {
   const currentYear = new Date().getFullYear();
   const nextYear = currentYear + 1;
 
@@ -330,7 +330,7 @@ function loadExamYear () {
   `;
 }
 
-async function loadSubjects () {
+async function loadSubjects() {
   const fetchUrl = ` https://ceebookanswers.herokuapp.com/subjects`;
   try {
     const response = await fetch(fetchUrl, {
@@ -350,8 +350,8 @@ async function loadSubjects () {
       throw new Error(subjects.error.message);
     }
 
-    let subjectElements = "";
-    let viewSubjectElements = "";
+    let subjectElements = '';
+    let viewSubjectElements = '';
 
     subjects.data.map(subject => {
       subjectElements += `
@@ -365,18 +365,18 @@ async function loadSubjects () {
     });
 
     subjectContainer.innerHTML = subjectElements;
-    viewSubjectContainer.insertAdjacentHTML("beforeend", viewSubjectElements);
+    viewSubjectContainer.insertAdjacentHTML('beforeend', viewSubjectElements);
   } catch (e) {
     console.log(e.message);
   }
 }
 
-async function deleteCandidate () {
+async function deleteCandidate() {
   const phone = searchCandidatePhone.value;
-  deleteCandidateSpinnerBtn.classList.remove("d-none");
+  deleteCandidateSpinnerBtn.classList.remove('d-none');
 
   try {
-    if (!phone) throw new Error("Please Enter a phone number to continue!");
+    if (!phone) throw new Error('Please Enter a phone number to continue!');
     const fetchUrl = ` https://ceebookanswers.herokuapp.com/candidates/${phone}`;
     const response = await fetch(fetchUrl, {
       method: 'DELETE',
@@ -394,22 +394,22 @@ async function deleteCandidate () {
       throw  new Error(responseData.error.message);
     }
 
-    deleteCandidateSpinnerBtn.classList.add("d-none");
-    searchFormContainer.classList.add("d-none");
+    deleteCandidateSpinnerBtn.classList.add('d-none');
+    searchFormContainer.classList.add('d-none');
 
-    updateCandidateAlert.classList.add("d-none", "alert-success");
-    updateCandidateAlert.innerHTML = candidateAlert("Success", "Candidate is successufully Deleted.");
-    updateCandidateAlert.classList.remove("d-none");
+    updateCandidateAlert.classList.add('d-none', 'alert-success');
+    updateCandidateAlert.innerHTML = candidateAlert('Success', 'Candidate is successufully Deleted.');
+    updateCandidateAlert.classList.remove('d-none');
     manipulateupdateCandidateElements(updateCandidateAlert, searchFormContainer);
   } catch (e) {
-    deleteCandidateSpinnerBtn.classList.add("d-none");
+    deleteCandidateSpinnerBtn.classList.add('d-none');
 
-    candidateForm.classList.add("d-none");
-    searchFormContainer.classList.add("d-none");
+    candidateForm.classList.add('d-none');
+    searchFormContainer.classList.add('d-none');
 
-    updateCandidateAlert.classList.remove("d-none", "alert-success");
-    updateCandidateAlert.classList.add("alert-primary");
-    updateCandidateAlert.innerHTML = candidateAlert("Error", e.message);
+    updateCandidateAlert.classList.remove('d-none', 'alert-success');
+    updateCandidateAlert.classList.add('alert-primary');
+    updateCandidateAlert.innerHTML = candidateAlert('Error', e.message);
     manipulateupdateCandidateElements(updateCandidateAlert, searchFormContainer);
   }
 }

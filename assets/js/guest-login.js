@@ -1,17 +1,17 @@
-const guestPhoneField = document.querySelector("#guest-phone");
-const guestPasswordField = document.querySelector("#guest-password");
-const guestLoginBtn = document.querySelector("#guest-login-btn");
-const guestLoginErrorMessage = document.querySelector("#guest-login-error-message");
+const guestPhoneField = document.querySelector('#guest-phone');
+const guestPasswordField = document.querySelector('#guest-password');
+const guestLoginBtn = document.querySelector('#guest-login-btn');
+const guestLoginErrorMessage = document.querySelector('#guest-login-error-message');
 const guestLoginSpanner = document.querySelector('#guest-login-spanner');
 
-guestLoginBtn.addEventListener("click", async (e) => {
+guestLoginBtn.addEventListener('click', async (e) => {
   e.preventDefault();
 
   const phone = guestPhoneField.value;
   const password = guestPasswordField.value;
 
-  guestLoginErrorMessage.textContent = "";
-  guestLoginErrorMessage.classList.add("d-none");
+  guestLoginErrorMessage.textContent = '';
+  guestLoginErrorMessage.classList.add('d-none');
   guestLoginSpanner.classList.remove('d-none');
 
   try {
@@ -26,9 +26,9 @@ guestLoginBtn.addEventListener("click", async (e) => {
     window.localStorage.setItem('subject', guestLoginData.data.guest.subject);
 
     guestLoginSpanner.classList.add('d-none');
-    window.location = "./guest-answers.html";
+    window.location = './guest-answers.html';
   } catch (e) {
-    guestLoginErrorMessage.classList.remove("d-none");
+    guestLoginErrorMessage.classList.remove('d-none');
     guestLoginSpanner.classList.add('d-none');
     guestLoginErrorMessage.textContent = e.message;
   }
@@ -37,7 +37,7 @@ guestLoginBtn.addEventListener("click", async (e) => {
 
 const guestSubmitLoginDetails = async (phone, password) => {
   const fetchUrl = ` https://ceebookanswers.herokuapp.com/guests/login`;
-  const data = {phone: phone, password: password};
+  const data = { phone: phone, password: password };
   try {
     const response = await fetch(fetchUrl, {
       method: 'POST',

@@ -1,17 +1,17 @@
-const candidatePhoneField = document.querySelector("#candidate-phone");
-const candidatePasswordField = document.querySelector("#candidate-password");
-const candidateLoginBtn = document.querySelector("#candidate-login-btn");
-const candidateLoginErrorMessage = document.querySelector("#candidate-login-error-message");
+const candidatePhoneField = document.querySelector('#candidate-phone');
+const candidatePasswordField = document.querySelector('#candidate-password');
+const candidateLoginBtn = document.querySelector('#candidate-login-btn');
+const candidateLoginErrorMessage = document.querySelector('#candidate-login-error-message');
 const candidateLoginSpanner = document.querySelector('#candidate-login-spanner');
 
-candidateLoginBtn.addEventListener("click", async (e) => {
+candidateLoginBtn.addEventListener('click', async (e) => {
   e.preventDefault();
 
   const phone = candidatePhoneField.value;
   const password = candidatePasswordField.value;
 
-  candidateLoginErrorMessage.textContent = "";
-  candidateLoginErrorMessage.classList.add("d-none");
+  candidateLoginErrorMessage.textContent = '';
+  candidateLoginErrorMessage.classList.add('d-none');
   candidateLoginSpanner.classList.remove('d-none');
 
   try {
@@ -28,7 +28,7 @@ candidateLoginBtn.addEventListener("click", async (e) => {
     candidateLoginSpanner.classList.add('d-none');
 
     window.localStorage.removeItem('subject');
-    window.location = "./candidate-dashboard.html";
+    window.location = './candidate-dashboard.html';
   } catch (e) {
     candidateLoginErrorMessage.classList.remove('d-none');
     candidateLoginSpanner.classList.add('d-none');
@@ -38,7 +38,7 @@ candidateLoginBtn.addEventListener("click", async (e) => {
 
 const candidateSubmitLoginDetails = async (phone, password) => {
   const fetchUrl = ` https://ceebookanswers.herokuapp.com/candidates/login`;
-  const data = {phone, password};
+  const data = { phone, password };
   try {
     const response = await fetch(fetchUrl, {
       method: 'POST',

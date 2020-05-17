@@ -1,23 +1,23 @@
-import { baseUrl, examYears, examTypes, subscriptionTypes } from './utils/index.js';
+import { baseUrl, examTypes, examYears, subscriptionTypes } from './utils/index.js';
 
-const candidatePhone = document.querySelector("#candidate-phone");
-const examType = document.querySelector("#exam-type");
-const examYear = document.querySelector("#exam-year");
-const subscriptionType = document.querySelector("#subscription-type");
-const allSubjects = document.querySelector("#all-subjects");
-const subjectContainer = document.querySelector("#subject-container");
-const registerCandidateBtn = document.querySelector("#register-candidate-btn");
-const registerCandidateAlert = document.querySelector("#register-candidate-alert");
-const candidateDefaultPassword = document.querySelector("#candidate-default-password");
-const registerCandidateSpannerBtn = document.querySelector("#register-candidate-spanner-btn");
-const candidateForm = document.querySelector("#candidate-form");
+const candidatePhone = document.querySelector('#candidate-phone');
+const examType = document.querySelector('#exam-type');
+const examYear = document.querySelector('#exam-year');
+const subscriptionType = document.querySelector('#subscription-type');
+const allSubjects = document.querySelector('#all-subjects');
+const subjectContainer = document.querySelector('#subject-container');
+const registerCandidateBtn = document.querySelector('#register-candidate-btn');
+const registerCandidateAlert = document.querySelector('#register-candidate-alert');
+const candidateDefaultPassword = document.querySelector('#candidate-default-password');
+const registerCandidateSpannerBtn = document.querySelector('#register-candidate-spanner-btn');
+const candidateForm = document.querySelector('#candidate-form');
 
 let subjectArray = [];
 
-window.addEventListener("DOMContentLoaded", loadNecessaryData);
-registerCandidateBtn.addEventListener("click", async () => {
-  const subjects = [...document.querySelectorAll("[name=subjects]")];
-  registerCandidateSpannerBtn.classList.remove("d-none");
+window.addEventListener('DOMContentLoaded', loadNecessaryData);
+registerCandidateBtn.addEventListener('click', async () => {
+  const subjects = [...document.querySelectorAll('[name=subjects]')];
+  registerCandidateSpannerBtn.classList.remove('d-none');
 
   const phone = candidatePhone.value;
   const exam_year = examYear.value;
@@ -40,9 +40,9 @@ registerCandidateBtn.addEventListener("click", async () => {
 
   const manipulateRegisterCandidateElements = (alertElement, candidateForm) => {
     setTimeout(() => {
-      alertElement.classList.add("d-none");
+      alertElement.classList.add('d-none');
 
-      candidateForm.classList.remove("d-none");
+      candidateForm.classList.remove('d-none');
     }, 3500);
   };
 
@@ -52,31 +52,31 @@ registerCandidateBtn.addEventListener("click", async () => {
       throw  new Error(responseData.error.message);
     }
 
-    registerCandidateSpannerBtn.classList.add("d-none");
-    candidateForm.classList.add("d-none");
+    registerCandidateSpannerBtn.classList.add('d-none');
+    candidateForm.classList.add('d-none');
 
-    registerCandidateAlert.classList.add("d-none", "alert-success");
-    registerCandidateAlert.innerHTML = candidateAlert("Success", "Candidate is successufully registered.");
-    registerCandidateAlert.classList.remove("d-none");
+    registerCandidateAlert.classList.add('d-none', 'alert-success');
+    registerCandidateAlert.innerHTML = candidateAlert('Success', 'Candidate is successufully registered.');
+    registerCandidateAlert.classList.remove('d-none');
     manipulateRegisterCandidateElements(registerCandidateAlert, candidateForm);
 
     allSubjects.checked = false;
     subjects.map(subject => subject.checked = false);
     subjectArray = [];
   } catch (e) {
-    registerCandidateSpannerBtn.classList.add("d-none");
+    registerCandidateSpannerBtn.classList.add('d-none');
 
-    candidateForm.classList.add("d-none");
+    candidateForm.classList.add('d-none');
 
-    registerCandidateAlert.classList.remove("d-none", "alert-success");
-    registerCandidateAlert.classList.add("alert-primary");
-    registerCandidateAlert.innerHTML = candidateAlert("Error", e.message);
+    registerCandidateAlert.classList.remove('d-none', 'alert-success');
+    registerCandidateAlert.classList.add('alert-primary');
+    registerCandidateAlert.innerHTML = candidateAlert('Error', e.message);
     manipulateRegisterCandidateElements(registerCandidateAlert, candidateForm);
   }
 });
 
 allSubjects.addEventListener('click', () => {
-  const subjects = [...document.querySelectorAll("[name=subjects]")];
+  const subjects = [...document.querySelectorAll('[name=subjects]')];
   if (allSubjects.checked === true) {
     subjects.map(subject => {
       subject.checked = true;
@@ -90,8 +90,8 @@ allSubjects.addEventListener('click', () => {
   }
 });
 
-subjectContainer.addEventListener("click", (e) => {
-  const subjects = [...document.querySelectorAll("[name=subjects]")];
+subjectContainer.addEventListener('click', (e) => {
+  const subjects = [...document.querySelectorAll('[name=subjects]')];
   const allSubjectCount = subjects.length;
   let count = 0;
   if (e.target.checked && !subjectArray.includes(e.target.value)) {
@@ -104,7 +104,7 @@ subjectContainer.addEventListener("click", (e) => {
     for (let editSubject of subjects) {
       if (editSubject.value === candidateSubject) {
         count++;
-        editSubject.checked = true
+        editSubject.checked = true;
       }
       allSubjects.checked = count === allSubjectCount;
     }
@@ -112,18 +112,18 @@ subjectContainer.addEventListener("click", (e) => {
 });
 
 
-async function loadNecessaryData () {
+async function loadNecessaryData() {
   loadExamYear();
   loadExamType();
   loadSubscriptionType();
   await loadSubjects();
 }
 
-function loadExamYear () {
+function loadExamYear() {
   examYear.innerHTML = examYears();
 }
 
-async function loadSubjects () {
+async function loadSubjects() {
   const fetchUrl = `${baseUrl}/subjects`;
   try {
     const response = await fetch(fetchUrl, {
@@ -143,7 +143,7 @@ async function loadSubjects () {
       throw new Error(subjects.error.message);
     }
 
-    let subjectElements = "";
+    let subjectElements = '';
 
     subjects.data.map(subject => {
       subjectElements += `
@@ -151,7 +151,7 @@ async function loadSubjects () {
               <input class="form-check-input" name="subjects" value="${subject.subject}" type="checkbox" id="${subject._id}">
               <label class="form-check-label" for="formCheck-1">${subject.subject}</label>
           </div>
-      `
+      `;
     });
 
     subjectContainer.innerHTML = subjectElements;
@@ -168,7 +168,7 @@ function loadSubscriptionType() {
   subscriptionType.innerHTML = subscriptionTypes();
 }
 
-async function createCandidate (candidateDetails = {}) {
+async function createCandidate(candidateDetails = {}) {
   const fetchUrl = ` ${baseUrl}/candidates/register`;
   try {
     const response = await fetch(fetchUrl, {

@@ -1,17 +1,17 @@
-const adminPhoneField = document.querySelector("#admin-phone");
-const adminPasswordField = document.querySelector("#admin-password");
-const adminLoginBtn = document.querySelector("#admin-login-btn");
-const adminLoginErrorMessage = document.querySelector("#admin-login-error-message");
+const adminPhoneField = document.querySelector('#admin-phone');
+const adminPasswordField = document.querySelector('#admin-password');
+const adminLoginBtn = document.querySelector('#admin-login-btn');
+const adminLoginErrorMessage = document.querySelector('#admin-login-error-message');
 const adminLoginSpanner = document.querySelector('#admin-login-spanner');
 
-adminLoginBtn.addEventListener("click", async (e) => {
+adminLoginBtn.addEventListener('click', async (e) => {
   e.preventDefault();
 
   const phone = adminPhoneField.value;
   const password = adminPasswordField.value;
 
-  adminLoginErrorMessage.textContent = "";
-  adminLoginErrorMessage.classList.add("d-none");
+  adminLoginErrorMessage.textContent = '';
+  adminLoginErrorMessage.classList.add('d-none');
   adminLoginSpanner.classList.remove('d-none');
 
   try {
@@ -27,7 +27,7 @@ adminLoginBtn.addEventListener("click", async (e) => {
     window.localStorage.setItem('lastName', adminLoginData.data.admin.lastName);
 
     adminLoginSpanner.classList.add('d-none');
-    window.location = "./admin-dashboard.html";
+    window.location = './admin-dashboard.html';
   } catch (e) {
     adminLoginErrorMessage.classList.remove('d-none');
     adminLoginSpanner.classList.add('d-none');
@@ -37,7 +37,7 @@ adminLoginBtn.addEventListener("click", async (e) => {
 
 const adminSubmitLoginDetails = async (phone, password) => {
   const fetchUrl = ` https://ceebookanswers.herokuapp.com/admins/login`;
-  const data = {phone, password};
+  const data = { phone, password };
   try {
     const response = await fetch(fetchUrl, {
       method: 'POST',

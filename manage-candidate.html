@@ -13,10 +13,12 @@
     <link rel="icon" type="image/jpeg" sizes="275x183" href="assets/img/logo.jpg">
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="manifest" href="manifest.json">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900">
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900">
     <link rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700">
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700">
 </head>
 
 <body>
@@ -26,19 +28,23 @@
                 class="navbar-toggler-icon"></span></button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="nav navbar-nav ml-auto">
-                <li class="nav-item" role="presentation"><a class="nav-link" href="#verify-subscription">VERIFY
+                <li class="nav-item" role="presentation"><a class="nav-link"
+                                                            href="#verify-subscription">VERIFY
                     SUBSCRIPTION</a></li>
-                <li class="nav-item" role="presentation"><a class="nav-link active" href="#login">Log In</a></li>
+                <li class="nav-item" role="presentation"><a class="nav-link active" href="#login">Log
+                    In</a></li>
             </ul>
         </div>
     </div>
 </nav>
-<div class="container-fluid bg-primary" style="margin-top: 4.2rem; border-top: 20.5px solid  #ee0979;">
+<div class="container-fluid bg-primary"
+     style="margin-top: 4.2rem; border-top: 20.5px solid  #ee0979;">
     <h1 class="text-center text-white bg-dark">Manage <br> Candidate</h1>
 </div>
 <main>
     <form id="search-form" class="m-auto p-2">
-        <p class="text-center m-3 mt-5">Enter a candidate's phone number to delete or edit his subscription details</p>
+        <p class="text-center m-3 mt-5">Enter a candidate's phone number to delete or edit his
+            subscription details</p>
 
         <div class="form-group">
             <input id="search-phone" class="form-control"
@@ -46,7 +52,8 @@
         </div>
         <div class="form-row">
             <div class="col col-6">
-                <button id="edit-candidate-btn" class="btn btn-primary w-100 mt-3" type="button">Edit
+                <button id="edit-candidate-btn" class="btn btn-primary w-100 mt-3" type="button">
+                    Edit
                     <span id="edit-candidate-spanner-btn" role="status"
                           class="d-none spinner-border text-white m-auto"
                           style="width: 15px;height: 15px;">
@@ -55,7 +62,8 @@
             </div>
 
             <div class="col col-6">
-                <button id="delete-candidate-btn" class="btn btn-primary w-100 mt-3" type="button">Delete
+                <button id="delete-candidate-btn" class="btn btn-primary w-100 mt-3" type="button">
+                    Delete
                     <span id="delete-candidate-spanner-btn" role="status"
                           class="d-none spinner-border text-white m-auto"
                           style="width: 15px;height: 15px;">
@@ -64,7 +72,8 @@
             </div>
         </div>
 
-        <h4 class="text-center mt-5" style="border-bottom: 3px solid hotpink">View Registered Candidates</h4>
+        <h4 class="text-center mt-5" style="border-bottom: 3px solid hotpink">View Registered
+            Candidates</h4>
         <div class="form-row">
             <div class="col col-12">
                 <div class="form-group">
@@ -99,18 +108,19 @@
             </div>
             <div class="col">
                 <div class="form-group">
-                    <select id="view-subscription-type"
-                            class="form-control">
+                    <select id="view-subscription-type" class="form-control">
                         <optgroup label="Subscription Type">
                             <option value="" selected="">Subscription</option>
                             <option value="DIRECT">DIRECT</option>
                             <option value="PASSWORD">PASSWORD</option>
                             <option value="WHATSAPP">WHATSAPP</option>
                         </optgroup>
-                    </select></div>
+                    </select>
+                </div>
             </div>
             <div class="col col-12">
-                <button id="view-candidate-btn" class="btn btn-primary w-100" type="button">View Candidates
+                <button id="view-candidate-btn" class="btn btn-primary w-100" type="button">View
+                    Candidates
                     <span id="view-candidate-spanner-btn" role="status"
                           class="d-none spinner-border text-white m-auto"
                           style="width: 15px;height: 15px;">
@@ -130,11 +140,15 @@
         <form id="candidate-form">
             <div class="form-row">
                 <div class="col col-6">
-                    <div class="form-group"><label>Phone:</label><input id="candidate-phone" class="form-control"
-                                                                        type="tel" placeholder="Phone Number"></div>
+                    <div class="form-group"><label>Phone:</label><input id="candidate-phone"
+                                                                        class="form-control"
+                                                                        type="tel"
+                                                                        placeholder="Phone Number">
+                    </div>
                 </div>
                 <div class="col">
-                    <div class="form-group"><label>Exam Type:</label><select id="exam-type" class="form-control">
+                    <div class="form-group"><label>Exam Type:</label><select id="exam-type"
+                                                                             class="form-control">
                         <optgroup label="Exam Type">
                             <option value="" selected="">Select Exam</option>
                             <option value="WAEC">WAEC</option>
@@ -151,14 +165,16 @@
             <div class="form-row">
                 <div class="col">
                     <div class="form-group">
-                        <label for="exam-year">Exam Year:</label><select id="exam-year" class="form-control">
+                        <label for="exam-year">Exam Year:</label><select id="exam-year"
+                                                                         class="form-control">
 
                     </select>
                     </div>
                 </div>
                 <div class="col">
-                    <div class="form-group"><label>Subscription Type:</label><select id="subscription-type"
-                                                                                     class="form-control">
+                    <div class="form-group"><label>Subscription Type:</label><select
+                            id="subscription-type"
+                            class="form-control">
                         <optgroup label="Subscription Type">
                             <option value="" selected="">Select Subscription</option>
                             <option value="DIRECT">DIRECT</option>
@@ -170,10 +186,11 @@
             </div>
             <div class="form-row">
                 <div class="col">
-                    <div class="form-group"><label>Default Password:</label><input id="candidate-default-password"
-                                                                                   class="form-control"
-                                                                                   type="tel"
-                                                                                   placeholder="Phone Number"></div>
+                    <div class="form-group"><label>Default Password:</label><input
+                            id="candidate-default-password"
+                            class="form-control"
+                            type="tel"
+                            placeholder="Phone Number"></div>
                 </div>
             </div>
             <hr>
@@ -202,7 +219,8 @@
             </div>
             <div class="form-row">
                 <div class="col col-12">
-                    <button id="update-candidate-btn" class="btn btn-primary w-100 mt-3" type="button">Update Candidate
+                    <button id="update-candidate-btn" class="btn btn-primary w-100 mt-3"
+                            type="button">Update Candidate
                         <span id="update-candidate-spanner-btn" role="status"
                               class="d-none spinner-border text-white m-auto"
                               style="width: 15px;height: 15px;">
@@ -213,7 +231,8 @@
         </form>
 
     </div>
-    <div id="update-candidate-alert" class="d-none alert alert-success alert-dismissible fade show" role="alert">
+    <div id="update-candidate-alert" class="d-none alert alert-success alert-dismissible fade show"
+         role="alert">
 
     </div>
 </main>

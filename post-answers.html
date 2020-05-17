@@ -13,10 +13,12 @@
     <link rel="icon" type="image/jpeg" sizes="275x183" href="assets/img/logo.jpg">
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="manifest" href="manifest.json">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900">
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900">
     <link rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700">
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700">
     <link rel="stylesheet" href="assets/css/styles.min.css">
 </head>
 
@@ -29,7 +31,8 @@
         <form>
             <div class="form-row">
                 <div class="col">
-                    <div class="form-group"><label>Subject:</label><select class="form-control">
+                    <div class="form-group"><label>Subject:</label><select id="answer-subject"
+                                                                           class="form-control">
                         <optgroup label="subjectOption">
                             <option value="Civic Education" selected="">Civic Education</option>
                         </optgroup>
@@ -38,12 +41,19 @@
                 <div class="col">
                     <div class="form-group"><label>Exam Type:</label><select class="form-control">
                         <optgroup label="examTypeOption">
-                            <option value="WAEC GCE" selected="">WAEC GCE</option>
+                            <option value="" selected="">Exam Type</option>
+                            <option value="WAEC">WAEC</option>
+                            <option value="NECO">NECO</option>
+                            <option value="WAEC GCE 1ST SERIES">WAEC GCE 1ST SERIES</option>
+                            <option value="WAEC GCE 2ND SERIES">WAEC GCE 2ND SERIES</option>
+                            <option value="NECO GCE">NECO GCE</option>
+                            <option value="NABTEB">NABTEB</option>
+                            <option value="NABTEB GCE">NABTEB GCE</option>
                         </optgroup>
                     </select></div>
                 </div>
                 <div class="col">
-                    <div class="form-group"><label>Exam Year:</label><select class="form-control">
+                    <div class="form-group"><label for="answer-exam-year">Exam Year:</label><select id="answer-exam-year" class="form-control">
                         <optgroup label="examYearOption">
                             <option value="2020" selected="">2020</option>
                         </optgroup>
@@ -54,7 +64,8 @@
                 <div class="col">
                     <div class="form-group">
                         <label for="answer">Answer:</label>
-                        <textarea class="form-control" style="height: 247px;" id="answer" name="answer"></textarea>
+                        <textarea class="form-control" style="height: 247px;" id="answer"
+                                  name="answer"></textarea>
                     </div>
                 </div>
                 <div class="col col-2">
@@ -67,7 +78,9 @@
             <input id="photoUrl" name="photoUrl" type="file">
             <div class="form-row">
                 <div class="col col-12">
-                    <button id="submitAnswer" class="btn btn-primary w-100 mt-3 h-100" type="button">Submit Answer</button>
+                    <button id="submitAnswer" class="btn btn-primary w-100 mt-3 h-100"
+                            type="button">Submit Answer
+                    </button>
                 </div>
             </div>
         </form>
@@ -76,9 +89,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
 <script src="assets/js/script.min.js"></script>
-<script>
-
-</script>
+<script src="./assets/js/post-answers.js"></script>
 </body>
 
 </html>

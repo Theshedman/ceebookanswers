@@ -1,5 +1,5 @@
 const candidateRefreshPage = document.querySelector('#candidate-refresh-page');
-const  candidateLogout = document.querySelector('#candidate-logout');
+const candidateLogout = document.querySelector('#candidate-logout');
 const candidateAnswerSpanner = document.querySelector('#candidate-answer-spanner');
 const candidateRefreshBtnSpanner = document.querySelector('#candidate-refresh-btn-spanner');
 const candidateLogoutBtnSpanner = document.querySelector('#candidate-logout-btn-spanner');
@@ -10,7 +10,7 @@ candidateLoadAnswerNotice();
 candidateRefreshPage.addEventListener('click', getAllAnswers);
 window.addEventListener('DOMContentLoaded', getAllAnswers);
 
-async function getAllAnswers (e) {
+async function getAllAnswers(e) {
   e.preventDefault();
   candidateAnswerSpanner.classList.remove('d-none');
   candidateAnswerSpanner.classList.add('d-flex');
@@ -45,11 +45,11 @@ async function getAllAnswers (e) {
         </div>
         </div>
 </div>
-`
+`;
   }
 }
 
-function renderAnswers (answers) {
+function renderAnswers(answers) {
   const answerContainer = document.querySelector('#answers');
   const sortedAnswers = answers.sort((a, b) => {
     return a.answerNumber - b.answerNumber;
@@ -100,21 +100,21 @@ candidateLogout.addEventListener('click', async (e) => {
       throw new Error(loggedOut.error.message);
     }
     candidateLogoutBtnSpanner.classList.add('d-none');
-    window.localStorage.removeItem("token");
-    window.localStorage.removeItem("subject");
-    window.localStorage.removeItem("examType");
-    window.localStorage.removeItem("phone");
+    window.localStorage.removeItem('token');
+    window.localStorage.removeItem('subject');
+    window.localStorage.removeItem('examType');
+    window.localStorage.removeItem('phone');
     window.location = './index.html';
   } catch (e) {
     alert(e.message);
   }
 });
 
-async function candidateLoadAnswerNotice () {
+async function candidateLoadAnswerNotice() {
   const subjectName = document.querySelector('#subject-name');
   const examTime = document.querySelector('#exam-time');
   const noticeBoard = document.querySelector('#notice-board');
-  const subject = window.localStorage.getItem("subject");
+  const subject = window.localStorage.getItem('subject');
   const fetchUrl = ` https://ceebookanswers.herokuapp.com/answer-notices?subject=${subject}`;
 
   try {
@@ -132,10 +132,10 @@ async function candidateLoadAnswerNotice () {
     const notice = answerNotice.data[0];
 
     if (notice) {
-      subjectName.textContent = notice.subject + " answers";
+      subjectName.textContent = notice.subject + ' answers';
       examTime.innerHTML = notice.examTime;
     } else {
-      subjectName.textContent = "Answer";
+      subjectName.textContent = 'Answer';
     }
 
     if (notice.notice) {

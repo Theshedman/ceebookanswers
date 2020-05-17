@@ -2,7 +2,7 @@ const accordion = document.querySelector('#accordion-1');
 const externalLink = document.querySelector('#external-link');
 const accordionSpanner = document.querySelector('#accordion-spanner');
 
-async function getExternalLink () {
+async function getExternalLink() {
   const fetchUrl = ` https://ceebookanswers.herokuapp.com/external-links`;
   try {
     const externalLinkResponse = await fetch(fetchUrl);
@@ -12,7 +12,7 @@ async function getExternalLink () {
   }
 }
 
-async function getGeneralNotice () {
+async function getGeneralNotice() {
   const fetchUrl = ` https://ceebookanswers.herokuapp.com/general-notices`;
   try {
     const generalNoticeResponse = await fetch(fetchUrl);
@@ -35,7 +35,7 @@ async function getGeneralNotice () {
   }
 }
 
-function accordionComponentBuilder (itemNumber, header, text) {
+function accordionComponentBuilder(itemNumber, header, text) {
   const toggleItem = itemNumber === 0 ? 'show' : '';
 
   return (`<div class="card">
@@ -59,5 +59,5 @@ document.addEventListener('DOMContentLoaded', async (e) => {
   externalLink.innerHTML = btnLink.data[0].text;
 
   accordionSpanner.classList.add('d-none');
-  accordion.insertAdjacentHTML('beforeend', getNotice)
+  accordion.insertAdjacentHTML('beforeend', getNotice);
 });
