@@ -1,4 +1,4 @@
-import { examTypes } from './utils/exam-type';
+import { examTypes } from './utils/exam-type.js';
 
 const candidatePhone = document.querySelector("#candidate-phone");
 const examType = document.querySelector("#exam-type");
