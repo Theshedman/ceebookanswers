@@ -1,4 +1,4 @@
-import { examTypes } from './utils/exam-type.js';
+import { baseUrl, examYears, examTypes } from './utils';
 
 const candidatePhone = document.querySelector("#candidate-phone");
 const examType = document.querySelector("#exam-type");
@@ -14,10 +14,9 @@ const candidateForm = document.querySelector("#candidate-form");
 
 let subjectArray = [];
 
-window.addEventListener("DOMContentLoaded", loadExamYearAndSubjects);
+window.addEventListener("DOMContentLoaded", loadNecessaryData);
 registerCandidateBtn.addEventListener("click", async () => {
   const subjects = [...document.querySelectorAll("[name=subjects]")];
-  const fetchUrl = ` https://ceebookanswers.herokuapp.com/candidates/register`;
   registerCandidateSpannerBtn.classList.remove("d-none");
 
   const phone = candidatePhone.value;
@@ -48,20 +47,7 @@ registerCandidateBtn.addEventListener("click", async () => {
   };
 
   try {
-    const response = await fetch(fetchUrl, {
-      method: 'POST',
-      mode: 'cors',
-      credentials: 'same-origin',
-      headers: {
-        'Content-Type': 'application/json',
-        Authorization: `Bearer ${window.localStorage.getItem('token')}`
-      },
-      redirect: 'follow',
-      referrerPolicy: 'no-referrer',
-      body: JSON.stringify(candidateData)
-    });
-
-    const responseData = await response.json();
+    const responseData = await createCandidate(candidateData);
     if (responseData.error) {
       throw  new Error(responseData.error.message);
     }
@@ -126,26 +112,18 @@ subjectContainer.addEventListener("click", (e) => {
 });
 
 
-function loadExamYearAndSubjects () {
+async function loadNecessaryData () {
   loadExamYear();
-  loadSubjects();
+  loadExamType();
+  await loadSubjects();
 }
 
 function loadExamYear () {
-  const currentYear = new Date().getFullYear();
-  const nextYear = currentYear + 1;
-
-  examYear.innerHTML = `
-  <optgroup label="Exam Year">
-      <option value="" selected="">Select Year</option>
-      <option value="${currentYear}">${currentYear}</option>
-      <option value="${nextYear}">${nextYear}</option>
-  </optgroup>
-  `;
+  examYear.innerHTML = `<optgroup label="Exam Year">${examYears()}</optgroup>`;
 }
 
 async function loadSubjects () {
-  const fetchUrl = ` https://ceebookanswers.herokuapp.com/subjects`;
+  const fetchUrl = `${baseUrl}/subjects`;
   try {
     const response = await fetch(fetchUrl, {
       method: 'GET',
@@ -180,22 +158,21 @@ async function loadSubjects () {
     console.log(e.message);
   }
 }
-loadExamType();
 
 function loadExamType() {
   examType.innerHTML = `<optgroup label="Exam Type">${examTypes()}</optgroup>`;
-  console.log(examType);
 }
 
 async function createCandidate (candidateDetails = {}) {
-  const fetchUrl = ` https://ceebookanswers.herokuapp.com/candidates/register`;
+  const fetchUrl = ` ${baseUrl}/candidates/register`;
   try {
     const response = await fetch(fetchUrl, {
       method: 'POST',
       mode: 'cors',
       credentials: 'same-origin',
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${window.localStorage.getItem('token')}`
       },
       redirect: 'follow',
       referrerPolicy: 'no-referrer',
@@ -203,6 +180,6 @@ async function createCandidate (candidateDetails = {}) {
     });
     return await response.json();
   } catch (e) {
-    console.log(e.message);
+    throw new Error(e.message);
   }
 }
