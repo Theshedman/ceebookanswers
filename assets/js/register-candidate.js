@@ -1,3 +1,4 @@
+import { subscriptionTypes } from './utils/index';
 import { baseUrl, examYears, examTypes } from './utils/index.js';
 
 const candidatePhone = document.querySelector("#candidate-phone");
@@ -115,11 +116,12 @@ subjectContainer.addEventListener("click", (e) => {
 async function loadNecessaryData () {
   loadExamYear();
   loadExamType();
+  loadSubscriptionType();
   await loadSubjects();
 }
 
 function loadExamYear () {
-  examYear.innerHTML = `<optgroup label="Exam Year">${examYears()}</optgroup>`;
+  examYear.innerHTML = examYears();
 }
 
 async function loadSubjects () {
@@ -160,7 +162,11 @@ async function loadSubjects () {
 }
 
 function loadExamType() {
-  examType.innerHTML = `<optgroup label="Exam Type">${examTypes()}</optgroup>`;
+  examType.innerHTML = examTypes();
+}
+
+function loadSubscriptionType() {
+  subscriptionType.innerHTML = subscriptionTypes();
 }
 
 async function createCandidate (candidateDetails = {}) {

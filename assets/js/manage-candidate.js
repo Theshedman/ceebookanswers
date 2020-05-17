@@ -45,7 +45,7 @@ const manipulateupdateCandidateElements = (alertElement, searchFormContainer) =>
   }, 3500);
 };
 
-async function getCandidatePhoneNumbers () {
+async function  getCandidatePhoneNumbers () {
   viewCandidateSpannerBtn.classList.remove("d-none");
   viewCandidate.classList.add("d-none");
 
