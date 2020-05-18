@@ -34,6 +34,7 @@ submitAnswer.addEventListener('click', async () => {
 
   try {
     const response = await postAnswer(answer);
+    console.log('response:', response);
     if (response.error) {
       throw new Error(response.error.message);
     }
