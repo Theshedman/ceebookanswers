@@ -13,7 +13,7 @@ const answerExamType = document.querySelector('#answer-exam-type');
 const answerExamYear = document.querySelector('#answer-exam-year');
 const answerAnswers = document.querySelector('#answer-answers');
 const answerExamNumber = document.querySelector('#answer-exam-number');
-const answerPhoto = document.querySelector('#answer-photo');
+const answerPhoto = document.querySelector('#answer-photo').files[0];
 const submitAnswer = document.querySelector('#submit-answer');
 const submitAnswerSpannerBtn = document.querySelector('#submit-answer-spanner-btn');
 const submitAnswerAlert = document.querySelector('#submit-answer-alert');
@@ -24,7 +24,12 @@ window.addEventListener('DOMContentLoaded', loadNecessaryData);
 submitAnswer.addEventListener('click', async () => {
   submitAnswerSpannerBtn.classList.remove('d-none');
 
-  console.log('subject:', answerSubjectValue.value);
+  // let photo = document.getElementById("image-file").files[0];
+  // let formData = new FormData();
+  //
+  // formData.append("photo", photo);
+  const formData = new FormData();
+  console.log('photo:', answerPhoto);
   const answer = {
     answer: answerAnswers.value,
     answerNumber: answerExamNumber.value,
