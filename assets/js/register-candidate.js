@@ -154,5 +154,5 @@ function loadSubscriptionType() {
 
 async function createCandidate(candidateDetails = {}) {
   const fetchUrl = `${baseUrl}/candidates/register`;
-  await post(fetchUrl, candidateDetails);
+  return await post(fetchUrl, candidateDetails);
 }

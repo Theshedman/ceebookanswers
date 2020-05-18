@@ -100,5 +100,5 @@ async function loadSubjects() {
 
 async function postAnswer(answer = {}) {
   const url = `${baseUrl}/answers`;
-  await post(url, answer);
+  return await post(url, answer);
 }
