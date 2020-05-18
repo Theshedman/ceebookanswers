@@ -36,6 +36,10 @@ manageCandidate.addEventListener('click', () => {
   window.location = './manage-candidate.html';
 });
 
+postAnswers.addEventListener('click', () => {
+  window.location = './post-answers.html';
+});
+
 adminChangePassword.addEventListener('click', (e) => {
   adminPasswordBtnsContainer.classList.add('d-none');
   adminPasswordBtnsContainer.classList.remove('d-flex');
