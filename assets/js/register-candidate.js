@@ -1,4 +1,13 @@
-import { baseUrl, examTypes, examYears, subscriptionTypes, post } from './utils/index.js';
+import {
+  baseUrl,
+  examTypes,
+  examYears,
+  subscriptionTypes,
+  post,
+  get,
+  alert as candidateAlert,
+  manipulateAlert as manipulateRegisterCandidateElements
+} from './utils/index.js';
 
 const candidatePhone = document.querySelector('#candidate-phone');
 const examType = document.querySelector('#exam-type');
@@ -33,23 +42,10 @@ registerCandidateBtn.addEventListener('click', async () => {
   if (password) candidateData.password = password;
   if (subjectArray.length) candidateData.subjects = subjectArray;
 
-  const candidateAlert = (heading, message) => `<strong>${heading}!</strong> ${message}.
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-        </button>`;
-
-  const manipulateRegisterCandidateElements = (alertElement, candidateForm) => {
-    setTimeout(() => {
-      alertElement.classList.add('d-none');
-
-      candidateForm.classList.remove('d-none');
-    }, 3500);
-  };
-
   try {
     const responseData = await createCandidate(candidateData);
     if (responseData.error) {
-      throw  new Error(responseData.error.message);
+      throw new Error(responseData.error.message);
     }
 
     registerCandidateSpannerBtn.classList.add('d-none');
@@ -111,7 +107,6 @@ subjectContainer.addEventListener('click', (e) => {
   }
 });
 
-
 async function loadNecessaryData() {
   loadExamYear();
   loadExamType();
@@ -126,18 +121,7 @@ function loadExamYear() {
 async function loadSubjects() {
   const fetchUrl = `${baseUrl}/subjects`;
   try {
-    const response = await fetch(fetchUrl, {
-      method: 'GET',
-      mode: 'cors',
-      credentials: 'same-origin',
-      headers: {
-        'Content-Type': 'application/json',
-        Authorization: `Bearer ${window.localStorage.getItem('token')}`
-      },
-      redirect: 'follow',
-      referrerPolicy: 'no-referrer'
-    });
-    const subjects = await response.json();
+    const subjects = await get(fetchUrl);
 
     if (subjects.error) {
       throw new Error(subjects.error.message);

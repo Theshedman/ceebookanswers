@@ -18,4 +18,23 @@ async function post(url, data) {
   }
 }
 
-export { post };
+async function get(url) {
+  try {
+    const response = await fetch(url, {
+      method: 'GET',
+      mode: 'cors',
+      credentials: 'same-origin',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${window.localStorage.getItem('token')}`
+      },
+      redirect: 'follow',
+      referrerPolicy: 'no-referrer'
+    });
+    return await response.json();
+  } catch (e) {
+    throw new Error(e.message);
+  }
+}
+
+export { post, get };
