@@ -57,7 +57,7 @@ submitAnswer.addEventListener('click', async () => {
 async function loadNecessaryData() {
   loadExamYear();
   loadExamType();
-  loadSubjects();
+  await loadSubjects();
 }
 
 function loadExamYear() {
