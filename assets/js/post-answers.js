@@ -24,23 +24,25 @@ window.addEventListener('DOMContentLoaded', loadNecessaryData);
 submitAnswer.addEventListener('click', async () => {
   submitAnswerSpannerBtn.classList.remove('d-none');
 
-  // let photo = document.getElementById("image-file").files[0];
-  // let formData = new FormData();
-  //
-  // formData.append("photo", photo);
   const formData = new FormData();
-  console.log('photo:', answerPhoto.files);
-  const answer = {
-    answer: answerAnswers.value,
-    answerNumber: answerExamNumber.value,
-    subject: answerSubjectValue.value,
-    photo: answerPhoto.value,
-    examType: answerExamType.value,
-    examYear: answerExamYear.value
-  };
+  formData.append('photo', answerPhoto.files[0]);
+  formData.append('answer', answerAnswers.value);
+  formData.append('answerNumber', answerExamNumber.value);
+  formData.append('subject', answerSubjectValue.value);
+  formData.append('examType', answerExamType.value);
+  formData.append('examYear', answerExamYear.value);
+
+  // const answer = {
+  //   answer: answerAnswers.value,
+  //   answerNumber: answerExamNumber.value,
+  //   subject: answerSubjectValue.value,
+  //   photo: answerPhoto.value,
+  //   examType: answerExamType.value,
+  //   examYear: answerExamYear.value
+  // };
 
   try {
-    const response = await postAnswer(answer);
+    const response = await postAnswer(formData);
     console.log('response:', response);
     if (response.error) {
       throw new Error(response.error.message);
