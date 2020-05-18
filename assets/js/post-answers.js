@@ -4,7 +4,7 @@ import {
   examTypes,
   examYears,
   manipulateAlert,
-  post,
+  postFormData,
   get
 } from './utils/index.js';
 
@@ -31,18 +31,6 @@ submitAnswer.addEventListener('click', async () => {
   formData.append('subject', answerSubjectValue.value);
   formData.append('examType', answerExamType.value);
   formData.append('examYear', answerExamYear.value);
-
-  formData.forEach((val, key) => {
-    console.log(key+'='+val);
-  })
-  // const answer = {
-  //   answer: answerAnswers.value,
-  //   answerNumber: answerExamNumber.value,
-  //   subject: answerSubjectValue.value,
-  //   photo: answerPhoto.value,
-  //   examType: answerExamType.value,
-  //   examYear: answerExamYear.value
-  // };
 
   try {
     const response = await postAnswer(formData);
@@ -107,5 +95,5 @@ async function loadSubjects() {
 
 async function postAnswer(answer = {}) {
   const url = `${baseUrl}/answers`;
-  return await post(url, answer);
+  return await postFormData(url, answer);
 }

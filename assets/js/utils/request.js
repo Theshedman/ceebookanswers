@@ -18,6 +18,25 @@ async function post(url, data) {
   }
 }
 
+async function postFormData(url, data) {
+  try {
+    const response = await fetch(url, {
+      method: 'POST',
+      mode: 'cors',
+      credentials: 'same-origin',
+      headers: {
+        Authorization: `Bearer ${window.localStorage.getItem('token')}`
+      },
+      redirect: 'follow',
+      referrerPolicy: 'no-referrer',
+      body: data
+    });
+    return await response.json();
+  } catch (e) {
+    throw new Error(e.message);
+  }
+}
+
 async function get(url) {
   try {
     const response = await fetch(url, {
@@ -37,4 +56,4 @@ async function get(url) {
   }
 }
 
-export { post, get };
+export { post, get, postFormData };
