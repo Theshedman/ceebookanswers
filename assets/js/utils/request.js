@@ -12,8 +12,10 @@ async function post(url, data) {
       referrerPolicy: 'no-referrer',
       body: JSON.stringify(data)
     });
+    console.log('data:', response.json());
     return await response.json();
   } catch (e) {
+    console.log('Error:', e);
     throw new Error(e.message);
   }
 }
