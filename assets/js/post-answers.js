@@ -93,6 +93,7 @@ async function loadSubjects() {
     </optgroup>`;
 
     answerSubject.innerHTML = subjectElements;
+    console.log('subjects:', answerSubject);
   } catch (e) {
     console.log(e.message);
   }
