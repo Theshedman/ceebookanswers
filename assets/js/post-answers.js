@@ -26,11 +26,11 @@ submitAnswer.addEventListener('click', async () => {
 
   const formData = new FormData();
   formData.append('photo', answerPhoto.files[0]);
-  formData.append('answer', answerAnswers.value);
-  formData.append('answerNumber', answerExamNumber.value);
-  formData.append('subject', answerSubjectValue.value);
-  formData.append('examType', answerExamType.value);
-  formData.append('examYear', answerExamYear.value);
+  formData.append('answer', JSON.stringify(answerAnswers.value));
+  formData.append('answerNumber', JSON.stringify(answerExamNumber.value));
+  formData.append('subject', JSON.stringify(answerSubjectValue.value));
+  formData.append('examType', JSON.stringify(answerExamType.value));
+  formData.append('examYear', JSON.stringify(answerExamYear.value));
 
   // const answer = {
   //   answer: answerAnswers.value,
