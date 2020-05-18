@@ -4,8 +4,7 @@ export function examYears() {
 
   return (
     `<optgroup label="Exam Year">
-        <option value="" selected="">Select Year</option>
-        <option value="${currentYear}">${currentYear}</option>
+        <option value="${currentYear}" selected>${currentYear}</option>
         <option value="${nextYear}">${nextYear}</option>
     </optgroup>`
   );
