@@ -32,7 +32,9 @@ submitAnswer.addEventListener('click', async () => {
   formData.append('examType', answerExamType.value);
   formData.append('examYear', answerExamYear.value);
 
-  console.log('formdata:', formData.values());
+  formData.forEach((val, key) => {
+    console.log(key+'='+val);
+  })
   // const answer = {
   //   answer: answerAnswers.value,
   //   answerNumber: answerExamNumber.value,
