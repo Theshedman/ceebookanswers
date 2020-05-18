@@ -92,12 +92,6 @@ async function loadSubjects() {
     </optgroup>`;
 
     answerSubject.innerHTML = subjectElements;
-
-    // Enable text search using Selectize Lib
-    answerSubject.selectize({
-      sortField: 'text'
-    });
-
   } catch (e) {
     console.log(e.message);
   }
