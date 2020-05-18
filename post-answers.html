@@ -13,7 +13,6 @@
     <link rel="icon" type="image/jpeg" sizes="275x183" href="assets/img/logo.jpg">
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="manifest" href="manifest.json">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/css/selectize.bootstrap3.min.css" integrity="sha256-ze/OEYGcFbPRmvCnrSeKbRTtjG4vGLHXgOqsyLFTRjg=" crossorigin="anonymous" />
     <link rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900">
     <link rel="stylesheet"
@@ -50,9 +49,10 @@
             <div class="form-row">
                 <div class="col">
                     <div class="form-group">
-                        <label for="answer-subject">Subject:</label>
-                        <select id="answer-subject" class="form-control">
-                        </select>
+                        <label for="subject">Subject:</label>
+                        <input id="subject" list="answer-subject" type="text">
+                        <datalist id="answer-subject" class="form-control">
+                        </datalist>
                     </div>
                 </div>
                 <div class="col">
@@ -108,16 +108,7 @@
 </footer>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/js/standalone/selectize.min.js" integrity="sha256-+C0A5Ilqmu4QcSPxrlGpaZxJ04VjsRjKu+G82kl5UJk=" crossorigin="anonymous"></script>
 <script src="./assets/js/post-answers.js" type="module"></script>
-<script>
-  // Enable text search using Selectize Lib
-  $(document).ready(function () {
-    $('#answer-subject').selectize({
-      sortField: 'text'
-    });
-  });
-</script>
 </body>
 
 </html>

@@ -87,13 +87,7 @@ async function loadSubjects() {
       `;
     });
 
-    subjectElements = `<optgroup label="subjectOption">
-        <option value="" selected>Select Subject</option>
-        ${subjectElements}
-    </optgroup>`;
-
     answerSubject.innerHTML = subjectElements;
-    console.log('subjects:', answerSubject);
   } catch (e) {
     console.log(e.message);
   }
