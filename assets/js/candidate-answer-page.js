@@ -1,3 +1,5 @@
+import { baseUrl } from './utils/index.js';
+
 const candidateRefreshPage = document.querySelector('#candidate-refresh-page');
 const candidateLogout = document.querySelector('#candidate-logout');
 const candidateAnswerSpanner = document.querySelector('#candidate-answer-spanner');
@@ -60,9 +62,7 @@ function renderAnswers(answers) {
     let answerPhoto = '';
 
     if (answer.photoUrl) {
-      console.log('answerPhoto:', answer.photoUrl);
-      answerPhoto = `<img width="80%" src="${answer.photoUrl}" alt="answer image" />`;
-      console.log('photoHref:', answerPhoto);
+      answerPhoto = `<img width="80%" src="${baseUrl}/${answer.photoUrl}" alt="answer image" />`;
     }
 
     answerContent += `<div class="row">

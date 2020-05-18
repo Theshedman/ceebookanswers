@@ -1,3 +1,5 @@
+import { baseUrl } from './utils/index.js';
+
 const guestRefreshPage = document.querySelector('#guest-refresh-page');
 const guestLogout = document.querySelector('#guest-logout');
 const guestAnswerSpanner = document.querySelector('#guest-answer-spanner');
@@ -60,7 +62,7 @@ function renderAnswers(answers) {
     let answerPhoto = '';
 
     if (answer.photoUrl) {
-      answerPhoto = `<img width="80%" src="${answer.photoUrl}" alt="" />`;
+      answerPhoto = `<img width="80%" src="${baseUrl}/${answer.photoUrl}" alt="" />`;
     }
 
     answerContent += `<div class="row">
