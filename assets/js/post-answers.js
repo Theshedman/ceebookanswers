@@ -4,7 +4,8 @@ import {
   examTypes,
   examYears,
   manipulateAlert,
-  post
+  post,
+  get
 } from './utils/index.js';
 
 const answerSubject = document.querySelector('#answer-subject');
