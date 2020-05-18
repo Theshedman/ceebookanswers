@@ -18,15 +18,20 @@ const submitAnswer = document.querySelector('#submit-answer');
 const submitAnswerSpannerBtn = document.querySelector('#submit-answer-spanner-btn');
 const submitAnswerAlert = document.querySelector('#submit-answer-alert');
 const answerForm = document.querySelector('#answer-form');
+const answerSubjectValue = document.querySelector('#answer-subject-value');
 
 window.addEventListener('DOMContentLoaded', loadNecessaryData);
 submitAnswer.addEventListener('click', async () => {
   submitAnswerSpannerBtn.classList.remove('d-none');
+  // var val = document.getElementById('txt_name').value;
+  // var text = $('#emp_names').find('option[value="' + val + '"]').attr('value');
 
+  const subject = answerSubject.find(`option[value="${answerSubjectValue.value}"]`).attr('value');
+  console.log('subject:', subject);
   const answer = {
     answer: answerAnswers.value,
     answerNumber: answerExamNumber.value,
-    subject: answerSubject.value,
+    subject,
     photo: answerPhoto.value,
     examType: answerExamType.value,
     examYear: answerExamYear.value
