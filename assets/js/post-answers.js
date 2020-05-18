@@ -23,15 +23,12 @@ const answerSubjectValue = document.querySelector('#answer-subject-value');
 window.addEventListener('DOMContentLoaded', loadNecessaryData);
 submitAnswer.addEventListener('click', async () => {
   submitAnswerSpannerBtn.classList.remove('d-none');
-  // var val = document.getElementById('txt_name').value;
-  // var text = $('#emp_names').find('option[value="' + val + '"]').attr('value');
 
-  const subject = answerSubject.find(`option[value="${answerSubjectValue.value}"]`).attr('value');
-  console.log('subject:', subject);
+  console.log('subject:', answerSubjectValue.value);
   const answer = {
     answer: answerAnswers.value,
     answerNumber: answerExamNumber.value,
-    subject,
+    subject: answerSubjectValue.value,
     photo: answerPhoto.value,
     examType: answerExamType.value,
     examYear: answerExamYear.value
