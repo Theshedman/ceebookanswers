@@ -61,7 +61,7 @@ function renderAnswers(answers) {
 
     if (answer.photoUrl) {
       console.log('answerPhoto:', answer.photoUrl);
-      answerPhoto = `<img width="80%" src="${answer.photoUrl}" alt="" />`;
+      answerPhoto = `<img width="80%" src="${answer.photoUrl}" alt="answer image" />`;
       console.log('photoHref:', answerPhoto);
     }
 
