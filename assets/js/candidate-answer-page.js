@@ -62,7 +62,10 @@ function renderAnswers(answers) {
     let answerPhoto = '';
 
     if (answer.photoUrl) {
-      answerPhoto = `<img width="80%" src="${baseUrl}/${answer.photoUrl}" alt="answer image" />`;
+      if (answer.photoUrl.startsWith('uploads/')) {
+        answerPhoto = `<img width="80%" src="${baseUrl}/${answer.photoUrl}" alt="answer image" />`;
+      }
+      answerPhoto = `<img width="80%" src="${answer.photoUrl}" alt="answer image" />`;
     }
 
     answerContent += `<div class="row">
