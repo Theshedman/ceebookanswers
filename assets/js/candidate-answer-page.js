@@ -60,7 +60,9 @@ function renderAnswers(answers) {
     let answerPhoto = '';
 
     if (answer.photoUrl) {
+      console.log('answerPhoto:', answer.photoUrl);
       answerPhoto = `<img width="80%" src="${answer.photoUrl}" alt="" />`;
+      console.log('photoHref:', answerPhoto);
     }
 
     answerContent += `<div class="row">
