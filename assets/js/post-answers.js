@@ -24,16 +24,23 @@ window.addEventListener('DOMContentLoaded', loadNecessaryData);
 submitAnswer.addEventListener('click', async () => {
   submitAnswerSpannerBtn.classList.remove('d-none');
 
-  const answer = {
-    answer: answerAnswers.value,
-    answerNumber: answerExamNumber.value,
-    subject: answerSubjectValue.value,
-    photo: answerPhoto.files[0],
-    examType: answerExamType.value,
-    examYear: answerExamYear.value
-  };
   const formData = new FormData();
-  formData.append('answer', JSON.stringify(answer));
+  formData.append('photo', answerPhoto.files[0]);
+  formData.append('answer', answerAnswers.value);
+  formData.append('answerNumber', answerExamNumber.value);
+  formData.append('subject', answerSubjectValue.value);
+  formData.append('examType', answerExamType.value);
+  formData.append('examYear', answerExamYear.value);
+
+  console.log('formdata:', formData.values());
+  // const answer = {
+  //   answer: answerAnswers.value,
+  //   answerNumber: answerExamNumber.value,
+  //   subject: answerSubjectValue.value,
+  //   photo: answerPhoto.value,
+  //   examType: answerExamType.value,
+  //   examYear: answerExamYear.value
+  // };
 
   try {
     const response = await postAnswer(formData);
