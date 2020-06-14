@@ -65,12 +65,12 @@ async function populateNoticeBoard() {
       ++rowNum;
       noticeContent.unshift(`<tr>
                     <td id="heading-${rowNum}" style="width: 15%;">${res.heading}</td>
-                    <td id="notice-${rowNum}" style="width: 50%;">${res.notice}</td>
+                    <td id="notice-${rowNum}" style="width: 55%;">${res.notice}</td>
                     <td id="id-${rowNum}" class="d-none id">${res._id}</td>
                     <td style="width: 20%;">
                         <div id="btn-group-${rowNum}" class="btn-group" role="group">
                            <button class="btn btn-warning" type="button" name="${rowNum}">Edit</button>
-                           <button style="width: 80%;" class="btn btn-primary" type="button" name="${rowNum}">Delete
+                           <button style="display: flex;" class="btn btn-primary" type="button" name="${rowNum}">Del
                              <span id="delete-spanner-${rowNum}" role="status"
                                   class="d-none spinner-border text-white m-auto"
                                   style="width: 15px;height: 15px;">
@@ -98,7 +98,7 @@ async function populateNoticeBoard() {
 noticeBoard.addEventListener('click', async (e) => {
   const tableRow = e.target.parentNode.parentNode.parentNode;
   // Delete notice
-  if (e.target.textContent.startsWith('Delete')) {
+  if (e.target.textContent.startsWith('Del')) {
     const rowNum = e.target.name;
     await deleteRow(rowNum);
   }
@@ -131,13 +131,18 @@ function editRow(rowNum) {
   const updateBtn = document.querySelector(`#update-btn-${rowNum}`);
   const noticeColumn = document.querySelector(`#notice-${rowNum}`);
   const headingColumn = document.querySelector(`#heading-${rowNum}`);
-  const notice = noticeColumn.textContent.trim();
+  let notice = noticeColumn.textContent.trim();
   const heading = headingColumn.textContent.trim();
+  const detectUrlRegex =/(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
+
+  notice = notice.replace(detectUrlRegex, (url) => {
+    return `[${url}]`;
+  });
 
   btnGroup.classList.add('d-none');
   updateBtn.classList.remove('d-none');
 
-  noticeColumn.innerHTML = `<input class="form-control" id="notice-text-${rowNum}" type="text" value="${notice}" />`;
+  noticeColumn.innerHTML = `<textarea style="height: 40px;" class="form-control" id="notice-text-${rowNum}">${notice}</textarea>`;
   headingColumn.innerHTML = `<input class="form-control" id="heading-text-${rowNum}" type="text" value="${heading}" />`;
 }
 
