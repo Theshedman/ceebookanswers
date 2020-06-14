@@ -17,8 +17,10 @@ const postAnswers = document.querySelector('#post-answers');
 const createGuestsPassword = document.querySelector('#create-guests-password');
 const manageAnswerNotices = document.querySelector('#manage-answer-notices');
 const manageCandidate = document.querySelector('#manage-candidate');
+const manageExternalLink = document.querySelector('#manage-external-link');
+const manageSubjects = document.querySelector('#manage-subjects');
 
-// TODO - manageAccordion, postAnswers, createGuestsPassword, manageAnswerNotices
+// TODO - externalLink, Subjects, createGuestsPassword, manageAnswerNotices
 
 window.addEventListener('DOMContentLoaded', () => {
   const firstName = window.localStorage.getItem('firstName');
@@ -30,6 +32,10 @@ window.addEventListener('DOMContentLoaded', () => {
 
 registerCandidate.addEventListener('click', () => {
   window.location = './register-candidate.html';
+});
+
+manageAccordion.addEventListener('click', () => {
+  window.location = './general-notice.html';
 });
 
 manageCandidate.addEventListener('click', () => {
