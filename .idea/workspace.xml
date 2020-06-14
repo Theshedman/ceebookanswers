@@ -1,4 +1,495 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:master" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </select>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="ba089427-999f-493e-a25a-5f5ac2692d0f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/assets/js/general-notice.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Bootstrap Studio.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Bootstrap Studio.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/theshedman.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/theshedman.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin-dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/admin-dashboard.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/admin-dashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/admin-dashboard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/post-answers.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/post-answers.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/utils/request.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/utils/request.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/candidate-answers.html" beforeDir="false" afterPath="$PROJECT_DIR$/candidate-answers.html" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1Wbin6J4SLAuPM2cHAInrw5YJej" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_package_manager_path" value="npm" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ba089427-999f-493e-a25a-5f5ac2692d0f" name="Default Changelist" comment="" />
+      <created>1589666099630</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1589666099630</updated>
+      <workItem from="1589666102000" duration="34580000" />
+      <workItem from="1589820883461" duration="32000" />
+      <workItem from="1589820954100" duration="255000" />
+      <workItem from="1590525097131" duration="451000" />
+      <workItem from="1590529216059" duration="6000" />
+      <workItem from="1590848155405" duration="361000" />
+    </task>
+    <task id="LOCAL-00007" summary="Update register-candidate.js">
+      <created>1589747779859</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1589747779859</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Update register-candidate.html">
+      <created>1589748051176</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1589748051176</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Format codebase">
+      <created>1589750463418</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1589750463418</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Add post-answers.html">
+      <created>1589755731883</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1589755731884</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Fix style issues post-answers.html">
+      <created>1589755899057</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1589755899057</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Fix style issues post-answers.html">
+      <created>1589755916877</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1589755916877</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Update Posting answers">
+      <created>1589758313620</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1589758313620</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Refactor register-candidate.js">
+      <created>1589758351973</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1589758351973</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Refactor request.js">
+      <created>1589758775727</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1589758775727</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Update default import">
+      <created>1589758940011</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1589758940012</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Update files">
+      <created>1589763840837</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1589763840838</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Update files">
+      <created>1589764015850</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1589764015850</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Update files">
+      <created>1589764282558</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1589764282558</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Update admin-dashboard.js">
+      <created>1589764526617</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1589764526617</updated>
+    </task>
+    <task id="LOCAL-00021" summary="Update post-answers">
+      <created>1589764739130</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1589764739130</updated>
+    </task>
+    <task id="LOCAL-00022" summary="Update exam-year.js">
+      <created>1589764905732</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1589764905732</updated>
+    </task>
+    <task id="LOCAL-00023" summary="Log result">
+      <created>1589765331203</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1589765331203</updated>
+    </task>
+    <task id="LOCAL-00024" summary="Remove Log result">
+      <created>1589765598133</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1589765598134</updated>
+    </task>
+    <task id="LOCAL-00025" summary="Log response">
+      <created>1589765718281</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1589765718281</updated>
+    </task>
+    <task id="LOCAL-00026" summary="Return response">
+      <created>1589766052208</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1589766052208</updated>
+    </task>
+    <task id="LOCAL-00027" summary="Update post-answers.html">
+      <created>1589766177547</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1589766177547</updated>
+    </task>
+    <task id="LOCAL-00028" summary="Update post-answers.html">
+      <created>1589766497649</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1589766497650</updated>
+    </task>
+    <task id="LOCAL-00029" summary="Log subjects">
+      <created>1589766808178</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1589766808178</updated>
+    </task>
+    <task id="LOCAL-00030" summary="Update post-answers">
+      <created>1589767325397</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1589767325397</updated>
+    </task>
+    <task id="LOCAL-00031" summary="Update post-answers">
+      <created>1589767536101</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1589767536101</updated>
+    </task>
+    <task id="LOCAL-00032" summary="Update post-answers">
+      <created>1589767823814</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1589767823814</updated>
+    </task>
+    <task id="LOCAL-00033" summary="Update post-answers">
+      <created>1589767979204</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1589767979204</updated>
+    </task>
+    <task id="LOCAL-00034" summary="Update post-answers">
+      <created>1589768167446</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1589768167446</updated>
+    </task>
+    <task id="LOCAL-00035" summary="Update post-answers">
+      <created>1589768408359</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1589768408359</updated>
+    </task>
+    <task id="LOCAL-00036" summary="Update post-answers">
+      <created>1589768574157</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1589768574157</updated>
+    </task>
+    <task id="LOCAL-00037" summary="Update post-answers">
+      <created>1589769457085</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1589769457085</updated>
+    </task>
+    <task id="LOCAL-00038" summary="Update post-answers">
+      <created>1589794300973</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1589794300973</updated>
+    </task>
+    <task id="LOCAL-00039" summary="Update post-answers">
+      <created>1589794351272</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1589794351272</updated>
+    </task>
+    <task id="LOCAL-00040" summary="Update post-answers">
+      <created>1589798350164</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1589798350165</updated>
+    </task>
+    <task id="LOCAL-00041" summary="Update post-answers">
+      <created>1589798728745</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1589798728745</updated>
+    </task>
+    <task id="LOCAL-00042" summary="Update post-answers">
+      <created>1589799080414</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1589799080414</updated>
+    </task>
+    <task id="LOCAL-00043" summary="Update post-answers">
+      <created>1589799332272</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1589799332272</updated>
+    </task>
+    <task id="LOCAL-00044" summary="Update post-answers">
+      <created>1589800242167</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1589800242167</updated>
+    </task>
+    <task id="LOCAL-00045" summary="Update post-answers">
+      <created>1589800786226</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1589800786226</updated>
+    </task>
+    <task id="LOCAL-00046" summary="Update post-answers">
+      <created>1589801218072</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1589801218072</updated>
+    </task>
+    <task id="LOCAL-00047" summary="Update post-answers">
+      <created>1589801474013</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1589801474013</updated>
+    </task>
+    <task id="LOCAL-00048" summary="Test image upload">
+      <created>1589802284896</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1589802284896</updated>
+    </task>
+    <task id="LOCAL-00049" summary="Test image upload">
+      <created>1589802377206</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1589802377206</updated>
+    </task>
+    <task id="LOCAL-00050" summary="Update url for testing">
+      <created>1589802681844</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1589802681853</updated>
+    </task>
+    <task id="LOCAL-00051" summary="Update url for production">
+      <created>1589805505133</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1589805505134</updated>
+    </task>
+    <task id="LOCAL-00052" summary="Fix image issues">
+      <created>1589810854821</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1589810854824</updated>
+    </task>
+    <task id="LOCAL-00053" summary="Fix image issues">
+      <created>1589812747363</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1589812747367</updated>
+    </task>
+    <task id="LOCAL-00054" summary="Fix image issues">
+      <created>1589813729574</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1589813729577</updated>
+    </task>
+    <task id="LOCAL-00055" summary="Add lite-server dependency">
+      <created>1592146282898</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1592146282904</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Update modules and register-candidate.js" />
+    <MESSAGE value="Update register-candidate.js" />
+    <MESSAGE value="Update register-candidate.html" />
+    <MESSAGE value="Format codebase" />
+    <MESSAGE value="Add post-answers.html" />
+    <MESSAGE value="Fix style issues post-answers.html" />
+    <MESSAGE value="Update Posting answers" />
+    <MESSAGE value="Refactor register-candidate.js" />
+    <MESSAGE value="Refactor request.js" />
+    <MESSAGE value="Update default import" />
+    <MESSAGE value="Update files" />
+    <MESSAGE value="Update admin-dashboard.js" />
+    <MESSAGE value="Update exam-year.js" />
+    <MESSAGE value="Log result" />
+    <MESSAGE value="Remove Log result" />
+    <MESSAGE value="Log response" />
+    <MESSAGE value="Return response" />
+    <MESSAGE value="Update post-answers.html" />
+    <MESSAGE value="Log subjects" />
+    <MESSAGE value="Update post-answers" />
+    <MESSAGE value="Test image upload" />
+    <MESSAGE value="Update url for testing" />
+    <MESSAGE value="Update url for production" />
+    <MESSAGE value="Fix image issues" />
+    <MESSAGE value="Add lite-server dependency" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add lite-server dependency" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="424" y="180" key="#Servers" timestamp="1589729074260">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="424" y="180" key="#Servers/0.0.1440.900@0.0.1440.900" timestamp="1589729074260" />
+  </component>
 </project>
