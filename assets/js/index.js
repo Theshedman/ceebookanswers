@@ -1,22 +1,22 @@
+import { baseUrl, get } from './utils/index.js';
+
 const accordion = document.querySelector('#accordion-1');
 const externalLink = document.querySelector('#external-link');
 const accordionSpanner = document.querySelector('#accordion-spanner');
 
 async function getExternalLink() {
-  const fetchUrl = ` https://ceebookanswers.herokuapp.com/external-links`;
+  const fetchUrl = `${baseUrl}/external-links`;
   try {
-    const externalLinkResponse = await fetch(fetchUrl);
-    return await externalLinkResponse.json();
+    return await get(fetchUrl);
   } catch (e) {
     console.log(e.message);
   }
 }
 
 async function getGeneralNotice() {
-  const fetchUrl = ` https://ceebookanswers.herokuapp.com/general-notices`;
+  const fetchUrl = `${baseUrl}/general-notices`;
   try {
-    const generalNoticeResponse = await fetch(fetchUrl);
-    const noticeData = await generalNoticeResponse.json();
+    const noticeData = await get(fetchUrl);
 
     if (!noticeData.data.length) {
       throw new Error();
