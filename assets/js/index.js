@@ -1,17 +1,7 @@
 import { baseUrl, get } from './utils/index.js';
 
 const accordion = document.querySelector('#accordion-1');
-const externalLink = document.querySelector('#external-link');
 const accordionSpanner = document.querySelector('#accordion-spanner');
-
-async function getExternalLink() {
-  const fetchUrl = `${baseUrl}/external-links`;
-  try {
-    return await get(fetchUrl);
-  } catch (e) {
-    console.log(e.message);
-  }
-}
 
 async function getGeneralNotice() {
   const fetchUrl = `${baseUrl}/general-notices`;
@@ -52,11 +42,7 @@ function accordionComponentBuilder(itemNumber, header, text) {
 }
 
 document.addEventListener('DOMContentLoaded', async (e) => {
-  const btnLink = await getExternalLink();
   const getNotice = await getGeneralNotice();
-
-  externalLink.href = `http://${btnLink.data[0].link}`;
-  externalLink.innerHTML = btnLink.data[0].text;
 
   accordionSpanner.classList.add('d-none');
   accordion.insertAdjacentHTML('beforeend', getNotice);
