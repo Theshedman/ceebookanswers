@@ -1,4 +1,9 @@
-import { baseUrl } from './utils/index.js';
+import {
+  baseUrl,
+  get,
+  logout,
+  accessDeniedMessage
+} from './utils/index.js';
 
 const guestRefreshPage = document.querySelector('#guest-refresh-page');
 const guestLogout = document.querySelector('#guest-logout');
@@ -7,7 +12,7 @@ const guestRefreshBtnSpanner = document.querySelector('#guest-refresh-btn-spanne
 const guestLogoutBtnSpanner = document.querySelector('#guest-logout-btn-spanner');
 
 
-loadAnswerNotice();
+loadAnswerNotice().then();
 
 guestRefreshPage.addEventListener('click', getAllAnswers);
 window.addEventListener('DOMContentLoaded', getAllAnswers);
@@ -22,15 +27,10 @@ async function getAllAnswers(e) {
 
   const subject = localStorage.getItem('subject');
   const examType = localStorage.getItem('examType');
-  const fetchUrl = ` https://ceebookanswers.herokuapp.com/answers?subject=${subject}&examType${examType}`;
+  const fetchUrl = `${baseUrl}/answers?subject=${subject}&examType=${examType}`;
 
   try {
-    const data = await fetch(fetchUrl, {
-      headers: {
-        Authorization: `Bearer ${window.localStorage.getItem('token')}`
-      }
-    });
-    const answers = await data.json();
+    const answers = await get(fetchUrl);
 
     if (answers.error) {
       throw new Error(answers.error.message);
@@ -39,15 +39,7 @@ async function getAllAnswers(e) {
 
     renderAnswers(answers.data);
   } catch (e) {
-    body.innerHTML = `<div class="highlight-clean">
-    <div class="container">
-        <div class="intro">
-            <h2 class="text-center">Access Denied.</h2>
-            <p class="text-center text-danger">Please Login to view answers... </p>
-        </div>
-        </div>
-</div>
-`;
+    body.innerHTML = accessDeniedMessage();
   }
 }
 
@@ -56,57 +48,44 @@ function renderAnswers(answers) {
   const sortedAnswers = answers.sort((a, b) => {
     return a.answerNumber - b.answerNumber;
   });
-  let answerContent = '';
+  let answerContent = [];
 
   for (let answer of sortedAnswers) {
     let answerPhoto = '';
 
     if (answer.photoUrl) {
-      answerPhoto = `<img width="80%" src="${baseUrl}/${answer.photoUrl}" alt="" />`;
+      if (answer.photoUrl.startsWith('uploads/')) {
+        answerPhoto = `<img width="80%" src="${baseUrl}/${answer.photoUrl}" alt="answer image" />`;
+      } else {
+        answerPhoto = `<img width="80%" src="${answer.photoUrl}" alt="answer image" />`;
+      }
     }
 
-    answerContent += `<div class="row">
+    answerContent.push(`<div class="row">
             <div class="col d-md-flex align-items-md-start col-2">
-                <button class="btn btn-primary" type="button">${answer.answerNumber}</button>
+                <button class="btn btn-primary" 
+                 type="button">${answer.answerNumber}</button>
             </div>
             <div class="col">
                 <div>${answer.answer}</div>${answerPhoto}
             </div>
         </div>
 <hr/>
-<hr/>`;
+<hr/>`);
   }
 
   guestRefreshBtnSpanner.classList.add('d-none');
   guestAnswerSpanner.classList.add('d-none');
   guestAnswerSpanner.classList.remove('d-flex');
-  answerContainer.insertAdjacentHTML('beforeend', answerContent);
+  answerContainer.innerHTML = answerContent.join('');
+  answerContent = [];
 }
 
 guestLogout.addEventListener('click', async (e) => {
   e.preventDefault();
-
-  const fetchUrl = `https://ceebookanswers.herokuapp.com/guests/logout`;
-  guestLogoutBtnSpanner.classList.remove('d-none');
-
   try {
-    const logout = await fetch(fetchUrl, {
-      headers: {
-        Authorization: `Bearer ${window.localStorage.getItem('token')}`
-      },
-      method: 'POST'
-    });
-    const loggedOut = logout.json();
-
-    if (loggedOut.error) {
-      throw new Error(loggedOut.error.message);
-    }
-    guestLogoutBtnSpanner.classList.add('d-none');
-    window.localStorage.removeItem('token');
-    window.localStorage.removeItem('subject');
-    window.localStorage.removeItem('examType');
-    window.localStorage.removeItem('phone');
-    window.location = './index.html';
+    guestLogoutBtnSpanner.classList.remove('d-none');
+    await logout(guestLogoutBtnSpanner);
   } catch (e) {
     alert(e.message);
   }
@@ -117,15 +96,10 @@ async function loadAnswerNotice() {
   const examTime = document.querySelector('#exam-time');
   const noticeBoard = document.querySelector('#notice-board');
   const subject = window.localStorage.getItem('subject');
-  const fetchUrl = ` https://ceebookanswers.herokuapp.com/answer-notices?subject=${subject}`;
+  const fetchUrl = `${baseUrl}/answer-notices?subject=${subject}`;
 
   try {
-    const data = await fetch(fetchUrl, {
-      headers: {
-        Authorization: `Bearer ${window.localStorage.getItem('token')}`
-      }
-    });
-    const answerNotice = await data.json();
+    const answerNotice = await get(fetchUrl);
 
     if (answerNotice.error) {
       throw new Error(answerNotice.error.message);
@@ -140,7 +114,7 @@ async function loadAnswerNotice() {
       subjectName.textContent = 'Answer';
     }
 
-    if (notice.notice) {
+    if (notice?.notice) {
       noticeBoard.classList.remove('d-none');
       noticeBoard.innerHTML = notice.notice;
     }
