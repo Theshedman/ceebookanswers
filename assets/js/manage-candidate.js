@@ -1,3 +1,12 @@
+import { deleteData } from './utils/index';
+import {
+  alert as candidateAlert,
+  baseUrl,
+  get,
+  manipulateAlert as manipulateUpdateCandidateElements,
+  update
+} from './utils/index.js';
+
 const candidatePhone = document.querySelector('#candidate-phone');
 const examType = document.querySelector('#exam-type');
 const examYear = document.querySelector('#exam-year');
@@ -31,19 +40,6 @@ window.addEventListener('DOMContentLoaded', loadExamYearAndSubjects);
 editCandidateBtn.addEventListener('click', searchCandidate);
 deleteCandidateBtn.addEventListener('click', deleteCandidate);
 viewCandidateBtn.addEventListener('click', getCandidatePhoneNumbers);
-
-const candidateAlert = (heading, message) => `<strong>${heading}!</strong> ${message}.
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-        </button>`;
-
-const manipulateupdateCandidateElements = (alertElement, searchFormContainer) => {
-  setTimeout(() => {
-    alertElement.classList.add('d-none');
-
-    searchFormContainer.classList.remove('d-none');
-  }, 3500);
-};
 
 async function getCandidatePhoneNumbers() {
   viewCandidateSpannerBtn.classList.remove('d-none');
@@ -83,22 +79,10 @@ async function getCandidatePhoneNumbers() {
     });
   }
 
-  const fetchUrl = ` https://ceebookanswers.herokuapp.com/candidates${queryString}`;
+  const fetchUrl = `${baseUrl}/candidates${queryString}`;
 
   try {
-    const response = await fetch(fetchUrl, {
-      method: 'GET',
-      mode: 'cors',
-      credentials: 'same-origin',
-      headers: {
-        'Content-Type': 'application/json',
-        Authorization: `Bearer ${window.localStorage.getItem('token')}`
-      },
-      redirect: 'follow',
-      referrerPolicy: 'no-referrer'
-    });
-
-    const responseData = await response.json();
+    const responseData = await get(fetchUrl);
     if (responseData.error) {
       throw  new Error(responseData.error.message);
     }
@@ -125,7 +109,7 @@ async function getCandidatePhoneNumbers() {
     updateCandidateAlert.classList.remove('d-none', 'alert-success');
     updateCandidateAlert.classList.add('alert-primary');
     updateCandidateAlert.innerHTML = candidateAlert('Error', e.message);
-    manipulateupdateCandidateElements(updateCandidateAlert, candidateForm);
+    manipulateUpdateCandidateElements(updateCandidateAlert, candidateForm);
   }
 }
 
@@ -136,20 +120,9 @@ async function searchCandidate() {
 
   try {
     if (!phone) throw new Error('Please Enter a phone number to continue!');
-    const fetchUrl = ` https://ceebookanswers.herokuapp.com/candidates/${phone}`;
-    const candidateResponse = await fetch(fetchUrl, {
-      method: 'GET',
-      mode: 'cors',
-      credentials: 'same-origin',
-      headers: {
-        'Content-Type': 'application/json',
-        Authorization: `Bearer ${window.localStorage.getItem('token')}`
-      },
-      redirect: 'follow',
-      referrerPolicy: 'no-referrer'
-    });
+    const fetchUrl = `${baseUrl}/candidates/${phone}`;
+    const responseData = await get(fetchUrl);
 
-    const responseData = await candidateResponse.json();
     if (responseData.error) {
       throw  new Error(responseData.error.message);
     }
@@ -187,7 +160,7 @@ async function searchCandidate() {
     updateCandidateAlert.classList.remove('d-none', 'alert-success');
     updateCandidateAlert.classList.add('alert-primary');
     updateCandidateAlert.innerHTML = candidateAlert('Error', e.message);
-    manipulateupdateCandidateElements(updateCandidateAlert, searchFormContainer);
+    manipulateUpdateCandidateElements(updateCandidateAlert, searchFormContainer);
   }
 }
 
@@ -209,35 +182,9 @@ updateCandidateBtn.addEventListener('click', async () => {
   if (password) candidateData.password = password;
   if (subjectArray.length) candidateData.subjects = subjectArray;
 
-  const fetchUrl = ` https://ceebookanswers.herokuapp.com/candidates/${phone}`;
-  const candidateAlert = (heading, message) => `<strong>${heading}!</strong> ${message}.
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-        </button>`;
-
-  const manipulateupdateCandidateElements = (alertElement, candidateForm) => {
-    setTimeout(() => {
-      alertElement.classList.add('d-none');
-
-      candidateForm.classList.remove('d-none');
-    }, 3500);
-  };
-
+  const fetchUrl = `${baseUrl}/candidates/${phone}`;
   try {
-    const response = await fetch(fetchUrl, {
-      method: 'PATCH',
-      mode: 'cors',
-      credentials: 'same-origin',
-      headers: {
-        'Content-Type': 'application/json',
-        Authorization: `Bearer ${window.localStorage.getItem('token')}`
-      },
-      redirect: 'follow',
-      referrerPolicy: 'no-referrer',
-      body: JSON.stringify(candidateData)
-    });
-
-    const responseData = await response.json();
+    const responseData = await update(fetchUrl, candidateData);
     if (responseData.error) {
       throw  new Error(responseData.error.message);
     }
@@ -248,7 +195,7 @@ updateCandidateBtn.addEventListener('click', async () => {
     updateCandidateAlert.classList.add('d-none', 'alert-success');
     updateCandidateAlert.innerHTML = candidateAlert('Success', 'Candidate is successufully updateed.');
     updateCandidateAlert.classList.remove('d-none');
-    manipulateupdateCandidateElements(updateCandidateAlert, candidateForm);
+    manipulateUpdateCandidateElements(updateCandidateAlert, candidateForm);
 
     allSubjects.checked = false;
     subjects.map(subject => subject.checked = false);
@@ -261,7 +208,7 @@ updateCandidateBtn.addEventListener('click', async () => {
     updateCandidateAlert.classList.remove('d-none', 'alert-success');
     updateCandidateAlert.classList.add('alert-primary');
     updateCandidateAlert.innerHTML = candidateAlert('Error', e.message);
-    manipulateupdateCandidateElements(updateCandidateAlert, candidateForm);
+    manipulateUpdateCandidateElements(updateCandidateAlert, candidateForm);
   }
 });
 
@@ -331,20 +278,9 @@ function loadExamYear() {
 }
 
 async function loadSubjects() {
-  const fetchUrl = ` https://ceebookanswers.herokuapp.com/subjects`;
   try {
-    const response = await fetch(fetchUrl, {
-      method: 'GET',
-      mode: 'cors',
-      credentials: 'same-origin',
-      headers: {
-        'Content-Type': 'application/json',
-        Authorization: `Bearer ${window.localStorage.getItem('token')}`
-      },
-      redirect: 'follow',
-      referrerPolicy: 'no-referrer'
-    });
-    const subjects = await response.json();
+    const fetchUrl = `${baseUrl}/subjects`;
+    const subjects = await get(fetchUrl);
 
     if (subjects.error) {
       throw new Error(subjects.error.message);
@@ -377,19 +313,8 @@ async function deleteCandidate() {
 
   try {
     if (!phone) throw new Error('Please Enter a phone number to continue!');
-    const fetchUrl = ` https://ceebookanswers.herokuapp.com/candidates/${phone}`;
-    const response = await fetch(fetchUrl, {
-      method: 'DELETE',
-      mode: 'cors',
-      credentials: 'same-origin',
-      headers: {
-        'Content-Type': 'application/json',
-        Authorization: `Bearer ${window.localStorage.getItem('token')}`
-      },
-      redirect: 'follow',
-      referrerPolicy: 'no-referrer'
-    });
-    const responseData = await response.json();
+    const fetchUrl = `${baseUrl}/candidates/${phone}`;
+    const responseData = await deleteData(fetchUrl);
     if (responseData.error) {
       throw  new Error(responseData.error.message);
     }
@@ -400,7 +325,7 @@ async function deleteCandidate() {
     updateCandidateAlert.classList.add('d-none', 'alert-success');
     updateCandidateAlert.innerHTML = candidateAlert('Success', 'Candidate is successufully Deleted.');
     updateCandidateAlert.classList.remove('d-none');
-    manipulateupdateCandidateElements(updateCandidateAlert, searchFormContainer);
+    manipulateUpdateCandidateElements(updateCandidateAlert, searchFormContainer);
   } catch (e) {
     deleteCandidateSpinnerBtn.classList.add('d-none');
 
@@ -410,6 +335,6 @@ async function deleteCandidate() {
     updateCandidateAlert.classList.remove('d-none', 'alert-success');
     updateCandidateAlert.classList.add('alert-primary');
     updateCandidateAlert.innerHTML = candidateAlert('Error', e.message);
-    manipulateupdateCandidateElements(updateCandidateAlert, searchFormContainer);
+    manipulateUpdateCandidateElements(updateCandidateAlert, searchFormContainer);
   }
 }
