@@ -1,3 +1,5 @@
+import { baseUrl, post } from './utils/index.js';
+
 const candidatePhoneField = document.querySelector('#candidate-phone');
 const candidatePasswordField = document.querySelector('#candidate-password');
 const candidateLoginBtn = document.querySelector('#candidate-login-btn');
@@ -22,6 +24,7 @@ candidateLoginBtn.addEventListener('click', async (e) => {
     }
 
     window.localStorage.setItem('token', candidateLoginData.data.token);
+    window.localStorage.setItem('type', candidateLoginData.data.candidate.type);
     window.localStorage.setItem('phone', candidateLoginData.data.candidate.phone);
     window.localStorage.setItem('examType', candidateLoginData.data.candidate.examType);
 
@@ -37,21 +40,10 @@ candidateLoginBtn.addEventListener('click', async (e) => {
 });
 
 const candidateSubmitLoginDetails = async (phone, password) => {
-  const fetchUrl = ` https://ceebookanswers.herokuapp.com/candidates/login`;
-  const data = { phone, password };
   try {
-    const response = await fetch(fetchUrl, {
-      method: 'POST',
-      mode: 'cors',
-      credentials: 'same-origin',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      redirect: 'follow',
-      referrerPolicy: 'no-referrer',
-      body: JSON.stringify(data)
-    });
-    return await response.json();
+    const fetchUrl = `${baseUrl}/candidates/login`;
+    const data = { phone, password };
+    return await post(fetchUrl, data);
   } catch (e) {
     throw  new Error(e.message);
   }

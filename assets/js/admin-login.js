@@ -1,3 +1,5 @@
+import { baseUrl, post } from './utils/index.js';
+
 const adminPhoneField = document.querySelector('#admin-phone');
 const adminPasswordField = document.querySelector('#admin-password');
 const adminLoginBtn = document.querySelector('#admin-login-btn');
@@ -23,6 +25,7 @@ adminLoginBtn.addEventListener('click', async (e) => {
 
     window.localStorage.setItem('token', adminLoginData.data.token);
     window.localStorage.setItem('phone', adminLoginData.data.admin.phone);
+    window.localStorage.setItem('type', adminLoginData.data.admin.type);
     window.localStorage.setItem('firstName', adminLoginData.data.admin.firstName);
     window.localStorage.setItem('lastName', adminLoginData.data.admin.lastName);
 
@@ -36,21 +39,10 @@ adminLoginBtn.addEventListener('click', async (e) => {
 });
 
 const adminSubmitLoginDetails = async (phone, password) => {
-  const fetchUrl = ` https://ceebookanswers.herokuapp.com/admins/login`;
-  const data = { phone, password };
   try {
-    const response = await fetch(fetchUrl, {
-      method: 'POST',
-      mode: 'cors',
-      credentials: 'same-origin',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      redirect: 'follow',
-      referrerPolicy: 'no-referrer',
-      body: JSON.stringify(data)
-    });
-    return await response.json();
+    const fetchUrl = `${baseUrl}/admins/login`;
+    const data = { phone, password };
+    return await post(fetchUrl, data);
   } catch (e) {
     console.log(e.message);
   }
