@@ -13,7 +13,6 @@ const noticeBody = document.querySelector('#notice-body');
 const createNotice = document.querySelector('#create-notice');
 const noticeBoard = document.querySelector('#notice-board');
 const submitNoticeSpannerBtn = document.querySelector('#submit-notice-spanner-btn');
-const editNoticeSpannerBtn = document.querySelector('#edit-notice-spanner-btn');
 const submitNoticeAlert = document.querySelector('#submit-notice-alert');
 const noticeForm = document.querySelector('#notice-form');
 
@@ -96,7 +95,6 @@ async function populateNoticeBoard() {
 
 
 noticeBoard.addEventListener('click', async (e) => {
-  const tableRow = e.target.parentNode.parentNode.parentNode;
   // Delete notice
   if (e.target.textContent.startsWith('Del')) {
     const rowNum = e.target.name;
@@ -150,7 +148,6 @@ async function updateRow(rowNum) {
   const id = document.querySelector(`#id-${rowNum}`).textContent.trim();
   const noticeText = document.querySelector(`#notice-text-${rowNum}`);
   const headingText = document.querySelector(`#heading-text-${rowNum}`);
-  const updateBtn = document.querySelector(`#update-btn-${rowNum}`);
   const updateSpanner = document.querySelector(`#update-spanner-${rowNum}`);
 
   updateSpanner.classList.remove('d-none');
