@@ -61,7 +61,7 @@ export async function updatePassword(newPasswordField,confirmPasswordField, oldP
 async function changePasswordHelper(phone, oldPassword, password, examType) {
   try {
     const type = window.localStorage.getItem('type');
-    const data = { phone, password, examType};
+    const data = { phone, password };
     let fetchUrl = '';
 
     if (type === 'admin') {
@@ -69,6 +69,7 @@ async function changePasswordHelper(phone, oldPassword, password, examType) {
     } else if (type === 'candidate') {
       fetchUrl = `${baseUrl}/candidates/me/updatePassword`;
       data.oldPassword = oldPassword;
+      data.examType = examType;
     }
 
     return await update(fetchUrl, data);
