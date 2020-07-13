@@ -26,11 +26,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ba089427-999f-493e-a25a-5f5ac2692d0f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/theshedman.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/theshedman.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/answer-page.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/answer-page.js" afterDir="false" />
     </list>
     <list id="1ff9520b-77b1-460a-bdcb-67ac24c55052" name="Refactor Candidate dashboard" comment="" />
     <list id="7967b855-538b-464e-b163-85185c480b40" name="Update all the script tags in the html files to JavaScript modules" comment="" />
@@ -64,7 +61,11 @@
     <property name="TODO_SCOPE" value="All Places" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -84,76 +85,6 @@
       <workItem from="1590525097131" duration="451000" />
       <workItem from="1590529216059" duration="6000" />
       <workItem from="1590848155405" duration="361000" />
-    </task>
-    <task id="LOCAL-00034" summary="Update post-answers">
-      <created>1589768167446</created>
-      <option name="number" value="00034" />
-      <option name="presentableId" value="LOCAL-00034" />
-      <option name="project" value="LOCAL" />
-      <updated>1589768167446</updated>
-    </task>
-    <task id="LOCAL-00035" summary="Update post-answers">
-      <created>1589768408359</created>
-      <option name="number" value="00035" />
-      <option name="presentableId" value="LOCAL-00035" />
-      <option name="project" value="LOCAL" />
-      <updated>1589768408359</updated>
-    </task>
-    <task id="LOCAL-00036" summary="Update post-answers">
-      <created>1589768574157</created>
-      <option name="number" value="00036" />
-      <option name="presentableId" value="LOCAL-00036" />
-      <option name="project" value="LOCAL" />
-      <updated>1589768574157</updated>
-    </task>
-    <task id="LOCAL-00037" summary="Update post-answers">
-      <created>1589769457085</created>
-      <option name="number" value="00037" />
-      <option name="presentableId" value="LOCAL-00037" />
-      <option name="project" value="LOCAL" />
-      <updated>1589769457085</updated>
-    </task>
-    <task id="LOCAL-00038" summary="Update post-answers">
-      <created>1589794300973</created>
-      <option name="number" value="00038" />
-      <option name="presentableId" value="LOCAL-00038" />
-      <option name="project" value="LOCAL" />
-      <updated>1589794300973</updated>
-    </task>
-    <task id="LOCAL-00039" summary="Update post-answers">
-      <created>1589794351272</created>
-      <option name="number" value="00039" />
-      <option name="presentableId" value="LOCAL-00039" />
-      <option name="project" value="LOCAL" />
-      <updated>1589794351272</updated>
-    </task>
-    <task id="LOCAL-00040" summary="Update post-answers">
-      <created>1589798350164</created>
-      <option name="number" value="00040" />
-      <option name="presentableId" value="LOCAL-00040" />
-      <option name="project" value="LOCAL" />
-      <updated>1589798350165</updated>
-    </task>
-    <task id="LOCAL-00041" summary="Update post-answers">
-      <created>1589798728745</created>
-      <option name="number" value="00041" />
-      <option name="presentableId" value="LOCAL-00041" />
-      <option name="project" value="LOCAL" />
-      <updated>1589798728745</updated>
-    </task>
-    <task id="LOCAL-00042" summary="Update post-answers">
-      <created>1589799080414</created>
-      <option name="number" value="00042" />
-      <option name="presentableId" value="LOCAL-00042" />
-      <option name="project" value="LOCAL" />
-      <updated>1589799080414</updated>
-    </task>
-    <task id="LOCAL-00043" summary="Update post-answers">
-      <created>1589799332272</created>
-      <option name="number" value="00043" />
-      <option name="presentableId" value="LOCAL-00043" />
-      <option name="project" value="LOCAL" />
-      <updated>1589799332272</updated>
     </task>
     <task id="LOCAL-00044" summary="Update post-answers">
       <created>1589800242167</created>
@@ -428,7 +359,77 @@
       <option name="project" value="LOCAL" />
       <updated>1592224277066</updated>
     </task>
-    <option name="localTasksCounter" value="83" />
+    <task id="LOCAL-00083" summary="Add yarn start script">
+      <created>1592232403103</created>
+      <option name="number" value="00083" />
+      <option name="presentableId" value="LOCAL-00083" />
+      <option name="project" value="LOCAL" />
+      <updated>1592232403105</updated>
+    </task>
+    <task id="LOCAL-00084" summary="Update site external link to the ceebook lite">
+      <created>1592232433467</created>
+      <option name="number" value="00084" />
+      <option name="presentableId" value="LOCAL-00084" />
+      <option name="project" value="LOCAL" />
+      <updated>1592232433467</updated>
+    </task>
+    <task id="LOCAL-00085" summary="Update config">
+      <created>1592232443810</created>
+      <option name="number" value="00085" />
+      <option name="presentableId" value="LOCAL-00085" />
+      <option name="project" value="LOCAL" />
+      <updated>1592232443810</updated>
+    </task>
+    <task id="LOCAL-00086" summary="Add input for examType">
+      <created>1594614918428</created>
+      <option name="number" value="00086" />
+      <option name="presentableId" value="LOCAL-00086" />
+      <option name="project" value="LOCAL" />
+      <updated>1594614918437</updated>
+    </task>
+    <task id="LOCAL-00087" summary="Update verify subscription to require examType">
+      <created>1594615004001</created>
+      <option name="number" value="00087" />
+      <option name="presentableId" value="LOCAL-00087" />
+      <option name="project" value="LOCAL" />
+      <updated>1594615004001</updated>
+    </task>
+    <task id="LOCAL-00088" summary="Update candidate login to require examType">
+      <created>1594615206741</created>
+      <option name="number" value="00088" />
+      <option name="presentableId" value="LOCAL-00088" />
+      <option name="project" value="LOCAL" />
+      <updated>1594615206741</updated>
+    </task>
+    <task id="LOCAL-00089" summary="Load examType on page load">
+      <created>1594615236221</created>
+      <option name="number" value="00089" />
+      <option name="presentableId" value="LOCAL-00089" />
+      <option name="project" value="LOCAL" />
+      <updated>1594615236221</updated>
+    </task>
+    <task id="LOCAL-00090" summary="Update changePassword to require examType">
+      <created>1594615826015</created>
+      <option name="number" value="00090" />
+      <option name="presentableId" value="LOCAL-00090" />
+      <option name="project" value="LOCAL" />
+      <updated>1594615826015</updated>
+    </task>
+    <task id="LOCAL-00091" summary="Update ChangePassword">
+      <created>1594619477622</created>
+      <option name="number" value="00091" />
+      <option name="presentableId" value="LOCAL-00091" />
+      <option name="project" value="LOCAL" />
+      <updated>1594619477622</updated>
+    </task>
+    <task id="LOCAL-00092" summary="Update manage-candidate file to support registration for multiple exam types">
+      <created>1594636867796</created>
+      <option name="number" value="00092" />
+      <option name="presentableId" value="LOCAL-00092" />
+      <option name="project" value="LOCAL" />
+      <updated>1594636867797</updated>
+    </task>
+    <option name="localTasksCounter" value="93" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -459,16 +460,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Update admin-dashboard.html to include external link and subjects" />
-    <MESSAGE value="Update admin-dashboard.js include link to general-notice page" />
-    <MESSAGE value="Update .gitignore file to blacklist node_modules" />
-    <MESSAGE value="Update candidate-answers.html file" />
-    <MESSAGE value="Update editor config files" />
-    <MESSAGE value="Remove the log statement in the post-answers.js file" />
-    <MESSAGE value="Update the request.js module to include delete and update functions" />
-    <MESSAGE value="Add general-notice.html page" />
-    <MESSAGE value="Add general-notice.js file" />
-    <MESSAGE value="Update Editor Config" />
     <MESSAGE value="Fix alignment and size issue and as well replace input element for updating notice with textarea" />
     <MESSAGE value="Add logout module for handling logouts" />
     <MESSAGE value="Add Change Password module for handling changing of passwords" />
@@ -484,7 +475,17 @@
     <MESSAGE value="Update file by extracting out urls into baseURl" />
     <MESSAGE value="Update default export file" />
     <MESSAGE value="Update configs" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update configs" />
+    <MESSAGE value="Add yarn start script" />
+    <MESSAGE value="Update site external link to the ceebook lite" />
+    <MESSAGE value="Update config" />
+    <MESSAGE value="Add input for examType" />
+    <MESSAGE value="Update verify subscription to require examType" />
+    <MESSAGE value="Update candidate login to require examType" />
+    <MESSAGE value="Load examType on page load" />
+    <MESSAGE value="Update changePassword to require examType" />
+    <MESSAGE value="Update ChangePassword" />
+    <MESSAGE value="Update manage-candidate file to support registration for multiple exam types" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update manage-candidate file to support registration for multiple exam types" />
   </component>
   <component name="WindowStateProjectService">
     <state x="424" y="180" key="#Servers" timestamp="1589729074260">
@@ -495,9 +496,25 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="413" y="159" key="RollbackChangesDialog/0.0.1440.900@0.0.1440.900" timestamp="1592221998872" />
+    <state x="280" y="109" key="SettingsEditor" timestamp="1594619493960">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="280" y="109" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1594619493960" />
     <state x="571" y="371" key="VCS.ChangelistChooser" timestamp="1592223523958">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="571" y="371" key="VCS.ChangelistChooser/0.0.1440.900@0.0.1440.900" timestamp="1592223523958" />
+    <state x="319" y="189" key="Vcs.Push.Dialog.v2" timestamp="1594636879316">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="319" y="189" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1594636879316" />
+    <state x="477" y="324" width="568" height="472" key="org.intellij.images.editor.actions.BackgroundImageDialog" timestamp="1594619227724">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="477" y="324" width="568" height="472" key="org.intellij.images.editor.actions.BackgroundImageDialog/0.0.1440.900@0.0.1440.900" timestamp="1594619227724" />
+    <state x="383" y="194" width="672" height="678" key="search.everywhere.popup" timestamp="1594620688957">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="383" y="194" width="672" height="678" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1594620688957" />
   </component>
 </project>
