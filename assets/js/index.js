@@ -1,7 +1,9 @@
-import { baseUrl, get } from './utils/index.js';
+import { baseUrl, get, examTypes } from './utils/index.js';
 
 const accordion = document.querySelector('#accordion-1');
 const accordionSpanner = document.querySelector('#accordion-spanner');
+const examTypeLogin = document.querySelector('#exam-type-login');
+const examTypeVerify = document.querySelector('#exam-type-verify');
 
 async function getGeneralNotice() {
   const fetchUrl = `${baseUrl}/general-notices`;
@@ -42,8 +44,14 @@ function accordionComponentBuilder(itemNumber, header, text) {
 }
 
 document.addEventListener('DOMContentLoaded', async (e) => {
+  loadExamType();
   const getNotice = await getGeneralNotice();
 
   accordionSpanner.classList.add('d-none');
   accordion.insertAdjacentHTML('beforeend', getNotice);
 });
+
+function loadExamType() {
+  examTypeLogin.innerHTML = examTypes();
+  examTypeVerify.innerHTML = examTypes();
+}
