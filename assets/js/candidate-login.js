@@ -5,19 +5,21 @@ const candidatePasswordField = document.querySelector('#candidate-password');
 const candidateLoginBtn = document.querySelector('#candidate-login-btn');
 const candidateLoginErrorMessage = document.querySelector('#candidate-login-error-message');
 const candidateLoginSpanner = document.querySelector('#candidate-login-spanner');
+const examTypeLogin = document.querySelector('#exam-type-login');
 
 candidateLoginBtn.addEventListener('click', async (e) => {
   e.preventDefault();
 
   const phone = candidatePhoneField.value;
   const password = candidatePasswordField.value;
+  const examType = examTypeLogin.value;
 
   candidateLoginErrorMessage.textContent = '';
   candidateLoginErrorMessage.classList.add('d-none');
   candidateLoginSpanner.classList.remove('d-none');
 
   try {
-    const candidateLoginData = await candidateSubmitLoginDetails(phone, password);
+    const candidateLoginData = await candidateSubmitLoginDetails(phone, password, examType);
 
     if (candidateLoginData.error) {
       throw new Error(candidateLoginData.error.message);
@@ -39,10 +41,10 @@ candidateLoginBtn.addEventListener('click', async (e) => {
   }
 });
 
-const candidateSubmitLoginDetails = async (phone, password) => {
+const candidateSubmitLoginDetails = async (phone, password, examType) => {
   try {
     const fetchUrl = `${baseUrl}/candidates/login`;
-    const data = { phone, password };
+    const data = { phone, password, examType };
     return await post(fetchUrl, data);
   } catch (e) {
     throw  new Error(e.message);
