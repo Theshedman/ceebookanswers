@@ -49,6 +49,7 @@
         <div class="form-group">
             <input id="search-phone" class="form-control"
                    type="tel" placeholder="Candidate Number">
+            <select id="exam-type-modify" class="form-control"></select>
         </div>
         <div class="form-row">
             <div class="col col-6">
@@ -86,18 +87,8 @@
             </div>
             <div class="col">
                 <div class="form-group">
-                    <select id="view-exam-type" class="form-control">
-                        <optgroup label="Exam Type">
-                            <option value="" selected="">Exam Type</option>
-                            <option value="WAEC">WAEC</option>
-                            <option value="NECO">NECO</option>
-                            <option value="WAEC GCE 1ST SERIES">WAEC GCE 1ST SERIES</option>
-                            <option value="WAEC GCE 2ND SERIES">WAEC GCE 2ND SERIES</option>
-                            <option value="NECO GCE">NECO GCE</option>
-                            <option value="NABTEB">NABTEB</option>
-                            <option value="NABTEB GCE">NABTEB GCE</option>
-                        </optgroup>
-                    </select></div>
+                    <select id="view-exam-type" class="form-control"></select>
+                </div>
             </div>
             <div class="col">
                 <div class="form-group">
@@ -140,26 +131,15 @@
         <form id="candidate-form">
             <div class="form-row">
                 <div class="col col-6">
-                    <div class="form-group"><label>Phone:</label><input id="candidate-phone"
-                                                                        class="form-control"
-                                                                        type="tel"
-                                                                        placeholder="Phone Number">
+                    <div class="form-group">
+                        <label>Phone:</label>
+                        <input id="candidate-phone" class="form-control" type="tel" placeholder="Phone Number">
                     </div>
                 </div>
                 <div class="col">
-                    <div class="form-group"><label>Exam Type:</label><select id="exam-type"
-                                                                             class="form-control">
-                        <optgroup label="Exam Type">
-                            <option value="" selected="">Select Exam</option>
-                            <option value="WAEC">WAEC</option>
-                            <option value="NECO">NECO</option>
-                            <option value="WAEC GCE 1ST SERIES">WAEC GCE 1ST SERIES</option>
-                            <option value="WAEC GCE 2ND SERIES">WAEC GCE 2ND SERIES</option>
-                            <option value="NECO GCE">NECO GCE</option>
-                            <option value="NABTEB">NABTEB</option>
-                            <option value="NABTEB GCE">NABTEB GCE</option>
-                        </optgroup>
-                    </select></div>
+                    <div class="form-group"><label>Exam Type:</label>
+                        <select id="exam-type" class="form-control"></select>
+                    </div>
                 </div>
             </div>
             <div class="form-row">

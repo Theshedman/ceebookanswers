@@ -1,10 +1,11 @@
-import { deleteData } from './utils/index';
 import {
   alert as candidateAlert,
   baseUrl,
   get,
   manipulateAlert as manipulateUpdateCandidateElements,
-  update
+  update,
+  examTypes,
+  deleteData
 } from './utils/index.js';
 
 const candidatePhone = document.querySelector('#candidate-phone');
@@ -33,10 +34,11 @@ const viewCandidateSpannerBtn = document.querySelector('#view-candidate-spanner-
 const viewCandidate = document.querySelector('#view-candidate');
 const viewSubjectContainer = document.querySelector('#view-subject-container');
 const viewSubjectParentContainer = document.querySelector('#view-subject-container-parent');
+const examTypeModify = document.querySelector('#exam-type-modify');
 
 let subjectArray = [];
 
-window.addEventListener('DOMContentLoaded', loadExamYearAndSubjects);
+window.addEventListener('DOMContentLoaded', loadExamData);
 editCandidateBtn.addEventListener('click', searchCandidate);
 deleteCandidateBtn.addEventListener('click', deleteCandidate);
 viewCandidateBtn.addEventListener('click', getCandidatePhoneNumbers);
@@ -120,7 +122,7 @@ async function searchCandidate() {
 
   try {
     if (!phone) throw new Error('Please Enter a phone number to continue!');
-    const fetchUrl = `${baseUrl}/candidates/${phone}`;
+    const fetchUrl = `${baseUrl}/candidates/one?phone=${phone}&examType=${examTypeModify.value}`;
     const responseData = await get(fetchUrl);
 
     if (responseData.error) {
@@ -182,7 +184,7 @@ updateCandidateBtn.addEventListener('click', async () => {
   if (password) candidateData.password = password;
   if (subjectArray.length) candidateData.subjects = subjectArray;
 
-  const fetchUrl = `${baseUrl}/candidates/${phone}`;
+  const fetchUrl = `${baseUrl}/candidates/one?phone=${phone}&examType=${exam_type}`;
   try {
     const responseData = await update(fetchUrl, candidateData);
     if (responseData.error) {
@@ -251,9 +253,10 @@ subjectContainer.addEventListener('click', (e) => {
 });
 
 
-function loadExamYearAndSubjects() {
+async function loadExamData() {
   loadExamYear();
-  loadSubjects();
+  await loadSubjects();
+  loadExamType();
 }
 
 function loadExamYear() {
@@ -307,13 +310,19 @@ async function loadSubjects() {
   }
 }
 
+function loadExamType() {
+  viewExamType.innerHTML = examTypes();
+  examType.innerHTML = examTypes();
+  examTypeModify.innerHTML = examTypes();
+}
+
 async function deleteCandidate() {
   const phone = searchCandidatePhone.value;
   deleteCandidateSpinnerBtn.classList.remove('d-none');
 
   try {
     if (!phone) throw new Error('Please Enter a phone number to continue!');
-    const fetchUrl = `${baseUrl}/candidates/${phone}`;
+    const fetchUrl = `${baseUrl}/candidates/one?phone=${phone}&examType=${examTypeModify.value}`;
     const responseData = await deleteData(fetchUrl);
     if (responseData.error) {
       throw  new Error(responseData.error.message);
