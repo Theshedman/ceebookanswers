@@ -28,7 +28,8 @@ export async function updatePassword(newPasswordField,confirmPasswordField, oldP
     passwordErrorField.classList.add('d-none');
   }
   try {
-    const changePassword = await changePasswordHelper(phone, oldPassword, password);
+    const examType = localStorage.getItem('examType');
+    const changePassword = await changePasswordHelper(phone, oldPassword, password, examType);
 
     if (changePassword.error) {
       throw new Error(changePassword.error.message);
@@ -57,10 +58,10 @@ export async function updatePassword(newPasswordField,confirmPasswordField, oldP
   }
 }
 
-async function changePasswordHelper(phone, oldPassword, password) {
+async function changePasswordHelper(phone, oldPassword, password, examType) {
   try {
     const type = window.localStorage.getItem('type');
-    const data = { phone, password };
+    const data = { phone, password, examType};
     let fetchUrl = '';
 
     if (type === 'admin') {
