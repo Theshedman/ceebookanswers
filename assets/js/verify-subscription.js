@@ -6,6 +6,7 @@ const phoneTitle = document.querySelector('#phone-title');
 const verifiedSubjects = document.querySelector('#verified-subjects');
 const subjectTitle = document.querySelector('#subject-title');
 const verifySubSpanner = document.querySelector('#verify-sub-spanner');
+const examTypeVerify = document.querySelector('#exam-type-verify');
 
 submitBtn.addEventListener('click', fetchApiBtn);
 phoneInput.addEventListener('keypress', fetchApiEnter);
@@ -35,7 +36,7 @@ async function fetchApi() {
     }
     const phone = phoneInput.value;
     phoneInput.value = '';
-    const fetchUrl = ` https://ceebookanswers.herokuapp.com/candidates/verifySubscription/${phone}`;
+    const fetchUrl = ` https://ceebookanswers.herokuapp.com/candidates/verifySubscription?phone=${phone}&examType=${examTypeVerify.value}`;
 
     const data = await fetch(fetchUrl);
     const verified = await data.json();
