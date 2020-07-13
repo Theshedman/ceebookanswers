@@ -1,9 +1,4 @@
-import {
-  baseUrl,
-  get,
-  logout,
-  accessDeniedMessage
-} from './utils/index.js';
+import { accessDeniedMessage, baseUrl, get, logout } from './utils/index.js';
 
 const guestRefreshPage = document.querySelector('#guest-refresh-page');
 const guestLogout = document.querySelector('#guest-logout');
@@ -54,11 +49,7 @@ function renderAnswers(answers) {
     let answerPhoto = '';
 
     if (answer.photoUrl) {
-      if (answer.photoUrl.startsWith('uploads/')) {
-        answerPhoto = `<img width="80%" src="${baseUrl}/${answer.photoUrl}" alt="answer image" />`;
-      } else {
-        answerPhoto = `<img width="80%" src="${answer.photoUrl}" alt="answer image" />`;
-      }
+      answerPhoto = `<img width="80%" src="${answer.photoUrl}" alt="answer image" />`;
     }
 
     answerContent.push(`<div class="row">
