@@ -54,6 +54,10 @@ createGuestsPassword.addEventListener('click', () => {
   window.location = './register-guess.html';
 });
 
+manageAnswerNotices.addEventListener('click', () => {
+  window.location = './answer-notice.html';
+});
+
 adminChangePassword.addEventListener('click', (e) => {
   togglePasswordFormAndAlert(adminPasswordBtnsContainer, adminChangePasswordForm);
 });

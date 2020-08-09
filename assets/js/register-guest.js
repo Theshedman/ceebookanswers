@@ -185,14 +185,14 @@ function editRow(rowNum) {
   updateBtn.classList.remove('d-none');
 
   subjectColumn.innerHTML = `<input class="form-control" id="guest-edit-subject-text-${rowNum}" type="text" value="${subject}" />`;
-  examTypeColumn.innerHTML = `<input class="form-control" id="guest-edit-exam-typ-text-${rowNum}" type="text" value="${examType}" />`;
+  examTypeColumn.innerHTML = `<input class="form-control" id="guest-edit-exam-type-text-${rowNum}" type="text" value="${examType}" />`;
   examYearColumn.innerHTML = `<input class="form-control" id="guest-edit-exam-year-text-${rowNum}" type="text" value="${examYear}" />`;
   passwordColumn.innerHTML = `<input class="form-control" id="guest-edit-password-text-${rowNum}" type="text" value="${password}" />`;
 }
 
 async function updateRow(rowNum) {
   const id = document.querySelector(`#guest-edit-id-${rowNum}`).textContent.trim();
-  const examTypeText = document.querySelector(`#guest-edit-exam-typ-text-${rowNum}`);
+  const examTypeText = document.querySelector(`#guest-edit-exam-type-text-${rowNum}`);
   const passwordText = document.querySelector(`#guest-edit-password-text-${rowNum}`);
   const updateSpanner = document.querySelector(`#update-spanner-${rowNum}`);
 

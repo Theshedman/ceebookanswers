@@ -26,7 +26,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ba089427-999f-493e-a25a-5f5ac2692d0f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/answer-notice.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/js/answer-notice.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/admin-dashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/admin-dashboard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/register-guest.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/register-guest.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
     </list>
     <list id="1ff9520b-77b1-460a-bdcb-67ac24c55052" name="Refactor Candidate dashboard" comment="" />
     <list id="7967b855-538b-464e-b163-85185c480b40" name="Update all the script tags in the html files to JavaScript modules" comment="" />
@@ -38,8 +43,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="JavaScript File" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -87,13 +92,6 @@
       <workItem from="1590525097131" duration="451000" />
       <workItem from="1590529216059" duration="6000" />
       <workItem from="1590848155405" duration="361000" />
-    </task>
-    <task id="LOCAL-00049" summary="Test image upload">
-      <created>1589802377206</created>
-      <option name="number" value="00049" />
-      <option name="presentableId" value="LOCAL-00049" />
-      <option name="project" value="LOCAL" />
-      <updated>1589802377206</updated>
     </task>
     <task id="LOCAL-00050" summary="Update url for testing">
       <created>1589802681844</created>
@@ -431,7 +429,14 @@
       <option name="project" value="LOCAL" />
       <updated>1596952594523</updated>
     </task>
-    <option name="localTasksCounter" value="98" />
+    <task id="LOCAL-00098" summary="Update password board after successfully creating guest password">
+      <created>1596953267747</created>
+      <option name="number" value="00098" />
+      <option name="presentableId" value="LOCAL-00098" />
+      <option name="project" value="LOCAL" />
+      <updated>1596953267748</updated>
+    </task>
+    <option name="localTasksCounter" value="99" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -462,7 +467,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Update the alert module" />
     <MESSAGE value="Update all the script tags in the html files to JavaScript modules" />
     <MESSAGE value="Refactor Candidate dashboard" />
     <MESSAGE value="Refactor login files for all the users" />
@@ -487,7 +491,8 @@
     <MESSAGE value="Add exam type on guess login" />
     <MESSAGE value="Add register guest password password" />
     <MESSAGE value="Edit guest password" />
-    <option name="LAST_COMMIT_MESSAGE" value="Edit guest password" />
+    <MESSAGE value="Update password board after successfully creating guest password" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update password board after successfully creating guest password" />
   </component>
   <component name="WindowStateProjectService">
     <state x="424" y="180" key="#Servers" timestamp="1589729074260">
@@ -506,10 +511,10 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="571" y="371" key="VCS.ChangelistChooser/0.0.1440.900@0.0.1440.900" timestamp="1592223523958" />
-    <state x="319" y="189" key="Vcs.Push.Dialog.v2" timestamp="1596952602310">
+    <state x="319" y="189" key="Vcs.Push.Dialog.v2" timestamp="1596953273793">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="319" y="189" key="Vcs.Push.Dialog.v2/0.0.1440.900/-165.-900.1600.900@0.0.1440.900" timestamp="1596952602310" />
+    <state x="319" y="189" key="Vcs.Push.Dialog.v2/0.0.1440.900/-165.-900.1600.900@0.0.1440.900" timestamp="1596953273793" />
     <state x="319" y="189" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1594637713829" />
     <state x="477" y="324" width="568" height="472" key="org.intellij.images.editor.actions.BackgroundImageDialog" timestamp="1594619227724">
       <screen x="0" y="0" width="1440" height="900" />
