@@ -43,6 +43,8 @@ btnSubmitGuessPassword.addEventListener('click', async () => {
     submitGuessPasswordAlert.innerHTML = guestPasswordAlert('Success', 'Guess Password created successfully.');
     submitGuessPasswordAlert.classList.remove('d-none');
     manipulateAlert(submitGuessPasswordAlert, guestPasswordForm);
+
+    await populatePasswordBoard();
   } catch (e) {
     submitGuessSpannerBtn.classList.add('d-none');
 
