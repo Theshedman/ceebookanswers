@@ -20,6 +20,25 @@
     <link rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700">
     <link rel="stylesheet" href="assets/css/styles.min.css">
+    <style>
+        thead tr {
+            background: slateblue;
+            color: #fff;
+        }
+
+        tbody tr:nth-child(odd) {
+            background: #b8b7b7;
+        }
+
+        tbody tr:nth-child(even) {
+            background: #fdf8ee;
+            color: #2f2e2e;
+        }
+
+        tr input, tr textarea {
+            background: #fcfeff;
+        }
+    </style>
 </head>
 
 <body>
@@ -93,6 +112,38 @@
 
         <div id="submit-guest-password-alert"
              class="d-none alert alert-success alert-dismissible fade show" role="alert">
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <h2 class="text-center text-white bg-dark mt-4">Edit Password</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="table-responsive" data-toggle="tooltip" data-bs-tooltip="" title="Notice">
+                    <table class="table table-sm">
+                        <thead>
+                        <tr>
+                            <th>Subject</th>
+                            <th>ExamType</th>
+                            <th>ExamYear</th>
+                            <th>Password</th>
+                        </tr>
+                        </thead>
+                        <tbody id="password-board">
+                        <tr>
+                            <td colspan="3" align="center" class="bg-white">
+                           <span role="status"
+                                 class="spinner-border text-primary m-auto"
+                                 style="width: 25px;height: 25px;">
+                            </span>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
     </div>
 </main>
