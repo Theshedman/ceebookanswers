@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Ceebook</title>
+    <meta property="og:type" content="website">
+    <link rel="icon" type="image/jpeg" sizes="275x183" href="assets/img/logo.jpg">
+    <link rel="icon" type="image/jpeg" sizes="275x183" href="assets/img/logo.jpg">
+    <link rel="icon" type="image/jpeg" sizes="275x183" href="assets/img/logo.jpg">
+    <link rel="icon" type="image/jpeg" sizes="275x183" href="assets/img/logo.jpg">
+    <link rel="icon" type="image/jpeg" sizes="275x183" href="assets/img/logo.jpg">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900">
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i">
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700">
+    <link rel="stylesheet" href="assets/css/styles.min.css">
+</head>
+
+<body>
+<nav class="navbar navbar-dark navbar-expand-sm fixed-top bg-dark d-md-flex navbar-custom">
+    <div class="container"><a class="navbar-brand" href="./index.html">CeebookAnswers</a>
+        <button data-toggle="collapse" class="navbar-toggler" data-target="#navbarResponsive"><span
+                class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="nav navbar-nav ml-auto">
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link" href="#">VERIFY SUBSCRIPTION</a>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link active" href="#">Log Out</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="container-fluid bg-primary"
+     style="margin-top: 4.2rem; border-top: 20.5px solid  #ee0979;">
+    <h1 class="text-center text-white bg-dark">Register Guess Users</h1>
+</div>
+<main>
+    <div class="container">
+        <form id="guest-password-form">
+            <div class="form-row">
+                <div class="col">
+                    <div class="form-group">
+                        <label for="guest-subject-value">Subject:
+                        </label>
+                        <div>
+                            <input id="guest-subject-value" name="guest-subject" class="form-control" list="guest-subject">
+                            <datalist id="guest-subject">
+                            </datalist>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-group"><label for="guest-exam-type">Exam Type:</label>
+                        <select id="guest-exam-type" class="form-control"></select>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <label for="guest-exam-year">Exam Year:</label>
+                        <select id="guest-exam-year" class="form-control"></select>
+                    </div>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="col">
+                    <div class="form-group">
+                        <label for="guest-password">Password:</label>
+                        <input type="text" class="form-control" id="guest-password" placeholder="Enter guest password">
+                    </div>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="col col-12">
+                    <button id="submit-guest-password" class="btn btn-primary w-100 mt-3 h-100"
+                            type="button">Create Guess Password
+                        <span id="submit-guest-password-spanner-btn" role="status"
+                              class="d-none spinner-border text-white m-auto"
+                              style="width: 15px;height: 15px;">
+                        </span>
+                    </button>
+                </div>
+            </div>
+        </form>
+
+        <div id="submit-guest-password-alert"
+             class="d-none alert alert-success alert-dismissible fade show" role="alert">
+        </div>
+    </div>
+</main>
+<footer class="py-5 bg-black mt-4">
+    <div class="container">
+        <p class="text-center text-white m-0 small">Copyright&nbsp;© CeebookAnswers 2020</p>
+    </div>
+</footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+<script src="./assets/js/register-guest.js" type="module"></script>
+</body>
+
+</html>

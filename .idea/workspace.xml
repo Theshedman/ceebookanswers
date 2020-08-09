@@ -26,8 +26,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ba089427-999f-493e-a25a-5f5ac2692d0f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/assets/js/register-guest.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/register-guess.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/answer-page.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/answer-page.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/admin-dashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/admin-dashboard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/guest-login.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/guest-login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
     </list>
     <list id="1ff9520b-77b1-460a-bdcb-67ac24c55052" name="Refactor Candidate dashboard" comment="" />
     <list id="7967b855-538b-464e-b163-85185c480b40" name="Update all the script tags in the html files to JavaScript modules" comment="" />
@@ -39,6 +44,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="HTML File" />
         <option value="JavaScript File" />
       </list>
     </option>
@@ -55,6 +61,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
@@ -67,6 +74,7 @@
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="project-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -85,20 +93,6 @@
       <workItem from="1590525097131" duration="451000" />
       <workItem from="1590529216059" duration="6000" />
       <workItem from="1590848155405" duration="361000" />
-    </task>
-    <task id="LOCAL-00044" summary="Update post-answers">
-      <created>1589800242167</created>
-      <option name="number" value="00044" />
-      <option name="presentableId" value="LOCAL-00044" />
-      <option name="project" value="LOCAL" />
-      <updated>1589800242167</updated>
-    </task>
-    <task id="LOCAL-00045" summary="Update post-answers">
-      <created>1589800786226</created>
-      <option name="number" value="00045" />
-      <option name="presentableId" value="LOCAL-00045" />
-      <option name="project" value="LOCAL" />
-      <updated>1589800786226</updated>
     </task>
     <task id="LOCAL-00046" summary="Update post-answers">
       <created>1589801218072</created>
@@ -429,11 +423,25 @@
       <option name="project" value="LOCAL" />
       <updated>1594636867797</updated>
     </task>
-    <option name="localTasksCounter" value="93" />
+    <task id="LOCAL-00093" summary="Updates answer page to accept images that aren't from express static files">
+      <created>1594637668288</created>
+      <option name="number" value="00093" />
+      <option name="presentableId" value="LOCAL-00093" />
+      <option name="project" value="LOCAL" />
+      <updated>1594637668289</updated>
+    </task>
+    <task id="LOCAL-00094" summary="Updates editor settings">
+      <created>1594637691042</created>
+      <option name="number" value="00094" />
+      <option name="presentableId" value="LOCAL-00094" />
+      <option name="project" value="LOCAL" />
+      <updated>1594637691042</updated>
+    </task>
+    <option name="localTasksCounter" value="95" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="2" />
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -460,8 +468,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Fix alignment and size issue and as well replace input element for updating notice with textarea" />
-    <MESSAGE value="Add logout module for handling logouts" />
     <MESSAGE value="Add Change Password module for handling changing of passwords" />
     <MESSAGE value="Set default data (an empty object) for post requests" />
     <MESSAGE value="Update the answer page to accommodate both candidates and guests" />
@@ -485,7 +491,9 @@
     <MESSAGE value="Update changePassword to require examType" />
     <MESSAGE value="Update ChangePassword" />
     <MESSAGE value="Update manage-candidate file to support registration for multiple exam types" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update manage-candidate file to support registration for multiple exam types" />
+    <MESSAGE value="Updates answer page to accept images that aren't from express static files" />
+    <MESSAGE value="Updates editor settings" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updates editor settings" />
   </component>
   <component name="WindowStateProjectService">
     <state x="424" y="180" key="#Servers" timestamp="1589729074260">
@@ -504,10 +512,10 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="571" y="371" key="VCS.ChangelistChooser/0.0.1440.900@0.0.1440.900" timestamp="1592223523958" />
-    <state x="319" y="189" key="Vcs.Push.Dialog.v2" timestamp="1594636879316">
+    <state x="319" y="189" key="Vcs.Push.Dialog.v2" timestamp="1594637713829">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="319" y="189" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1594636879316" />
+    <state x="319" y="189" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1594637713829" />
     <state x="477" y="324" width="568" height="472" key="org.intellij.images.editor.actions.BackgroundImageDialog" timestamp="1594619227724">
       <screen x="0" y="0" width="1440" height="900" />
     </state>

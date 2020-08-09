@@ -5,19 +5,21 @@ const guestPasswordField = document.querySelector('#guest-password');
 const guestLoginBtn = document.querySelector('#guest-login-btn');
 const guestLoginErrorMessage = document.querySelector('#guest-login-error-message');
 const guestLoginSpanner = document.querySelector('#guest-login-spanner');
+const guessExamTypeLogin = document.querySelector('#guess-exam-type-login');
 
 guestLoginBtn.addEventListener('click', async (e) => {
   e.preventDefault();
 
   const phone = guestPhoneField.value;
   const password = guestPasswordField.value;
+  const examType = guessExamTypeLogin.value;
 
   guestLoginErrorMessage.textContent = '';
   guestLoginErrorMessage.classList.add('d-none');
   guestLoginSpanner.classList.remove('d-none');
 
   try {
-    const guestLoginData = await guestSubmitLoginDetails(phone, password);
+    const guestLoginData = await guestSubmitLoginDetails(phone, password, examType);
 
     if (guestLoginData.error) {
       throw new Error(guestLoginData.error.message);
@@ -38,10 +40,10 @@ guestLoginBtn.addEventListener('click', async (e) => {
 
 });
 
-const guestSubmitLoginDetails = async (phone, password) => {
+const guestSubmitLoginDetails = async (phone, password, examType) => {
   try {
     const fetchUrl = `${baseUrl}/guests/login`;
-    const data = { phone, password };
+    const data = { phone, password, examType };
     return await post(fetchUrl, data);
   } catch (e) {
     throw new Error(e.message);
