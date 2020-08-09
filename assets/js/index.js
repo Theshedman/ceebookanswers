@@ -3,6 +3,7 @@ import { baseUrl, get, examTypes } from './utils/index.js';
 const accordion = document.querySelector('#accordion-1');
 const accordionSpanner = document.querySelector('#accordion-spanner');
 const examTypeLogin = document.querySelector('#exam-type-login');
+const guessExamTypeLogin = document.querySelector('#guess-exam-type-login');
 const examTypeVerify = document.querySelector('#exam-type-verify');
 
 async function getGeneralNotice() {
@@ -53,5 +54,6 @@ document.addEventListener('DOMContentLoaded', async (e) => {
 
 function loadExamType() {
   examTypeLogin.innerHTML = examTypes();
+  guessExamTypeLogin.innerHTML = examTypes();
   examTypeVerify.innerHTML = examTypes();
 }
