@@ -5,7 +5,7 @@ import {
   examYears,
   manipulateAlert,
   postFormData,
-  get, post, deleteData, update
+  get, deleteData, update
 } from './utils/index.js';
 
 const answerSubject = document.querySelector('#answer-subject');
