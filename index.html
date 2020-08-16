@@ -52,11 +52,28 @@
         <div class="container">
 
             <!--            Accordion for General Notice on the Home page -->
-            <div role="tablist" id="accordion-1">
+            <div class="mb-5" role="tablist" id="accordion-1">
                 <span id="accordion-spanner" role="status"
                       class="spinner-border text-white m-auto"
                       style="width: 15px;height: 15px;">
                 </span>
+            </div>
+
+            <!--    Notice for browser update     -->
+
+            <div class="mt-5">
+                <div class="bg-white text-dark text-left p-5">
+                    <strong class="font-weight-bolder text-primary">Supported Browsers:</strong>
+                    <ol>
+                        <li>All Operamini (Latest versions)</li>
+                        <li>Google Chrome (Latest version)</li>
+                        <li>Chrome Beta</li>
+                        <li>Opera Browser Beta</li>
+                    </ol>
+
+                    <p>Please You are advised to visit the Playstore and update your above browsers to
+                        enable you view answers on this page!</p>
+                </div>
             </div>
 
             <!--            External Link button -->
@@ -72,6 +89,7 @@
     <div class="bg-circle-3 bg-circle"></div>
     <div class="bg-circle-4 bg-circle"></div>
 </header>
+
 <section>
     <div class="container-fluid">
         <div class="row align-items-center">
@@ -213,7 +231,8 @@
 
                                 <select id="exam-type-verify" class="form-control"></select>
 
-                                <button class="btn btn-primary form-control" id="verify-subscription-btn"
+                                <button class="btn btn-primary form-control"
+                                        id="verify-subscription-btn"
                                         type="button">Verify
                                     <span id="verify-sub-spanner" role="status"
                                           class="spinner-border text-white m-auto d-none"

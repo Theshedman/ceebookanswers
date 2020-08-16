@@ -25,7 +25,10 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ba089427-999f-493e-a25a-5f5ac2692d0f" name="Default Changelist" comment="Add Answer Notice" />
+    <list default="true" id="ba089427-999f-493e-a25a-5f5ac2692d0f" name="Default Changelist" comment="Add Answer Notice">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+    </list>
     <list id="1ff9520b-77b1-460a-bdcb-67ac24c55052" name="Refactor Candidate dashboard" comment="" />
     <list id="7967b855-538b-464e-b163-85185c480b40" name="Update all the script tags in the html files to JavaScript modules" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -59,12 +62,13 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="TODO_SCOPE" value="All Places" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="ECMAScript 6" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="project-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
@@ -85,27 +89,6 @@
       <workItem from="1590525097131" duration="451000" />
       <workItem from="1590529216059" duration="6000" />
       <workItem from="1590848155405" duration="361000" />
-    </task>
-    <task id="LOCAL-00052" summary="Fix image issues">
-      <created>1589810854821</created>
-      <option name="number" value="00052" />
-      <option name="presentableId" value="LOCAL-00052" />
-      <option name="project" value="LOCAL" />
-      <updated>1589810854824</updated>
-    </task>
-    <task id="LOCAL-00053" summary="Fix image issues">
-      <created>1589812747363</created>
-      <option name="number" value="00053" />
-      <option name="presentableId" value="LOCAL-00053" />
-      <option name="project" value="LOCAL" />
-      <updated>1589812747367</updated>
-    </task>
-    <task id="LOCAL-00054" summary="Fix image issues">
-      <created>1589813729574</created>
-      <option name="number" value="00054" />
-      <option name="presentableId" value="LOCAL-00054" />
-      <option name="project" value="LOCAL" />
-      <updated>1589813729577</updated>
     </task>
     <task id="LOCAL-00055" summary="Add lite-server dependency">
       <created>1592146282898</created>
@@ -429,7 +412,28 @@
       <option name="project" value="LOCAL" />
       <updated>1597144120625</updated>
     </task>
-    <option name="localTasksCounter" value="101" />
+    <task id="LOCAL-00101" summary="Make the link button big">
+      <created>1597144466639</created>
+      <option name="number" value="00101" />
+      <option name="presentableId" value="LOCAL-00101" />
+      <option name="project" value="LOCAL" />
+      <updated>1597144466639</updated>
+    </task>
+    <task id="LOCAL-00102" summary="Edit and Delete answers">
+      <created>1597371710873</created>
+      <option name="number" value="00102" />
+      <option name="presentableId" value="LOCAL-00102" />
+      <option name="project" value="LOCAL" />
+      <updated>1597371710875</updated>
+    </task>
+    <task id="LOCAL-00103" summary="Remove unused function util">
+      <created>1597371767224</created>
+      <option name="number" value="00103" />
+      <option name="presentableId" value="LOCAL-00103" />
+      <option name="project" value="LOCAL" />
+      <updated>1597371767224</updated>
+    </task>
+    <option name="localTasksCounter" value="104" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -460,9 +464,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Refactor login files for all the users" />
-    <MESSAGE value="Refactor the admin dashboard" />
-    <MESSAGE value="Update general notice by removing unused variables" />
     <MESSAGE value="Refactor Manage Candidate file" />
     <MESSAGE value="Update file by extracting out urls into baseURl" />
     <MESSAGE value="Update default export file" />
@@ -485,7 +486,10 @@
     <MESSAGE value="Update password board after successfully creating guest password" />
     <MESSAGE value="Add Answer Notice" />
     <MESSAGE value="Split name on the button link at home page" />
-    <option name="LAST_COMMIT_MESSAGE" value="Split name on the button link at home page" />
+    <MESSAGE value="Make the link button big" />
+    <MESSAGE value="Edit and Delete answers" />
+    <MESSAGE value="Remove unused function util" />
+    <option name="LAST_COMMIT_MESSAGE" value="Remove unused function util" />
   </component>
   <component name="WindowStateProjectService">
     <state x="424" y="180" key="#Servers" timestamp="1589729074260">
@@ -496,19 +500,19 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="413" y="159" key="RollbackChangesDialog/0.0.1440.900@0.0.1440.900" timestamp="1592221998872" />
-    <state x="280" y="109" key="SettingsEditor" timestamp="1594619493960">
+    <state x="280" y="109" key="SettingsEditor" timestamp="1597368763187">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="280" y="109" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1594619493960" />
+    <state x="280" y="109" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1597368763187" />
     <state x="571" y="371" key="VCS.ChangelistChooser" timestamp="1592223523958">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="571" y="371" key="VCS.ChangelistChooser/0.0.1440.900@0.0.1440.900" timestamp="1592223523958" />
-    <state x="319" y="189" key="Vcs.Push.Dialog.v2" timestamp="1597144155455">
+    <state x="319" y="189" key="Vcs.Push.Dialog.v2" timestamp="1597371777780">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="319" y="189" key="Vcs.Push.Dialog.v2/0.0.1440.900/-165.-900.1600.900@0.0.1440.900" timestamp="1596953273793" />
-    <state x="319" y="189" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1597144155455" />
+    <state x="319" y="189" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1597371777780" />
     <state x="477" y="324" width="568" height="472" key="org.intellij.images.editor.actions.BackgroundImageDialog" timestamp="1594619227724">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
