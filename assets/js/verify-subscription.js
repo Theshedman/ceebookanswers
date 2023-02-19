@@ -1,4 +1,4 @@
-import { baseUrl } from "./utils";
+import { baseUrl } from "./utils/index.js";
 
 const phoneInput = document.querySelector('#verify-subscription-phone');
 const submitBtn = document.querySelector('#verify-subscription-btn');
