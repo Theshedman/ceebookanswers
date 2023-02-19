@@ -86,7 +86,7 @@ async function getCandidatePhoneNumbers() {
   try {
     const responseData = await get(fetchUrl);
     if (responseData.error) {
-      throw  new Error(responseData.error.message);
+      throw new Error(responseData.error.message);
     }
 
     const totalCandidateNumbers = responseData.data.length;
@@ -126,7 +126,7 @@ async function searchCandidate() {
     const responseData = await get(fetchUrl);
 
     if (responseData.error) {
-      throw  new Error(responseData.error.message);
+      throw new Error(responseData.error.message);
     }
 
     const allSubjectCount = subjects.length;
@@ -188,7 +188,7 @@ updateCandidateBtn.addEventListener('click', async () => {
   try {
     const responseData = await update(fetchUrl, candidateData);
     if (responseData.error) {
-      throw  new Error(responseData.error.message);
+      throw new Error(responseData.error.message);
     }
 
     updateCandidateSpannerBtn.classList.add('d-none');
@@ -325,7 +325,7 @@ async function deleteCandidate() {
     const fetchUrl = `${baseUrl}/candidates/one?phone=${phone}&examType=${examTypeModify.value}`;
     const responseData = await deleteData(fetchUrl);
     if (responseData.error) {
-      throw  new Error(responseData.error.message);
+      throw new Error(responseData.error.message);
     }
 
     deleteCandidateSpinnerBtn.classList.add('d-none');

@@ -5,7 +5,7 @@ import {
 import { baseUrl } from './base-url.js';
 import { update } from './request.js';
 
-export async function updatePassword(newPasswordField,confirmPasswordField, oldPasswordField, passwordErrorField, passwordSpanner, changePasswordForm, passwordAlertField, passwordBtnContainer) {
+export async function updatePassword(newPasswordField, confirmPasswordField, oldPasswordField, passwordErrorField, passwordSpanner, changePasswordForm, passwordAlertField, passwordBtnContainer) {
 
   passwordSpanner.classList.remove('d-none');
   const password = newPasswordField.value;

@@ -131,7 +131,7 @@ function editRow(rowNum) {
   const headingColumn = document.querySelector(`#heading-${rowNum}`);
   let notice = noticeColumn.textContent.trim();
   const heading = headingColumn.textContent.trim();
-  const detectUrlRegex =/(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
+  const detectUrlRegex = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
 
   notice = notice.replace(detectUrlRegex, (url) => {
     return `[${url}]`;

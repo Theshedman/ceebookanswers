@@ -47,6 +47,6 @@ const candidateSubmitLoginDetails = async (phone, password, examType) => {
     const data = { phone, password, examType };
     return await post(fetchUrl, data);
   } catch (e) {
-    throw  new Error(e.message);
+    throw new Error(e.message);
   }
 };

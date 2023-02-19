@@ -24,11 +24,11 @@ btnSubmitGuessPassword.addEventListener('click', async () => {
   submitGuessSpannerBtn.classList.remove('d-none');
 
   const data = {
-  password: guestPassword.value,
-  subject: guestSubjectValue.value,
-  examType: guestExamType.value,
-  examYear: guestExamYear.value,
-}
+    password: guestPassword.value,
+    subject: guestSubjectValue.value,
+    examType: guestExamType.value,
+    examYear: guestExamYear.value,
+  }
 
   try {
     const response = await createGuessPassword(data);

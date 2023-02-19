@@ -1,3 +1,5 @@
+import { baseUrl } from "./utils";
+
 const phoneInput = document.querySelector('#verify-subscription-phone');
 const submitBtn = document.querySelector('#verify-subscription-btn');
 const verifiedMessage = document.querySelector('#verified-message');
@@ -36,7 +38,7 @@ async function fetchApi() {
     }
     const phone = phoneInput.value;
     phoneInput.value = '';
-    const fetchUrl = ` https://ceebookanswers.herokuapp.com/candidates/verifySubscription?phone=${phone}&examType=${examTypeVerify.value}`;
+    const fetchUrl = `${baseUrl}/candidates/verifySubscription?phone=${phone}&examType=${examTypeVerify.value}`;
 
     const data = await fetch(fetchUrl);
     const verified = await data.json();
